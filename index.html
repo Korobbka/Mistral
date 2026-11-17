@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mistral вЂ” Roblox Scripter</title>
-<meta name="description" content="Mistral вЂ” Roblox developer. Luau mechanics, game systems and server logic. Explore the work and discuss your project.">
-<meta property="og:type" content="website"><meta property="og:title" content="Mistral вЂ” Roblox Scripter">
+<title>Mistral — Roblox Scripter</title>
+<meta name="description" content="Mistral — Roblox developer. Luau mechanics, game systems and server logic. Explore the work and discuss your project.">
+<meta property="og:type" content="website"><meta property="og:title" content="Mistral — Roblox Scripter">
 <meta property="og:description" content="Game mechanics. Systems. Server logic. Built with Luau.">
 <meta property="og:url" content="https://korobbka.github.io/Mistral/"><meta property="og:image" content="https://mistral-orbit-studio.justlyric512.chatgpt.site/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -100,7 +100,7 @@ h2.title{font-size:clamp(2.2rem,6.4vw,5rem);margin:14px 0 50px;letter-spacing:-.
 .marq{overflow:hidden;border-block:1px solid var(--line);padding:16px 0;max-width:none;background:rgba(0,0,0,.4)}
 .marq div{display:flex;width:max-content;will-change:transform;font-family:var(--disp);font-size:clamp(1.3rem,3vw,2.2rem);text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.45)}
 .marq span{padding-right:40px;white-space:nowrap}
-.marq span::after{content:"вњ¦";margin-left:40px;color:#fff;-webkit-text-stroke:0}
+.marq span::after{content:"✦";margin-left:40px;color:#fff;-webkit-text-stroke:0}
 
 /* ---------- works ---------- */
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
@@ -224,7 +224,7 @@ body.editing .addrow{display:block}
 .modal label{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:4px}
 .row{display:flex;gap:10px}.row>*{flex:1}
 .toast{position:fixed;right:24px;bottom:24px;display:flex;align-items:center;gap:10px;max-width:calc(100vw - 32px);background:#fff;color:#000;padding:12px 20px;border-radius:14px;font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .35s,transform .45s cubic-bezier(.22,1,.36,1);z-index:600;box-shadow:0 12px 40px rgba(255,255,255,.12)}
-.toast:not(.bad)::before{content:"вњ“";font-weight:700}
+.toast:not(.bad)::before{content:"✓";font-weight:700}
 .toast.on{opacity:1;transform:none}
 body.admin .toast{bottom:84px}
 @media(max-width:600px){
@@ -241,7 +241,7 @@ body.admin .toast{bottom:84px}
 a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid #fff;outline-offset:5px}button:disabled{opacity:.5;cursor:wait}
 .play svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}.status.busy i{background:#999;animation:none}.text-focus #trail,.text-focus .cur,.text-focus .dotc{opacity:0}
 .presence{display:flex;gap:10px;align-items:center;font:10px var(--mono);letter-spacing:.05em;color:var(--mute)}.presence i{width:7px;height:7px;background:#777;border-radius:50%;display:block}.presence[data-status=online] i{background:#79c494}.presence[data-status=idle] i{background:#d9bb7b}.presence[data-status=dnd] i{background:#c87878}
-.faq-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:55px}.section-note{max-width:340px;color:var(--mute);font-size:.93rem;line-height:1.9}#faqList details{border-top:1px solid var(--line);padding:23px 0}#faqList details:last-child{border-bottom:1px solid var(--line)}#faqList summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px}#faqList summary::-webkit-details-marker{display:none}#faqList summary::after{content:'+';font-family:var(--mono)}#faqList details[open] summary::after{content:'в€’'}#faqList details p{color:var(--mute);font-size:.9rem;line-height:1.9;margin-top:18px}
+.faq-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:55px}.section-note{max-width:340px;color:var(--mute);font-size:.93rem;line-height:1.9}#faqList details{border-top:1px solid var(--line);padding:23px 0}#faqList details:last-child{border-bottom:1px solid var(--line)}#faqList summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px}#faqList summary::-webkit-details-marker{display:none}#faqList summary::after{content:'+';font-family:var(--mono)}#faqList details[open] summary::after{content:'−'}#faqList details p{color:var(--mute);font-size:.9rem;line-height:1.9;margin-top:18px}
 .utility{position:fixed;bottom:20px;right:24px;display:flex;gap:8px;z-index:110}.utility button{font:9px var(--mono);letter-spacing:.05em;text-transform:uppercase;background:#080808c9;border:1px solid var(--line);border-radius:99px;padding:10px 14px;backdrop-filter:blur(10px);color:var(--mute)}.utility button:hover{color:#fff;border-color:#aaa}.eq{letter-spacing:2px;margin-right:7px}.utility [aria-pressed=true] .eq{color:#fff}
 .modal form{max-height:calc(100dvh - 32px);overflow:auto}.modal .note{line-height:1.8}.filepick{display:flex!important;align-items:center;justify-content:space-between;gap:12px;position:relative;padding:15px 18px;border:1px dashed #ffffff55;border-radius:14px;cursor:pointer}.filepick input{position:absolute;inset:0;opacity:0;cursor:pointer;padding:0}.filepick small{color:var(--mute);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:45%;letter-spacing:0;text-transform:none}.filepick:focus-within{border-color:#fff}
 #contentModal form{max-width:850px;width:min(850px,100%)}#contentJson{font:11px/1.7 var(--mono);min-height:44vh;white-space:pre}#contentError{color:#e8a5a5}#briefDiscord[hidden]{display:none}.bar{bottom:65px}.bar button{font-size:10px;padding:9px 13px}.translation-state{display:none;margin-top:10px;font:10px var(--mono);color:var(--mute)}
@@ -263,8 +263,8 @@ body.lite .grain{animation:none}body.lite .fog i{animation:none}body.reduced,bod
 
 <header>
   <a href="#top" class="brand" id="brandTop">Mistral</a>
-  <nav id="nav"><a href="#works">Р Р°Р±РѕС‚С‹</a><a href="#terms">РЈСЃР»РѕРІРёСЏ</a><a href="#contact">РљРѕРЅС‚Р°РєС‚С‹</a></nav>
-  <div class="navtools"><div class="language" role="group" aria-label="Language"><button data-lang="ru" class="selected" aria-pressed="true">RU</button><button data-lang="en" aria-pressed="false">EN</button></div><a class="tglink" id="dcTop" target="_blank" rel="noopener">Discord в†—</a></div>
+  <nav id="nav"><a href="#works">Работы</a><a href="#terms">Условия</a><a href="#contact">Контакты</a></nav>
+  <div class="navtools"><div class="language" role="group" aria-label="Language"><button data-lang="ru" class="selected" aria-pressed="true">RU</button><button data-lang="en" aria-pressed="false">EN</button></div><a class="tglink" id="dcTop" target="_blank" rel="noopener">Discord ↗</a></div>
 </header>
 
 <main>
@@ -276,7 +276,7 @@ body.lite .grain{animation:none}body.lite .fog i{animation:none}body.reduced,bod
     <div class="role rv" style="--d:.2s" data-p="role"></div>
     <p class="line rv" style="--d:.3s" data-p="line" data-multi></p>
     <div class="cta rv" style="--d:.4s">
-      <a href="#works" class="btn fill mag">Р Р°Р±РѕС‚С‹ в†“</a>
+      <a href="#works" class="btn fill mag">Работы ↓</a>
       <a class="btn ghost mag" id="dcHero" target="_blank" rel="noopener">Discord</a>
     </div>
   </div>
@@ -287,21 +287,21 @@ body.lite .grain{animation:none}body.lite .fog i{animation:none}body.reduced,bod
 <div class="marq"><div id="marq"></div></div>
 
 <section id="works">
-  <div class="rv"><span class="eyebrow">01 / <span data-mirror="sections.works">Р Р°Р±РѕС‚С‹</span></span></div>
-  <h2 class="title rv" data-p="sections.works">Р Р°Р±РѕС‚С‹</h2>
+  <div class="rv"><span class="eyebrow">01 / <span data-mirror="sections.works">Работы</span></span></div>
+  <h2 class="title rv" data-p="sections.works">Работы</h2>
   <div class="filters rv" id="filters"></div>
   <div class="works" id="worksGrid"></div>
-  <p class="empty" id="empty">РџСЂРѕРµРєС‚С‹ СЃРєРѕСЂРѕ РїРѕСЏРІСЏС‚СЃСЏ</p>
+  <p class="empty" id="empty">Проекты скоро появятся</p>
 </section>
 
 <section id="terms">
-  <div class="rv"><span class="eyebrow">02 / <span data-mirror="sections.terms">РЈСЃР»РѕРІРёСЏ</span></span></div>
-  <h2 class="title rv" data-p="sections.terms">РЈСЃР»РѕРІРёСЏ</h2>
+  <div class="rv"><span class="eyebrow">02 / <span data-mirror="sections.terms">Условия</span></span></div>
+  <h2 class="title rv" data-p="sections.terms">Условия</h2>
   <div class="terms">
     <div class="card rv">
       <h3 data-p="terms.noTitle"></h3>
       <ul class="nolist" id="nodo"></ul>
-      <div class="addrow"><button class="mini" data-add="nodo">+ РџСѓРЅРєС‚</button></div>
+      <div class="addrow"><button class="mini" data-add="nodo">+ Пункт</button></div>
     </div>
     <div class="card rv" style="--d:.1s">
       <h3 data-p="terms.priceTitle"></h3>
@@ -311,75 +311,75 @@ body.lite .grain{animation:none}body.lite .fog i{animation:none}body.reduced,bod
   </div>
 </section>
 
-<section id="faq"><div class="faq-layout"><div class="rv"><span class="eyebrow">03 / FAQ</span><h2 class="title">Р”Рѕ СЃС‚Р°СЂС‚Р°</h2><p class="section-note">РќРµСЃРєРѕР»СЊРєРѕ РѕС‚РІРµС‚РѕРІ, С‡С‚РѕР±С‹ Р±С‹СЃС‚СЂРµРµ РїРµСЂРµР№С‚Рё Рє РґРµР»Сѓ.</p></div><div id="faqList"></div></div></section>
+<section id="faq"><div class="faq-layout"><div class="rv"><span class="eyebrow">03 / FAQ</span><h2 class="title">До старта</h2><p class="section-note">Несколько ответов, чтобы быстрее перейти к делу.</p></div><div id="faqList"></div></div></section>
 <section id="contact">
-  <div class="rv"><span class="eyebrow">04 / <span data-mirror="sections.contact">РљРѕРЅС‚Р°РєС‚С‹</span></span></div>
-  <h2 class="title rv" data-p="sections.contact">РљРѕРЅС‚Р°РєС‚С‹</h2>
+  <div class="rv"><span class="eyebrow">04 / <span data-mirror="sections.contact">Контакты</span></span></div>
+  <h2 class="title rv" data-p="sections.contact">Контакты</h2>
   <div class="dcard rv">
     <div style="position:relative;z-index:1">
-      <div class="presence" id="presence" role="status"><i></i><span>РЎС‚Р°С‚СѓСЃ Discord РЅРµ РїРѕРґРєР»СЋС‡С‘РЅ</span></div>
+      <div class="presence" id="presence" role="status"><i></i><span>Статус Discord не подключён</span></div>
       <div class="nick" data-p="nick"></div>
       <p data-p="contactText" data-multi></p>
     </div>
     <div class="dcr">
-      <a class="btn fill mag" id="dcBox" target="_blank" rel="noopener">РћС‚РєСЂС‹С‚СЊ Discord в†’</a>
-      <button class="btn ghost mag" id="briefOpen">РЎРѕСЃС‚Р°РІРёС‚СЊ Р·Р°СЏРІРєСѓ в†—</button><button class="btn ghost mag" id="copyNick">РЎРєРѕРїРёСЂРѕРІР°С‚СЊ РЅРёРє</button>
+      <a class="btn fill mag" id="dcBox" target="_blank" rel="noopener">Открыть Discord →</a>
+      <button class="btn ghost mag" id="briefOpen">Составить заявку ↗</button><button class="btn ghost mag" id="copyNick">Скопировать ник</button>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="bigword" id="bigword"></div><span data-p="footer"></span> В· <a id="dcFoot" target="_blank" rel="noopener"></a> В· <a href="#top">в†‘</a></footer>
+<footer><div class="bigword" id="bigword"></div><span data-p="footer"></span> · <a id="dcFoot" target="_blank" rel="noopener"></a> · <a href="#top">↑</a></footer>
 <div class="hud mono" id="hud" aria-hidden="true"></div>
-<div class="utility"><button id="sound" aria-pressed="false" aria-label="Toggle ambient audio"><span class="eq">в–‚в–…в–ѓ</span><span data-sound>Р—РІСѓРє РІС‹РєР».</span></button><button id="quality" aria-label="Graphics quality">FX: AUTO</button></div>
+<div class="utility"><button id="sound" aria-pressed="false" aria-label="Toggle ambient audio"><span class="eq">▂▅▃</span><span data-sound>Звук выкл.</span></button><button id="quality" aria-label="Graphics quality">FX: AUTO</button></div>
 <div class="dots" id="dots"><a href="#top"></a><a href="#works"></a><a href="#terms" aria-label="Terms"></a><a href="#contact"></a></div>
 
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project preview"><button class="x" id="lbx">вњ•</button><div class="box"><div class="m" id="lbm"></div><h3 id="lbt"></h3><p id="lbd"></p></div></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project preview"><button class="x" id="lbx">✕</button><div class="box"><div class="m" id="lbm"></div><h3 id="lbt"></h3><p id="lbd"></p></div></div>
 
 <div class="modal" id="wm" role="dialog" aria-modal="true">
   <form id="wf">
-    <h3 id="wmt">РќРѕРІР°СЏ СЂР°Р±РѕС‚Р°</h3>
-    <label>РќР°Р·РІР°РЅРёРµ</label><input id="w_t" required placeholder="РЎРёСЃС‚РµРјР° РёРЅРІРµРЅС‚Р°СЂСЏ">
-    <div class="row"><div><label>РљР°С‚РµРіРѕСЂРёСЏ</label><input id="w_c" list="cats" placeholder="РњРµС…Р°РЅРёРєРё"><datalist id="cats"></datalist></div>
-    <div><label>РўРёРї</label><select id="w_ty"><option value="youtube">YouTube</option><option value="video">Р’РёРґРµРѕ (С„Р°Р№Р» / .mp4)</option><option value="image">Р¤РѕС‚Рѕ / СЃРєСЂРёРЅС€РѕС‚</option></select></div></div>
-    <label>РЎСЃС‹Р»РєР° (YouTube, mp4, РєР°СЂС‚РёРЅРєР°)</label><input id="w_s" placeholder="https://вЂ¦">
-    <label for="w_f" class="filepick"><span>Р’С‹Р±СЂР°С‚СЊ РјРµРґРёР° в†—</span><small id="fileName">Р¤Р°Р№Р» РЅРµ РІС‹Р±СЂР°РЅ</small><input type="file" id="w_f" accept="image/*,video/*"></label>
-    <p class="note">Р¤Р°Р№Р»С‹ С…СЂР°РЅСЏС‚СЃСЏ РІ СЃР°РјРѕРј СЃР°Р№С‚Рµ, Р±РѕР»СЊС€РёРµ РІРёРґРµРѕ Р»СѓС‡С€Рµ СЃСЃС‹Р»РєРѕР№.</p>
-    <label>РћРїРёСЃР°РЅРёРµ</label><textarea id="w_d" style="min-height:80px"></textarea>
-    <div class="row" style="margin-top:8px"><button type="button" class="btn ghost" id="wcancel">РћС‚РјРµРЅР°</button><button class="btn fill" type="submit" style="justify-content:center">РЎРѕС…СЂР°РЅРёС‚СЊ</button></div>
+    <h3 id="wmt">Новая работа</h3>
+    <label>Название</label><input id="w_t" required placeholder="Система инвентаря">
+    <div class="row"><div><label>Категория</label><input id="w_c" list="cats" placeholder="Механики"><datalist id="cats"></datalist></div>
+    <div><label>Тип</label><select id="w_ty"><option value="youtube">YouTube</option><option value="video">Видео (файл / .mp4)</option><option value="image">Фото / скриншот</option></select></div></div>
+    <label>Ссылка (YouTube, mp4, картинка)</label><input id="w_s" placeholder="https://…">
+    <label for="w_f" class="filepick"><span>Выбрать медиа ↗</span><small id="fileName">Файл не выбран</small><input type="file" id="w_f" accept="image/*,video/*"></label>
+    <p class="note">Файлы хранятся в самом сайте, большие видео лучше ссылкой.</p>
+    <label>Описание</label><textarea id="w_d" style="min-height:80px"></textarea>
+    <div class="row" style="margin-top:8px"><button type="button" class="btn ghost" id="wcancel">Отмена</button><button class="btn fill" type="submit" style="justify-content:center">Сохранить</button></div>
   </form>
 </div>
 
 <div class="modal" id="sm" role="dialog" aria-modal="true">
   <form id="sf">
-    <h3>РќР°СЃС‚СЂРѕР№РєРё</h3>
-    <label>РЎСЃС‹Р»РєР° РЅР° Discord (РїСЂРёРіР»Р°С€РµРЅРёРµ РёР»Рё РїСЂРѕС„РёР»СЊ)</label><input id="s_dc" placeholder="https://discord.gg/вЂ¦">
-    <label for="s_id">Discord User ID В· Lanyard</label><input id="s_id" inputmode="numeric" placeholder="123456789012345678"><p class="note">Р”Р»СЏ Р¶РёРІРѕРіРѕ СЃС‚Р°С‚СѓСЃР° РІСЃС‚СѓРїРё РІ Discord-СЃРµСЂРІРµСЂ Lanyard. Р‘РµР· РїРѕРґРєР»СЋС‡РµРЅРёСЏ РїРѕРєР°Р·С‹РІР°РµС‚СЃСЏ В«РЎС‚Р°С‚СѓСЃ РЅРµРґРѕСЃС‚СѓРїРµРЅВ».</p>
-<label for="s_av">Р”РѕСЃС‚СѓРїРЅРѕСЃС‚СЊ</label><select id="s_av"><option value="open">РћС‚РєСЂС‹С‚ РґР»СЏ Р·Р°РєР°Р·РѕРІ</option><option value="busy">Р—Р°РЅСЏС‚</option></select>
-<label for="s_until">Р—Р°РЅСЏС‚ РґРѕ (РЅРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ)</label><input id="s_until" type="date">
-<label for="s_tr">URL СЃРµСЂРІРёСЃР° РїРµСЂРµРІРѕРґР° (LibreTranslate API, РЅРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ)</label><input id="s_tr" type="url" placeholder="https://your-service.example/translate">
-<p class="note">РќРѕРІС‹Рµ СЂР°Р±РѕС‚С‹ РїРµСЂРµРІРѕРґСЏС‚СЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё С‡РµСЂРµР· MyMemory. РњРѕР¶РЅРѕ СѓРєР°Р·Р°С‚СЊ СЃРІРѕР№ LibreTranslate-СЃРµСЂРІРёСЃ. РџСѓР±Р»РёС‡РЅС‹Рµ С‚РµРєСЃС‚С‹ РѕС‚РїСЂР°РІР»СЏСЋС‚СЃСЏ СЃРµСЂРІРёСЃСѓ РїРµСЂРµРІРѕРґР°; СЃРµРєСЂРµС‚РЅС‹Рµ РєР»СЋС‡Рё Р·РґРµСЃСЊ РЅРµ РЅСѓР¶РЅС‹.</p>
-<label for="s_url">РџСѓР±Р»РёС‡РЅС‹Р№ Р°РґСЂРµСЃ СЃР°Р№С‚Р° (РґР»СЏ СЌРєСЃРїРѕСЂС‚Р° OG)</label><input id="s_url" type="url">
-<label>Р‘РµРіСѓС‰Р°СЏ СЃС‚СЂРѕРєР° (С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ)</label><textarea id="s_m" style="min-height:70px"></textarea>
-    <div class="row" style="margin-top:8px"><button type="button" class="btn ghost" id="scancel">РћС‚РјРµРЅР°</button><button class="btn fill" type="submit" style="justify-content:center">РЎРѕС…СЂР°РЅРёС‚СЊ</button></div>
+    <h3>Настройки</h3>
+    <label>Ссылка на Discord (приглашение или профиль)</label><input id="s_dc" placeholder="https://discord.gg/…">
+    <label for="s_id">Discord User ID · Lanyard</label><input id="s_id" inputmode="numeric" placeholder="123456789012345678"><p class="note">Для живого статуса вступи в Discord-сервер Lanyard. Без подключения показывается «Статус недоступен».</p>
+<label for="s_av">Доступность</label><select id="s_av"><option value="open">Открыт для заказов</option><option value="busy">Занят</option></select>
+<label for="s_until">Занят до (необязательно)</label><input id="s_until" type="date">
+<label for="s_tr">URL сервиса перевода (LibreTranslate API, необязательно)</label><input id="s_tr" type="url" placeholder="https://your-service.example/translate">
+<p class="note">Новые работы переводятся автоматически через MyMemory. Можно указать свой LibreTranslate-сервис. Публичные тексты отправляются сервису перевода; секретные ключи здесь не нужны.</p>
+<label for="s_url">Публичный адрес сайта (для экспорта OG)</label><input id="s_url" type="url">
+<label>Бегущая строка (через запятую)</label><textarea id="s_m" style="min-height:70px"></textarea>
+    <div class="row" style="margin-top:8px"><button type="button" class="btn ghost" id="scancel">Отмена</button><button class="btn fill" type="submit" style="justify-content:center">Сохранить</button></div>
   </form>
 </div>
 
 <div class="modal" id="briefModal" role="dialog" aria-modal="true" aria-labelledby="briefTitle">
-<form id="briefForm"><span class="eyebrow">MISSION BRIEF</span><h3 id="briefTitle">РЎ С‡РµРіРѕ РЅР°С‡РЅС‘Рј?</h3><p class="note">Р—Р°РїРѕР»РЅРё РєРѕСЂРѕС‚РєРѕ вЂ” РїРѕР»СѓС‡РёС€СЊ РіРѕС‚РѕРІС‹Р№ С‚РµРєСЃС‚ РґР»СЏ Discord.</p><label for="br_task">Р§С‚Рѕ РЅСѓР¶РЅРѕ СЃРґРµР»Р°С‚СЊ?</label><textarea id="br_task" required maxlength="4000" placeholder="РќР°РїСЂРёРјРµСЂ, РјР°РіР°Р·РёРЅ РїСЂРµРґРјРµС‚РѕРІ СЃ СЃРѕС…СЂР°РЅРµРЅРёРµРј РїРѕРєСѓРїРѕРє"></textarea><div class="row"><div><label for="br_budget">Р‘СЋРґР¶РµС‚</label><input id="br_budget" maxlength="120" placeholder="Robux / USD"></div><div><label for="br_time">Р–РµР»Р°РµРјС‹Р№ СЃСЂРѕРє</label><input id="br_time" maxlength="120" placeholder="РќР°РїСЂРёРјРµСЂ, 7 РґРЅРµР№"></div></div><label for="br_refs">РЎСЃС‹Р»РєРё Рё РїСЂРёРјРµСЂС‹</label><textarea id="br_refs" maxlength="2000" placeholder="РќРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ"></textarea><div class="row"><button class="btn ghost" type="button" data-close="briefModal">Р—Р°РєСЂС‹С‚СЊ</button><button class="btn fill" type="submit">РЎРєРѕРїРёСЂРѕРІР°С‚СЊ Р·Р°СЏРІРєСѓ</button></div><p class="note" id="briefResult" role="status"></p><a id="briefDiscord" class="btn ghost" target="_blank" rel="noopener" hidden>РџРµСЂРµР№С‚Рё РІ Discord в†—</a></form></div>
-<div class="modal" id="contentModal" role="dialog" aria-modal="true" aria-labelledby="contentTitle"><form id="contentForm"><h3 id="contentTitle">РљРѕРЅС‚РµРЅС‚ / JSON</h3><p class="note">Р—РґРµСЃСЊ СЂРµРґР°РєС‚РёСЂСѓСЋС‚СЃСЏ СЂР°Р±РѕС‚С‹, СѓСЃР»РѕРІРёСЏ, FAQ Рё РїРµСЂРµРІРѕРґС‹. en СЃРѕРґРµСЂР¶РёС‚ РїРµСЂРµРІРѕРґС‹ РїРѕ РїСѓС‚Рё РїРѕР»СЏ, РЅР°РїСЂРёРјРµСЂ works.0.title. РџРѕСЃР»Рµ РїСЂР°РІРѕРє РЅР°Р¶РјРё В«РЎРєР°С‡Р°С‚СЊ СЃР°Р№С‚В» Рё Р·Р°РјРµРЅРё index.html РІ GitHub.</p><textarea id="contentJson" spellcheck="false" aria-label="Content JSON"></textarea><p id="contentError" class="note" role="status"></p><div class="row"><button type="button" class="btn ghost" data-close="contentModal">РћС‚РјРµРЅР°</button><button class="btn fill" type="submit">РџСЂРёРјРµРЅРёС‚СЊ</button></div></form></div>
+<form id="briefForm"><span class="eyebrow">MISSION BRIEF</span><h3 id="briefTitle">С чего начнём?</h3><p class="note">Заполни коротко — получишь готовый текст для Discord.</p><label for="br_task">Что нужно сделать?</label><textarea id="br_task" required maxlength="4000" placeholder="Например, магазин предметов с сохранением покупок"></textarea><div class="row"><div><label for="br_budget">Бюджет</label><input id="br_budget" maxlength="120" placeholder="Robux / USD"></div><div><label for="br_time">Желаемый срок</label><input id="br_time" maxlength="120" placeholder="Например, 7 дней"></div></div><label for="br_refs">Ссылки и примеры</label><textarea id="br_refs" maxlength="2000" placeholder="Необязательно"></textarea><div class="row"><button class="btn ghost" type="button" data-close="briefModal">Закрыть</button><button class="btn fill" type="submit">Скопировать заявку</button></div><p class="note" id="briefResult" role="status"></p><a id="briefDiscord" class="btn ghost" target="_blank" rel="noopener" hidden>Перейти в Discord ↗</a></form></div>
+<div class="modal" id="contentModal" role="dialog" aria-modal="true" aria-labelledby="contentTitle"><form id="contentForm"><h3 id="contentTitle">Контент / JSON</h3><p class="note">Здесь редактируются работы, условия, FAQ и переводы. en содержит переводы по пути поля, например works.0.title. После правок нажми «Скачать сайт» и замени index.html в GitHub.</p><textarea id="contentJson" spellcheck="false" aria-label="Content JSON"></textarea><p id="contentError" class="note" role="status"></p><div class="row"><button type="button" class="btn ghost" data-close="contentModal">Отмена</button><button class="btn fill" type="submit">Применить</button></div></form></div>
 
 <div class="bar">
-  <button id="tgl">вњЋ Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ</button>
-  <button class="only" id="bAdd">+ Р Р°Р±РѕС‚Р°</button>
-  <button class="only" id="bSet">РќР°СЃС‚СЂРѕР№РєРё</button>
-  <button class="only" id="bContent">РљРѕРЅС‚РµРЅС‚ / JSON</button><button class="only" id="bTranslate">RU в†’ EN</button><button class="only" id="bExp">РЎРєР°С‡Р°С‚СЊ СЃР°Р№С‚</button>
-  <button class="only" id="bImp">РРјРїРѕСЂС‚</button>
-  <button class="only" id="bRes">РЎР±СЂРѕСЃ</button>
+  <button id="tgl">✎ Редактировать</button>
+  <button class="only" id="bAdd">+ Работа</button>
+  <button class="only" id="bSet">Настройки</button>
+  <button class="only" id="bContent">Контент / JSON</button><button class="only" id="bTranslate">RU → EN</button><button class="only" id="bExp">Скачать сайт</button>
+  <button class="only" id="bImp">Импорт</button>
+  <button class="only" id="bRes">Сброс</button>
 </div>
 <input type="file" id="impf" accept=".json" hidden>
 
-<script id="seed" type="application/json">{"_v": 1794938369368, "dc": "https://discord.gg/your_invite", "nick": "Mistral", "brand": "Mistral", "role": "Roblox Scripter", "status": "РћС‚РєСЂС‹С‚ РґР»СЏ Р·Р°РєР°Р·РѕРІ", "line": "РРіСЂРѕРІС‹Рµ РјРµС…Р°РЅРёРєРё, СЃРёСЃС‚РµРјС‹ Рё СЃРµСЂРІРµСЂРЅР°СЏ Р»РѕРіРёРєР°. Luau / Roblox Studio.", "marquee": ["Luau", "Roblox Studio", "РњРµС…Р°РЅРёРєРё", "РЎРёСЃС‚РµРјС‹", "РЎРµСЂРІРµСЂРЅР°СЏ Р»РѕРіРёРєР°"], "stats": [], "sections": {"works": "Р Р°Р±РѕС‚С‹", "terms": "РЈСЃР»РѕРІРёСЏ", "contact": "РљРѕРЅС‚Р°РєС‚С‹"}, "works": [{"title": "Р Р°Р±РѕС‚Р° 1", "cat": "РњРµС…Р°РЅРёРєРё", "type": "youtube", "src": "", "desc": "РћРїРёСЃР°РЅРёРµ СЂР°Р±РѕС‚С‹"}, {"title": "Р Р°Р±РѕС‚Р° 2", "cat": "РЎРёСЃС‚РµРјС‹", "type": "youtube", "src": "", "desc": "РћРїРёСЃР°РЅРёРµ СЂР°Р±РѕС‚С‹"}, {"title": "Р Р°Р±РѕС‚Р° 3", "cat": "РЎРµСЂРІРµСЂРЅР°СЏ Р»РѕРіРёРєР°", "type": "youtube", "src": "", "desc": "РћРїРёСЃР°РЅРёРµ СЂР°Р±РѕС‚С‹"}], "terms": {"noTitle": "РќРµ Р±РµСЂСѓСЃСЊ", "priceTitle": "РќР°С‡Р°Р»СЊРЅР°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ", "price": "РѕС‚ 250 Robux", "priceText": "Р·Р° РЅРµР±РѕР»СЊС€РёРµ Р·Р°РґР°С‡Рё. РћСЃС‚Р°Р»СЊРЅРѕРµ Р·Р°РІРёСЃРёС‚ РѕС‚ СЃР»РѕР¶РЅРѕСЃС‚Рё Рё РѕР±СЉС‘РјР°."}, "nodo": ["РџСЂРѕРґРІРёРЅСѓС‚С‹Р№ NPC AI", "РЎР»РѕР¶РЅС‹Рµ СЃРёСЃС‚РµРјС‹ С‚СЂР°РЅСЃРїРѕСЂС‚Р°", "РљРѕРјРїР»РµРєСЃРЅС‹Рµ Р°РЅС‚РёС‡РёС‚С‹", "3D-РјРѕРґРµР»РёСЂРѕРІР°РЅРёРµ Рё Р°РЅРёРјР°С†РёСЏ", "РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ UI/UX-РґРёР·Р°Р№РЅ"], "contactText": "РќР°РїРёС€Рё РІ Discord, РѕРїРёС€Рё Р·Р°РґР°С‡Сѓ, СЃСЂРѕРєРё Рё Р±СЋРґР¶РµС‚.", "footer": "Mistral В© 2026", "discordId": "", "availability": "open", "busyUntil": "", "completed": null, "translationEndpoint": "", "siteUrl": "https://korobbka.github.io/Mistral", "reviews": [], "snippets": [], "prices": [], "faq": [{"q": "РљР°Рє РЅР°С‡Р°С‚СЊ?", "a": "РћРїРёС€Рё РёРґРµСЋ, РїСЂРёР»РѕР¶Рё РїСЂРёРјРµСЂС‹ Рё СѓРєР°Р¶Рё Р¶РµР»Р°РµРјС‹Р№ СЃСЂРѕРє Рё Р±СЋРґР¶РµС‚. Р”Р°Р»СЊС€Рµ СЃРѕРіР»Р°СЃСѓРµРј РѕР±СЉС‘Рј Рё СЃС‚РѕРёРјРѕСЃС‚СЊ."}, {"q": "РњРѕР¶РЅРѕ Р·Р°РєР°Р·Р°С‚СЊ РѕС‚РґРµР»СЊРЅСѓСЋ РјРµС…Р°РЅРёРєСѓ?", "a": "Р”Р°. РќРµР±РѕР»СЊС€РёРµ СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅС‹Рµ Р·Р°РґР°С‡Рё вЂ” РїРѕРґС…РѕРґСЏС‰РёР№ С„РѕСЂРјР°С‚. РЎРЅР°С‡Р°Р»Р° РїСЂРѕРІРµСЂРёРј, РєР°Рє РјРµС…Р°РЅРёРєР° РІСЃС‚СЂР°РёРІР°РµС‚СЃСЏ РІ С‚РІРѕР№ РїСЂРѕРµРєС‚."}, {"q": "Р§С‚Рѕ СЃ РѕРїР»Р°С‚РѕР№ Рё РїСЂР°РІРєР°РјРё?", "a": "РЎРїРѕСЃРѕР± РѕРїР»Р°С‚С‹, СЌС‚Р°РїС‹ Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂР°РІРѕРє СЃРѕРіР»Р°СЃСѓРµРј РґРѕ РЅР°С‡Р°Р»Р° СЂР°Р±РѕС‚С‹. Р—РґРµСЃСЊ РїРѕСЏРІСЏС‚СЃСЏ С„РёРЅР°Р»СЊРЅС‹Рµ СѓСЃР»РѕРІРёСЏ."}], "en": {"status": "Open for commissions", "role": "Roblox Scripter", "line": "Game mechanics, systems and server logic. Luau / Roblox Studio.", "sections.works": "Work", "sections.terms": "Terms", "sections.contact": "Contact", "terms.noTitle": "Outside my scope", "terms.priceTitle": "Starting price", "terms.price": "From 250 Robux", "terms.priceText": "For small tasks. Final pricing depends on complexity and scope.", "nodo.0": "Advanced NPC AI", "nodo.1": "Complex vehicle systems", "nodo.2": "Comprehensive anti-cheat", "nodo.3": "3D modelling & animation", "nodo.4": "Professional UI/UX design", "contactText": "Tell me about your idea, timeline and budget.", "faq.0.q": "How do we start?", "faq.0.a": "Describe your idea, share references, and include your timeline and budget. We will agree on scope and pricing.", "faq.1.q": "Can I order a single mechanic?", "faq.1.a": "Yes. Small, self-contained tasks are welcome. First, we will check how it fits into your project.", "faq.2.q": "What about payment and revisions?", "faq.2.a": "Payment, milestones and the number of revisions are agreed before work begins. Final terms will appear here.", "works.0.title": "Work 1", "works.0.desc": "Project description", "works.0.cat": "Mechanics", "works.1.title": "Work 2", "works.1.desc": "Project description", "works.1.cat": "Systems", "works.2.title": "Work 3", "works.2.desc": "Project description", "works.2.cat": "Server logic", "marquee.0": "Luau", "marquee.1": "Roblox Studio", "marquee.2": "Mechanics", "marquee.3": "Systems", "marquee.4": "Server logic"}}</script>
+<script id="seed" type="application/json">{"_v": 1794938369368, "dc": "https://discord.gg/your_invite", "nick": "Mistral", "brand": "Mistral", "role": "Roblox Scripter", "status": "Открыт для заказов", "line": "Игровые механики, системы и серверная логика. Luau / Roblox Studio.", "marquee": ["Luau", "Roblox Studio", "Механики", "Системы", "Серверная логика"], "stats": [], "sections": {"works": "Работы", "terms": "Условия", "contact": "Контакты"}, "works": [{"title": "Работа 1", "cat": "Механики", "type": "youtube", "src": "", "desc": "Описание работы"}, {"title": "Работа 2", "cat": "Системы", "type": "youtube", "src": "", "desc": "Описание работы"}, {"title": "Работа 3", "cat": "Серверная логика", "type": "youtube", "src": "", "desc": "Описание работы"}], "terms": {"noTitle": "Не берусь", "priceTitle": "Начальная стоимость", "price": "от 250 Robux", "priceText": "за небольшие задачи. Остальное зависит от сложности и объёма."}, "nodo": ["Продвинутый NPC AI", "Сложные системы транспорта", "Комплексные античиты", "3D-моделирование и анимация", "Профессиональный UI/UX-дизайн"], "contactText": "Напиши в Discord, опиши задачу, сроки и бюджет.", "footer": "Mistral © 2026", "discordId": "", "availability": "open", "busyUntil": "", "completed": null, "translationEndpoint": "", "siteUrl": "https://korobbka.github.io/Mistral", "reviews": [], "snippets": [], "prices": [], "faq": [{"q": "Как начать?", "a": "Опиши идею, приложи примеры и укажи желаемый срок и бюджет. Дальше согласуем объём и стоимость."}, {"q": "Можно заказать отдельную механику?", "a": "Да. Небольшие самостоятельные задачи — подходящий формат. Сначала проверим, как механика встраивается в твой проект."}, {"q": "Что с оплатой и правками?", "a": "Способ оплаты, этапы и количество правок согласуем до начала работы. Здесь появятся финальные условия."}], "en": {"status": "Open for commissions", "role": "Roblox Scripter", "line": "Game mechanics, systems and server logic. Luau / Roblox Studio.", "sections.works": "Work", "sections.terms": "Terms", "sections.contact": "Contact", "terms.noTitle": "Outside my scope", "terms.priceTitle": "Starting price", "terms.price": "From 250 Robux", "terms.priceText": "For small tasks. Final pricing depends on complexity and scope.", "nodo.0": "Advanced NPC AI", "nodo.1": "Complex vehicle systems", "nodo.2": "Comprehensive anti-cheat", "nodo.3": "3D modelling & animation", "nodo.4": "Professional UI/UX design", "contactText": "Tell me about your idea, timeline and budget.", "faq.0.q": "How do we start?", "faq.0.a": "Describe your idea, share references, and include your timeline and budget. We will agree on scope and pricing.", "faq.1.q": "Can I order a single mechanic?", "faq.1.a": "Yes. Small, self-contained tasks are welcome. First, we will check how it fits into your project.", "faq.2.q": "What about payment and revisions?", "faq.2.a": "Payment, milestones and the number of revisions are agreed before work begins. Final terms will appear here.", "works.0.title": "Work 1", "works.0.desc": "Project description", "works.0.cat": "Mechanics", "works.1.title": "Work 2", "works.1.desc": "Project description", "works.1.cat": "Systems", "works.2.title": "Work 3", "works.2.desc": "Project description", "works.2.cat": "Server logic", "marquee.0": "Luau", "marquee.1": "Roblox Studio", "marquee.2": "Mechanics", "marquee.3": "Systems", "marquee.4": "Server logic"}}</script>
 
 <script>
 (async()=>{
@@ -399,16 +399,16 @@ let seed=JSON.parse($('#seed').textContent);
 let data; try{data=JSON.parse(localStorage.getItem(KEY))}catch(e){}
 if(!data||(data._v||0)<(seed._v||0))data=JSON.parse(JSON.stringify(seed));
 for(const k in seed) if(data[k]==null) data[k]=JSON.parse(JSON.stringify(seed[k]));
-if(data.sections&&data.sections.contact==='Discord')data.sections.contact='РљРѕРЅС‚Р°РєС‚С‹';
+if(data.sections&&data.sections.contact==='Discord')data.sections.contact='Контакты';
 data.stats=[];
-if(data.line==='1 РіРѕРґ СЃ Luau Рё Roblox Studio. РРіСЂРѕРІС‹Рµ РјРµС…Р°РЅРёРєРё, СЃРёСЃС‚РµРјС‹ Рё СЃРµСЂРІРµСЂРЅР°СЏ Р»РѕРіРёРєР°.')data.line='РРіСЂРѕРІС‹Рµ РјРµС…Р°РЅРёРєРё, СЃРёСЃС‚РµРјС‹ Рё СЃРµСЂРІРµСЂРЅР°СЏ Р»РѕРіРёРєР°. Luau / Roblox Studio.';
+if(data.line==='1 год с Luau и Roblox Studio. Игровые механики, системы и серверная логика.')data.line='Игровые механики, системы и серверная логика. Luau / Roblox Studio.';
 data.en??={};
 if(data.en.line==='1 year with Luau & Roblox Studio. Game mechanics, systems and server logic.')data.en.line='Game mechanics, systems and server logic. Luau / Roblox Studio.';
-let filter='Р’СЃРµ', editIdx=null, mx=0, my=0, first=true;
+let filter='Все', editIdx=null, mx=0, my=0, first=true;
 const editing=()=>document.body.classList.contains('editing');
 const admin=()=>document.body.classList.contains('admin');
 const toast=(t,bad)=>{const e=$('#toast');e.textContent=t;e.classList.toggle('bad',!!bad);e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),2400)};
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({...data,_v:Date.now()}))}catch(e){toast('РќРµ С…РІР°С‚РёР»Рѕ РјРµСЃС‚Р°, РёСЃРїРѕР»СЊР·СѓР№ СЃСЃС‹Р»РєРё РІРјРµСЃС‚Рѕ С„Р°Р№Р»РѕРІ',true)}};
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({...data,_v:Date.now()}))}catch(e){toast('Не хватило места, используй ссылки вместо файлов',true)}};
 function setAdmin(on){document.body.classList.toggle('admin',on);if(!on&&editing())toggleEdit(false)}
 const raw=p=>p.split('.').reduce((o,k)=>o?.[k],data);
 const get=p=>lang==='en'&&data.en?.[p]!=null?data.en[p]:raw(p);
@@ -427,12 +427,12 @@ function bindText(){
 function links(){
   const u=data.dc||'#';
   ['dcTop','dcHero','dcBox'].forEach(i=>$('#'+i).href=u);
-  const f=$('#dcFoot');f.href=u;f.textContent='Discord В· '+data.nick;
+  const f=$('#dcFoot');f.href=u;f.textContent='Discord · '+data.nick;
   $('#bigword').textContent=data.brand;
   $('#brandTop').textContent=data.brand;
-  document.title=data.brand+' вЂ” '+data.role;
+  document.title=data.brand+' — '+data.role;
 }
-const ctl=p=>`<div class="ctl"><button data-del="${p}" title="РЈРґР°Р»РёС‚СЊ">вњ•</button></div>`;
+const ctl=p=>`<div class="ctl"><button data-del="${p}" title="Удалить">✕</button></div>`;
 
 function render(){
   const m=(data.marquee||[]).map((t,i)=>`<span>${esc(get('marquee.'+i))}</span>`).join('');
@@ -476,10 +476,10 @@ function mediaHTML(w,i){
 }
 function renderWorks(){
   const cs=cats();
-  if(filter!=='Р’СЃРµ'&&!cs.includes(filter))filter='Р’СЃРµ';
-  $('#filters').innerHTML=cs.length>1?['Р’СЃРµ',...cs].map(c=>`<button class="chip ${c===filter?'on':''}" data-f="${esc(c)}">${esc(c==='Р’СЃРµ'?ui('Р’СЃРµ','All'):get('works.'+data.works.findIndex(w=>w.cat===c)+'.cat'))}</button>`).join(''):'';
+  if(filter!=='Все'&&!cs.includes(filter))filter='Все';
+  $('#filters').innerHTML=cs.length>1?['Все',...cs].map(c=>`<button class="chip ${c===filter?'on':''}" data-f="${esc(c)}">${esc(c==='Все'?ui('Все','All'):get('works.'+data.works.findIndex(w=>w.cat===c)+'.cat'))}</button>`).join(''):'';
   $('#cats').innerHTML=cs.map(c=>`<option value="${esc(get('works.'+data.works.findIndex(w=>w.cat===c)+'.cat'))}">`).join('');
-  $('#worksGrid').innerHTML=data.works.map((w,i)=>`<article tabindex="0" role="button" aria-label="${esc(get('works.'+i+'.title'))}" class="work tilt rv ${filter!=='Р’СЃРµ'&&w.cat!==filter?'hide':''}" data-i="${i}" style="--d:${(i%3)*.08}s"><div class="ctl"><button data-edit="${i}" title="РР·РјРµРЅРёС‚СЊ">вњЋ</button><button data-del="works.${i}" title="РЈРґР°Р»РёС‚СЊ">вњ•</button></div><div class="media">${mediaHTML(w,i)}</div><div class="info"><small>${esc(get('works.'+i+'.cat'))}</small><h3>${esc(get('works.'+i+'.title'))}</h3><p>${esc(get('works.'+i+'.desc'))}</p>${w._translation?.pending?`<span class="translation-state">${ui('РџРµСЂРµРІРѕРґ РѕР¶РёРґР°РµС‚ РїРѕРІС‚РѕСЂР°','Translation pending вЂ” retry')}</span>`:''}</div></article>`).join('')+'<button class="addtile" id="addTile">+ Р”РѕР±Р°РІРёС‚СЊ СЂР°Р±РѕС‚Сѓ</button>';
+  $('#worksGrid').innerHTML=data.works.map((w,i)=>`<article tabindex="0" role="button" aria-label="${esc(get('works.'+i+'.title'))}" class="work tilt rv ${filter!=='Все'&&w.cat!==filter?'hide':''}" data-i="${i}" style="--d:${(i%3)*.08}s"><div class="ctl"><button data-edit="${i}" title="Изменить">✎</button><button data-del="works.${i}" title="Удалить">✕</button></div><div class="media">${mediaHTML(w,i)}</div><div class="info"><small>${esc(get('works.'+i+'.cat'))}</small><h3>${esc(get('works.'+i+'.title'))}</h3><p>${esc(get('works.'+i+'.desc'))}</p>${w._translation?.pending?`<span class="translation-state">${ui('Перевод ожидает повтора','Translation pending — retry')}</span>`:''}</div></article>`).join('')+'<button class="addtile" id="addTile">+ Добавить работу</button>';
   $('#empty').style.display=data.works.length?'none':'block';
 }
 
@@ -589,12 +589,12 @@ addEventListener('scroll',()=>{
 document.addEventListener('click',e=>{
   const t=e.target;
   const f=t.closest('[data-f]');if(f){filter=f.dataset.f;renderWorks();bindText();$$('.work').forEach(w=>w.classList.add('in'));return}
-  const del=t.closest('[data-del]');if(del){e.stopPropagation();if(!confirm('РЈРґР°Р»РёС‚СЊ?'))return;
+  const del=t.closest('[data-del]');if(del){e.stopPropagation();if(!confirm('Удалить?'))return;
     const ks=del.dataset.del.split('.');const i=+ks.pop();const base=ks.join('.');get(base).splice(i,1);
     const translated={};for(const [key,value] of Object.entries(data.en||{})){const prefix=base+'.';if(key.startsWith(prefix)){const rest=key.slice(prefix.length),m=rest.match(/^(\d+)(.*)$/);if(m){const old=+m[1];if(old===i)continue;translated[prefix+(old>i?old-1:old)+m[2]]=value;continue;}}translated[key]=value;}data.en=translated;
     save();render();return}
   const eb=t.closest('[data-edit]');if(eb){e.stopPropagation();openWork(+eb.dataset.edit);return}
-  const add=t.closest('[data-add]');if(add){if(add.dataset.add==='nodo')data.nodo.push('РќРѕРІС‹Р№ РїСѓРЅРєС‚');save();render();return}
+  const add=t.closest('[data-add]');if(add){if(add.dataset.add==='nodo')data.nodo.push('Новый пункт');save();render();return}
   if(t.closest('#addTile')){openWork(null);return}
   const w=t.closest('.work');if(w&&!editing())openLB(+w.dataset.i);
 });
@@ -604,7 +604,7 @@ document.addEventListener('focusout',e=>{
   if(p==='brand'||p==='role'||p==='nick')links();
 });
 document.addEventListener('keydown',e=>{
-  if((e.ctrlKey||e.metaKey)&&e.shiftKey&&e.code==='KeyE'){e.preventDefault();const on=!admin();setAdmin(on);toast(on?'РђРґРјРёРЅ-РїР°РЅРµР»СЊ РѕС‚РєСЂС‹С‚Р°':'РђРґРјРёРЅ-РїР°РЅРµР»СЊ СЃРєСЂС‹С‚Р°');return}
+  if((e.ctrlKey||e.metaKey)&&e.shiftKey&&e.code==='KeyE'){e.preventDefault();const on=!admin();setAdmin(on);toast(on?'Админ-панель открыта':'Админ-панель скрыта');return}
   if(e.key==='Enter'&&e.target.dataset?.p&&e.target.dataset.multi===undefined){e.preventDefault();e.target.blur()}
   if(e.key==='Escape'){closeLB();$$('.modal').forEach(m=>m.classList.remove('open'))}
 });
@@ -613,10 +613,10 @@ document.addEventListener('pointerout',e=>{const w=e.target.closest?.('.work');i
 
 function openLB(i){
   const w=data.works[i];if(!w)return;let h;
-  if(w.type==='youtube'){const y=ytParse(w.src);h=y.id?`<iframe src="https://www.youtube.com/embed/${y.id}?autoplay=1&rel=0&playsinline=1${y.start?'&start='+y.start:''}" title="${esc(get('works.'+i+'.title'))}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`:'<p style="color:#888">РќРµРІРµСЂРЅР°СЏ СЃСЃС‹Р»РєР° РЅР° YouTube</p>'}
+  if(w.type==='youtube'){const y=ytParse(w.src);h=y.id?`<iframe src="https://www.youtube.com/embed/${y.id}?autoplay=1&rel=0&playsinline=1${y.start?'&start='+y.start:''}" title="${esc(get('works.'+i+'.title'))}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`:'<p style="color:#888">Неверная ссылка на YouTube</p>'}
   else if(w.type==='video'&&w.src)h=`<video src="${esc(w.src)}" controls autoplay loop playsinline></video>`;
   else if(w.src)h=`<img src="${esc(w.src)}" alt="">`;
-  else h='<p style="color:#888">Р’РёРґРµРѕ РїРѕРєР° РЅРµ РґРѕР±Р°РІР»РµРЅРѕ</p>';
+  else h='<p style="color:#888">Видео пока не добавлено</p>';
   $('#lbm').innerHTML=h;$('#lbt').textContent=get('works.'+i+'.title');$('#lbd').textContent=get('works.'+i+'.desc');$('#lb').classList.add('open');document.body.classList.add('media-open');$('#lbx').focus();
 }
 function closeLB(){const was=$('#lb').classList.contains('open');$('#lb').classList.remove('open');document.body.classList.remove('media-open');$('#lbm').innerHTML='';if(was)$('#worksGrid .work')?.focus({preventScroll:true});}
@@ -625,8 +625,8 @@ $('#lbx').onclick=closeLB;$('#lb').addEventListener('click',e=>{if(e.target.id==
 let fileData=null;
 function openWork(i){
   editIdx=i;fileData=null;const w=i==null?{title:'',cat:'',type:'youtube',src:'',desc:''}:data.works[i];
-  $('#wmt').textContent=i==null?'РќРѕРІР°СЏ СЂР°Р±РѕС‚Р°':'РР·РјРµРЅРёС‚СЊ СЂР°Р±РѕС‚Сѓ';
-  $('#w_t').value=i==null?'':get('works.'+i+'.title');$('#w_c').value=i==null?'':get('works.'+i+'.cat');$('#w_ty').value=w.type;$('#w_s').value=w.src.startsWith('data:')?'':w.src;$('#w_d').value=i==null?'':get('works.'+i+'.desc');$('#w_f').value='';$('#fileName').textContent=ui('Р¤Р°Р№Р» РЅРµ РІС‹Р±СЂР°РЅ','No file selected');
+  $('#wmt').textContent=i==null?'Новая работа':'Изменить работу';
+  $('#w_t').value=i==null?'':get('works.'+i+'.title');$('#w_c').value=i==null?'':get('works.'+i+'.cat');$('#w_ty').value=w.type;$('#w_s').value=w.src.startsWith('data:')?'':w.src;$('#w_d').value=i==null?'':get('works.'+i+'.desc');$('#w_f').value='';$('#fileName').textContent=ui('Файл не выбран','No file selected');
   $('#wm').classList.add('open');translateStatic();
   setTimeout(()=>$('#w_t').focus({preventScroll:true}),60);
 }
@@ -634,12 +634,12 @@ $('#wcancel').onclick=()=>$('#wm').classList.remove('open');
 $('#w_f').onchange=e=>{
   const f=e.target.files[0];if(!f)return;
   $('#fileName').textContent=f.name;$('#w_ty').value=f.type.startsWith('video/')?'video':'image';
-  if(f.size>3*1024*1024)toast('Р¤Р°Р№Р» Р±РѕР»СЊС€Рµ 3 РњР‘, РјРѕР¶РµС‚ РЅРµ СЃРѕС…СЂР°РЅРёС‚СЊСЃСЏ. Р›СѓС‡С€Рµ СЃСЃС‹Р»РєР°.');
-  const r=new FileReader();r.onload=()=>{fileData=r.result;toast('Р¤Р°Р№Р» Р·Р°РіСЂСѓР¶РµРЅ')};r.readAsDataURL(f);
+  if(f.size>3*1024*1024)toast('Файл больше 3 МБ, может не сохраниться. Лучше ссылка.');
+  const r=new FileReader();r.onload=()=>{fileData=r.result;toast('Файл загружен')};r.readAsDataURL(f);
 };
-/* Automatic RU в†” EN translation for newly saved work. */
+/* Automatic RU ↔ EN translation for newly saved work. */
 const translationCache=new Map();
-function detectLanguage(text,fallback=lang){return /[Р°-СЏС‘]/i.test(text)?'ru':/[a-z]/i.test(text)?'en':fallback;}
+function detectLanguage(text,fallback=lang){return /[а-яё]/i.test(text)?'ru':/[a-z]/i.test(text)?'en':fallback;}
 function chunksForTranslation(text){
  const chunks=[];let current='';
  for(const ch of text){if(new TextEncoder().encode(current+ch).length>450){chunks.push(current);current='';}current+=ch;}
@@ -685,9 +685,9 @@ async function translateWork(i,sourceFallback='ru'){
 let workSaving=false;
 $('#wf').onsubmit=async e=>{
  e.preventDefault();if(workSaving)return;workSaving=true;
- const submit=$('#wf button[type=submit]'),previousLabel=submit.textContent;submit.disabled=true;submit.textContent=ui('РџРµСЂРµРІРѕР¶СѓвЂ¦','TranslatingвЂ¦');
+ const submit=$('#wf button[type=submit]'),previousLabel=submit.textContent;submit.disabled=true;submit.textContent=ui('Перевожу…','Translating…');
  const index=editIdx==null?data.works.length:editIdx,old=data.works[index];
- const sourceInput={title:$('#w_t').value.trim(),cat:$('#w_c').value.trim()||ui('Р Р°Р·РЅРѕРµ','Other'),desc:$('#w_d').value.trim()};
+ const sourceInput={title:$('#w_t').value.trim(),cat:$('#w_c').value.trim()||ui('Разное','Other'),desc:$('#w_d').value.trim()};
  const src=fileData||$('#w_s').value.trim()||(old?.src.startsWith('data:')?old.src:'');let type=$('#w_ty').value;
  if(ytId(src))type='youtube';else if(type==='youtube'&&/\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(src))type='video';
  const w={...old,...sourceInput,type,src,_translation:{inputs:sourceInput,source:lang,pending:['title','desc','cat']}};
@@ -699,7 +699,7 @@ $('#wf').onsubmit=async e=>{
   for(const f of ['title','desc','cat'])data.en['works.'+index+'.'+f]=sourceInput[f];
   save(); // A failed service never loses the new work.
   const ok=await translateWork(index,lang);save();$('#wm').classList.remove('open');render();
-  toast(ok?ui('Р Р°Р±РѕС‚Р° СЃРѕС…СЂР°РЅРµРЅР° Рё РїРµСЂРµРІРµРґРµРЅР°','Work saved and translated'):ui('Р Р°Р±РѕС‚Р° СЃРѕС…СЂР°РЅРµРЅР°. РџРµСЂРµРІРѕРґ РЅРµРґРѕСЃС‚СѓРїРµРЅ вЂ” РїРѕРІС‚РѕСЂРё РёР· СЂРµРґР°РєС‚РѕСЂР°.','Work saved. Translation unavailable вЂ” retry from the editor.'),!ok);
+  toast(ok?ui('Работа сохранена и переведена','Work saved and translated'):ui('Работа сохранена. Перевод недоступен — повтори из редактора.','Work saved. Translation unavailable — retry from the editor.'),!ok);
  }finally{formInputs.forEach(n=>n.disabled=false);submit.textContent=previousLabel;workSaving=false;}
 };
 
@@ -710,14 +710,14 @@ $$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classLi
 
 function toggleEdit(force){
   const on=document.body.classList.toggle('editing',force);
-  $('#tgl').textContent=on?'вњ“ Р“РѕС‚РѕРІРѕ':'вњЋ Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ';
-  render();if(admin())toast(on?'РљР»РёРєР°Р№ РїРѕ С‚РµРєСЃС‚Сѓ, С‡С‚РѕР±С‹ РјРµРЅСЏС‚СЊ':'РЎРѕС…СЂР°РЅРµРЅРѕ');
+  $('#tgl').textContent=on?'✓ Готово':'✎ Редактировать';
+  render();if(admin())toast(on?'Кликай по тексту, чтобы менять':'Сохранено');
 }
 $('#tgl').onclick=()=>toggleEdit();
 if(new URLSearchParams(location.search).get('edit')==='1')setAdmin(true);
 $$('.modal,.lb').forEach(n=>new MutationObserver(()=>document.documentElement.classList.toggle('lock',!!$('.modal.open,.lb.open'))).observe(n,{attributes:true,attributeFilter:['class']}));
 $('#bAdd').onclick=()=>openWork(null);
-$('#bRes').onclick=()=>{if(confirm('РЎР±СЂРѕСЃРёС‚СЊ РІСЃС‘?')){localStorage.removeItem(KEY);data=JSON.parse(JSON.stringify(seed));render()}};
+$('#bRes').onclick=()=>{if(confirm('Сбросить всё?')){localStorage.removeItem(KEY);data=JSON.parse(JSON.stringify(seed));render()}};
 $('#bExp').onclick=()=>{
   data._v=Date.now();save();
   const c=document.documentElement.cloneNode(true);
@@ -738,16 +738,16 @@ $('#bExp').onclick=()=>{
   const url=URL.createObjectURL(new Blob(['<!doctype html>\n'+c.outerHTML],{type:'text/html'}));
   const a=document.createElement('a');a.href=url;a.download='index.html';document.body.appendChild(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(url),4000);
-  toast('РЎРєР°С‡Р°РЅ index.html вЂ” Р·Р°РіСЂСѓР·Рё РµРіРѕ РІ GitHub');
+  toast('Скачан index.html — загрузи его в GitHub');
 };
 $('#bImp').onclick=()=>$('#impf').click();
-$('#impf').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{data=JSON.parse(r.result);save();render();toast('РРјРїРѕСЂС‚РёСЂРѕРІР°РЅРѕ')}catch(x){toast('Р¤Р°Р№Р» РЅРµ РїРѕРґРѕС€С‘Р»')}};r.readAsText(f)};
+$('#impf').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{data=JSON.parse(r.result);save();render();toast('Импортировано')}catch(x){toast('Файл не подошёл')}};r.readAsText(f)};
 function copyText(t){
   if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t);
   return new Promise((res,rej)=>{try{const a=document.createElement('textarea');a.value=t;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();const ok=document.execCommand('copy');a.remove();ok?res():rej()}catch(e){rej(e)}});
 }
 $('#copyNick').onclick=()=>{const b=$('#copyNick');
-  copyText(data.nick).then(()=>{toast('РќРёРє СЃРєРѕРїРёСЂРѕРІР°РЅ!');b.textContent='РЎРєРѕРїРёСЂРѕРІР°РЅРѕ вњ“';clearTimeout(b.t);b.t=setTimeout(()=>{b.textContent='РЎРєРѕРїРёСЂРѕРІР°С‚СЊ РЅРёРє'},1800)},()=>toast('РќРµ СѓРґР°Р»РѕСЃСЊ СЃРєРѕРїРёСЂРѕРІР°С‚СЊ: '+data.nick,true))};
+  copyText(data.nick).then(()=>{toast('Ник скопирован!');b.textContent='Скопировано ✓';clearTimeout(b.t);b.t=setTimeout(()=>{b.textContent='Скопировать ник'},1800)},()=>toast('Не удалось скопировать: '+data.nick,true))};
 
 /* ---------- intro ---------- */
 (()=>{const it=$('#intro'),cn=$('#cnt'),b=$('#bar2');const t0=performance.now();
@@ -850,7 +850,7 @@ $('#copyNick').onclick=()=>{const b=$('#copyNick');
 })();
 
 /* -------- Portfolio functionality -------- */
-const staticPairs = [["Р Р°Р±РѕС‚С‹", "Work"], ["РЈСЃР»РѕРІРёСЏ", "Details"], ["РљРѕРЅС‚Р°РєС‚С‹", "Contact"], ["Р Р°Р±РѕС‚С‹ в†“", "Explore work в†“"], ["Р”Рѕ СЃС‚Р°СЂС‚Р°", "Before we start"], ["РќРµСЃРєРѕР»СЊРєРѕ РѕС‚РІРµС‚РѕРІ, С‡С‚РѕР±С‹ Р±С‹СЃС‚СЂРµРµ РїРµСЂРµР№С‚Рё Рє РґРµР»Сѓ.", "A few answers to get things moving."], ["РћС‚РєСЂС‹С‚СЊ Discord в†’", "Open Discord в†’"], ["РЎРѕСЃС‚Р°РІРёС‚СЊ Р·Р°СЏРІРєСѓ в†—", "Create a brief в†—"], ["РЎРєРѕРїРёСЂРѕРІР°С‚СЊ РЅРёРє", "Copy username"], ["РџСЂРѕРµРєС‚С‹ СЃРєРѕСЂРѕ РїРѕСЏРІСЏС‚СЃСЏ", "Projects are coming soon"], ["РќРѕРІР°СЏ СЂР°Р±РѕС‚Р°", "New work"], ["РР·РјРµРЅРёС‚СЊ СЂР°Р±РѕС‚Сѓ", "Edit work"], ["РќР°Р·РІР°РЅРёРµ", "Title"], ["РљР°С‚РµРіРѕСЂРёСЏ", "Category"], ["РўРёРї", "Type"], ["Р’РёРґРµРѕ (С„Р°Р№Р» / .mp4)", "Video (file / .mp4)"], ["Р¤РѕС‚Рѕ / СЃРєСЂРёРЅС€РѕС‚", "Image / screenshot"], ["РЎСЃС‹Р»РєР° (YouTube, mp4, РєР°СЂС‚РёРЅРєР°)", "URL (YouTube, mp4, image)"], ["Р’С‹Р±СЂР°С‚СЊ РјРµРґРёР° в†—", "Choose media в†—"], ["Р¤Р°Р№Р» РЅРµ РІС‹Р±СЂР°РЅ", "No file selected"], ["Р¤Р°Р№Р»С‹ С…СЂР°РЅСЏС‚СЃСЏ РІ СЃР°РјРѕРј СЃР°Р№С‚Рµ, Р±РѕР»СЊС€РёРµ РІРёРґРµРѕ Р»СѓС‡С€Рµ СЃСЃС‹Р»РєРѕР№.", "Files are embedded in the site. Use links for large videos."], ["РћРїРёСЃР°РЅРёРµ", "Description"], ["РћС‚РјРµРЅР°", "Cancel"], ["РЎРѕС…СЂР°РЅРёС‚СЊ", "Save"], ["РќР°СЃС‚СЂРѕР№РєРё", "Settings"], ["РЎСЃС‹Р»РєР° РЅР° Discord (РїСЂРёРіР»Р°С€РµРЅРёРµ РёР»Рё РїСЂРѕС„РёР»СЊ)", "Discord URL (invite or profile)"], ["Р”РѕСЃС‚СѓРїРЅРѕСЃС‚СЊ", "Availability"], ["РћС‚РєСЂС‹С‚ РґР»СЏ Р·Р°РєР°Р·РѕРІ", "Open for commissions"], ["Р—Р°РЅСЏС‚", "Busy"], ["Р—Р°РЅСЏС‚ РґРѕ (РЅРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ)", "Busy until (optional)"], ["Р‘РµРіСѓС‰Р°СЏ СЃС‚СЂРѕРєР° (С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ)", "Marquee (comma-separated)"], ["URL СЃРµСЂРІРёСЃР° РїРµСЂРµРІРѕРґР° (LibreTranslate API, РЅРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ)", "Translation endpoint (LibreTranslate API, optional)"], ["РќРѕРІС‹Рµ СЂР°Р±РѕС‚С‹ РїРµСЂРµРІРѕРґСЏС‚СЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё С‡РµСЂРµР· MyMemory. РњРѕР¶РЅРѕ СѓРєР°Р·Р°С‚СЊ СЃРІРѕР№ LibreTranslate-СЃРµСЂРІРёСЃ. РџСѓР±Р»РёС‡РЅС‹Рµ С‚РµРєСЃС‚С‹ РѕС‚РїСЂР°РІР»СЏСЋС‚СЃСЏ СЃРµСЂРІРёСЃСѓ РїРµСЂРµРІРѕРґР°; СЃРµРєСЂРµС‚РЅС‹Рµ РєР»СЋС‡Рё Р·РґРµСЃСЊ РЅРµ РЅСѓР¶РЅС‹.", "New work is translated automatically with MyMemory. You can set a custom LibreTranslate endpoint. Public text is sent to the translation service; no secret keys are needed."], ["Р”Р»СЏ Р¶РёРІРѕРіРѕ СЃС‚Р°С‚СѓСЃР° РІСЃС‚СѓРїРё РІ Discord-СЃРµСЂРІРµСЂ Lanyard. Р‘РµР· РїРѕРґРєР»СЋС‡РµРЅРёСЏ РїРѕРєР°Р·С‹РІР°РµС‚СЃСЏ В«РЎС‚Р°С‚СѓСЃ РЅРµРґРѕСЃС‚СѓРїРµРЅВ».", "Join the Lanyard Discord server to enable live presence. Without a connection the status is unavailable."], ["РџСѓР±Р»РёС‡РЅС‹Р№ Р°РґСЂРµСЃ СЃР°Р№С‚Р° (РґР»СЏ СЌРєСЃРїРѕСЂС‚Р° OG)", "Public site URL (for OG export)"], ["вњЋ Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ", "вњЋ Edit"], ["вњ“ Р“РѕС‚РѕРІРѕ", "вњ“ Done"], ["+ Р Р°Р±РѕС‚Р°", "+ Work"], ["+ Р”РѕР±Р°РІРёС‚СЊ СЂР°Р±РѕС‚Сѓ", "+ Add work"], ["+ РџСѓРЅРєС‚", "+ Item"], ["РљРѕРЅС‚РµРЅС‚ / JSON", "Content / JSON"], ["ZIP РёСЃС…РѕРґРЅРёРєРѕРІ", "Source ZIP"], ["РЎРєР°С‡Р°С‚СЊ data.json", "Export data.json"], ["РЎРєР°С‡Р°С‚СЊ СЃР°Р№С‚", "Export site"], ["РРјРїРѕСЂС‚", "Import"], ["РЎР±СЂРѕСЃ", "Reset"], ["РЎ С‡РµРіРѕ РЅР°С‡РЅС‘Рј?", "What are we building?"], ["Р—Р°РїРѕР»РЅРё РєРѕСЂРѕС‚РєРѕ вЂ” РїРѕР»СѓС‡РёС€СЊ РіРѕС‚РѕРІС‹Р№ С‚РµРєСЃС‚ РґР»СЏ Discord.", "Fill this in to get a ready-to-copy Discord message."], ["Р§С‚Рѕ РЅСѓР¶РЅРѕ СЃРґРµР»Р°С‚СЊ?", "What needs to be built?"], ["Р‘СЋРґР¶РµС‚", "Budget"], ["Р–РµР»Р°РµРјС‹Р№ СЃСЂРѕРє", "Preferred timeline"], ["РЎСЃС‹Р»РєРё Рё РїСЂРёРјРµСЂС‹", "Links and references"], ["РќРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ", "Optional"], ["Р—Р°РєСЂС‹С‚СЊ", "Close"], ["РЎРєРѕРїРёСЂРѕРІР°С‚СЊ Р·Р°СЏРІРєСѓ", "Copy brief"], ["РџРµСЂРµР№С‚Рё РІ Discord в†—", "Continue to Discord в†—"], ["РџСЂРёРјРµРЅРёС‚СЊ", "Apply"], ["Р—РґРµСЃСЊ СЂРµРґР°РєС‚РёСЂСѓСЋС‚СЃСЏ СЂР°Р±РѕС‚С‹, СѓСЃР»РѕРІРёСЏ, FAQ Рё РїРµСЂРµРІРѕРґС‹. en СЃРѕРґРµСЂР¶РёС‚ РїРµСЂРµРІРѕРґС‹ РїРѕ РїСѓС‚Рё РїРѕР»СЏ, РЅР°РїСЂРёРјРµСЂ works.0.title. РџРѕСЃР»Рµ РїСЂР°РІРѕРє РЅР°Р¶РјРё В«РЎРєР°С‡Р°С‚СЊ СЃР°Р№С‚В» Рё Р·Р°РјРµРЅРё index.html РІ GitHub.", "Edit work, terms, FAQ and translations here. en stores translations by field path, e.g. works.0.title. After editing, export the site and replace index.html in GitHub."], ["РџРѕРІС‚РѕСЂРёС‚СЊ РїРµСЂРµРІРѕРґ", "Retry translation"]];
+const staticPairs = [["Работы", "Work"], ["Условия", "Details"], ["Контакты", "Contact"], ["Работы ↓", "Explore work ↓"], ["До старта", "Before we start"], ["Несколько ответов, чтобы быстрее перейти к делу.", "A few answers to get things moving."], ["Открыть Discord →", "Open Discord →"], ["Составить заявку ↗", "Create a brief ↗"], ["Скопировать ник", "Copy username"], ["Проекты скоро появятся", "Projects are coming soon"], ["Новая работа", "New work"], ["Изменить работу", "Edit work"], ["Название", "Title"], ["Категория", "Category"], ["Тип", "Type"], ["Видео (файл / .mp4)", "Video (file / .mp4)"], ["Фото / скриншот", "Image / screenshot"], ["Ссылка (YouTube, mp4, картинка)", "URL (YouTube, mp4, image)"], ["Выбрать медиа ↗", "Choose media ↗"], ["Файл не выбран", "No file selected"], ["Файлы хранятся в самом сайте, большие видео лучше ссылкой.", "Files are embedded in the site. Use links for large videos."], ["Описание", "Description"], ["Отмена", "Cancel"], ["Сохранить", "Save"], ["Настройки", "Settings"], ["Ссылка на Discord (приглашение или профиль)", "Discord URL (invite or profile)"], ["Доступность", "Availability"], ["Открыт для заказов", "Open for commissions"], ["Занят", "Busy"], ["Занят до (необязательно)", "Busy until (optional)"], ["Бегущая строка (через запятую)", "Marquee (comma-separated)"], ["URL сервиса перевода (LibreTranslate API, необязательно)", "Translation endpoint (LibreTranslate API, optional)"], ["Новые работы переводятся автоматически через MyMemory. Можно указать свой LibreTranslate-сервис. Публичные тексты отправляются сервису перевода; секретные ключи здесь не нужны.", "New work is translated automatically with MyMemory. You can set a custom LibreTranslate endpoint. Public text is sent to the translation service; no secret keys are needed."], ["Для живого статуса вступи в Discord-сервер Lanyard. Без подключения показывается «Статус недоступен».", "Join the Lanyard Discord server to enable live presence. Without a connection the status is unavailable."], ["Публичный адрес сайта (для экспорта OG)", "Public site URL (for OG export)"], ["✎ Редактировать", "✎ Edit"], ["✓ Готово", "✓ Done"], ["+ Работа", "+ Work"], ["+ Добавить работу", "+ Add work"], ["+ Пункт", "+ Item"], ["Контент / JSON", "Content / JSON"], ["ZIP исходников", "Source ZIP"], ["Скачать data.json", "Export data.json"], ["Скачать сайт", "Export site"], ["Импорт", "Import"], ["Сброс", "Reset"], ["С чего начнём?", "What are we building?"], ["Заполни коротко — получишь готовый текст для Discord.", "Fill this in to get a ready-to-copy Discord message."], ["Что нужно сделать?", "What needs to be built?"], ["Бюджет", "Budget"], ["Желаемый срок", "Preferred timeline"], ["Ссылки и примеры", "Links and references"], ["Необязательно", "Optional"], ["Закрыть", "Close"], ["Скопировать заявку", "Copy brief"], ["Перейти в Discord ↗", "Continue to Discord ↗"], ["Применить", "Apply"], ["Здесь редактируются работы, условия, FAQ и переводы. en содержит переводы по пути поля, например works.0.title. После правок нажми «Скачать сайт» и замени index.html в GitHub.", "Edit work, terms, FAQ and translations here. en stores translations by field path, e.g. works.0.title. After editing, export the site and replace index.html in GitHub."], ["Повторить перевод", "Retry translation"]];
 const ruEn=new Map(staticPairs), enRu=new Map(staticPairs.map(([r,e])=>[e,r]));
 function translateStatic(){
   document.documentElement.lang=lang;
@@ -860,17 +860,17 @@ function translateStatic(){
     const text=n.textContent.trim(),r=enRu.get(text)||text;
     if(ruEn.has(r))n.textContent=n.textContent.replace(text,lang==='en'?ruEn.get(r):r);
   }
-  $$('[placeholder]').forEach(e=>{const r=e.dataset.ruPlaceholder||e.getAttribute('placeholder');e.dataset.ruPlaceholder=r;const map={'РЎРёСЃС‚РµРјР° РёРЅРІРµРЅС‚Р°СЂСЏ':'Inventory system','РњРµС…Р°РЅРёРєРё':'Mechanics','РќР°РїСЂРёРјРµСЂ, РјР°РіР°Р·РёРЅ РїСЂРµРґРјРµС‚РѕРІ СЃ СЃРѕС…СЂР°РЅРµРЅРёРµРј РїРѕРєСѓРїРѕРє':'For example, an item shop with persistent purchases','РќР°РїСЂРёРјРµСЂ, 7 РґРЅРµР№':'For example, 7 days','РќРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ':'Optional'};e.placeholder=lang==='en'?(map[r]||r):r;});
+  $$('[placeholder]').forEach(e=>{const r=e.dataset.ruPlaceholder||e.getAttribute('placeholder');e.dataset.ruPlaceholder=r;const map={'Система инвентаря':'Inventory system','Механики':'Mechanics','Например, магазин предметов с сохранением покупок':'For example, an item shop with persistent purchases','Например, 7 дней':'For example, 7 days','Необязательно':'Optional'};e.placeholder=lang==='en'?(map[r]||r):r;});
   $$('[data-lang]').forEach(b=>{b.classList.toggle('selected',b.dataset.lang===lang);b.setAttribute('aria-pressed',b.dataset.lang===lang?'true':'false')});
-  if($('#tgl'))$('#tgl').textContent=editing()?ui('вњ“ Р“РѕС‚РѕРІРѕ','вњ“ Done'):ui('вњЋ Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ','вњЋ Edit');
+  if($('#tgl'))$('#tgl').textContent=editing()?ui('✓ Готово','✓ Done'):ui('✎ Редактировать','✎ Edit');
   $('#quality').textContent='FX: '+({auto:'AUTO',lite:'LITE',full:'FULL'}[quality]||'AUTO');
-  $('#sound [data-sound]').textContent=audioOn?ui('Р—РІСѓРє РІРєР».','Sound on'):ui('Р—РІСѓРє РІС‹РєР».','Sound off');
+  $('#sound [data-sound]').textContent=audioOn?ui('Звук вкл.','Sound on'):ui('Звук выкл.','Sound off');
 }
 function safeURL(url){try{const u=new URL(url);return ['http:','https:'].includes(u.protocol)?u.href:'#'}catch{return '#'}}
 function field(path){return `<span data-p="${path}">${esc(get(path)??'')}</span>`}
 function renderExtras(){
   const busy=data.availability==='busy',until=data.busyUntil?new Date(data.busyUntil+'T12:00:00'):null;
-  const status=busy?(until&&!isNaN(until)?ui('Р—Р°РЅСЏС‚ РґРѕ ','Busy until ')+until.toLocaleDateString(lang==='ru'?'ru-RU':'en-GB',{day:'numeric',month:'short'}):ui('РЎРµР№С‡Р°СЃ Р·Р°РЅСЏС‚','Currently busy')):get('status');
+  const status=busy?(until&&!isNaN(until)?ui('Занят до ','Busy until ')+until.toLocaleDateString(lang==='ru'?'ru-RU':'en-GB',{day:'numeric',month:'short'}):ui('Сейчас занят','Currently busy')):get('status');
   $('.status [data-p=status]').textContent=status;$('.status').classList.toggle('busy',busy);
   $('#faqList').innerHTML=(data.faq||[]).map((f,i)=>`<details class="rv"><summary>${field('faq.'+i+'.q')}</summary><p>${field('faq.'+i+'.a')}</p></details>`).join('');
   $$('[data-p]').forEach(el=>{el.contentEditable=editing()?'plaintext-only':'false';el.spellcheck=false});pollPresence();
@@ -878,9 +878,9 @@ function renderExtras(){
 let presenceTimer=null,presenceRequest=0;
 async function pollPresence(){
   clearTimeout(presenceTimer);const request=++presenceRequest,p=$('#presence'),id=data.discordId;
-  if(!/^\d{17,20}$/.test(id||'')){p.dataset.status='unknown';p.querySelector('span').textContent=ui('РЎС‚Р°С‚СѓСЃ Discord РЅРµ РїРѕРґРєР»СЋС‡С‘РЅ','Discord presence not connected');return;}
-  try{const r=await fetch('https://api.lanyard.rest/v1/users/'+id,{signal:AbortSignal.timeout(6000)});const j=await r.json();if(request!==presenceRequest)return;if(!j.success||!j.data)throw Error();const st=j.data.discord_status||'offline';p.dataset.status=st;p.querySelector('span').textContent=({online:ui('Discord В· РІ СЃРµС‚Рё','Discord В· online'),idle:ui('Discord В· РѕС‚РѕС€С‘Р»','Discord В· idle'),dnd:ui('Discord В· РЅРµ Р±РµСЃРїРѕРєРѕРёС‚СЊ','Discord В· do not disturb'),offline:ui('Discord В· РЅРµ РІ СЃРµС‚Рё','Discord В· offline')})[st]||ui('РЎС‚Р°С‚СѓСЃ РЅРµРґРѕСЃС‚СѓРїРµРЅ','Presence unavailable');}
-  catch{if(request!==presenceRequest)return;p.dataset.status='unknown';p.querySelector('span').textContent=ui('РЎС‚Р°С‚СѓСЃ Discord РЅРµРґРѕСЃС‚СѓРїРµРЅ','Discord presence unavailable');}
+  if(!/^\d{17,20}$/.test(id||'')){p.dataset.status='unknown';p.querySelector('span').textContent=ui('Статус Discord не подключён','Discord presence not connected');return;}
+  try{const r=await fetch('https://api.lanyard.rest/v1/users/'+id,{signal:AbortSignal.timeout(6000)});const j=await r.json();if(request!==presenceRequest)return;if(!j.success||!j.data)throw Error();const st=j.data.discord_status||'offline';p.dataset.status=st;p.querySelector('span').textContent=({online:ui('Discord · в сети','Discord · online'),idle:ui('Discord · отошёл','Discord · idle'),dnd:ui('Discord · не беспокоить','Discord · do not disturb'),offline:ui('Discord · не в сети','Discord · offline')})[st]||ui('Статус недоступен','Presence unavailable');}
+  catch{if(request!==presenceRequest)return;p.dataset.status='unknown';p.querySelector('span').textContent=ui('Статус Discord недоступен','Discord presence unavailable');}
   presenceTimer=setTimeout(()=>{if(!document.hidden)pollPresence()},45000);
 }
 function download(name,content,type='application/json'){const url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);}
@@ -894,21 +894,21 @@ function validateContent(d){
  if(!d.sections||!d.terms)throw Error('sections and terms are required');
  return d;
 }
-$('#contentForm').onsubmit=e=>{e.preventDefault();try{const next=validateContent(JSON.parse($('#contentJson').value));data=next;save();closeDialog('contentModal');render();toast(ui('РљРѕРЅС‚РµРЅС‚ РѕР±РЅРѕРІР»С‘РЅ','Content updated'));}catch(e){$('#contentError').textContent=ui('РџСЂРѕРІРµСЂСЊ JSON: ','Check JSON: ')+e.message;}};
+$('#contentForm').onsubmit=e=>{e.preventDefault();try{const next=validateContent(JSON.parse($('#contentJson').value));data=next;save();closeDialog('contentModal');render();toast(ui('Контент обновлён','Content updated'));}catch(e){$('#contentError').textContent=ui('Проверь JSON: ','Check JSON: ')+e.message;}};
 // Validate imported data before applying any changes.
-$('#impf').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const next=validateContent(JSON.parse(await f.text()));data=next;save();render();toast(ui('РРјРїРѕСЂС‚РёСЂРѕРІР°РЅРѕ','Imported'));}catch{toast(ui('РќРµ СѓРґР°Р»РѕСЃСЊ РїСЂРѕС‡РёС‚Р°С‚СЊ data.json. РџСЂРѕРІРµСЂСЊ СЃС‚СЂСѓРєС‚СѓСЂСѓ.','Could not import data.json. Check its structure.'),true)}e.target.value='';};
+$('#impf').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const next=validateContent(JSON.parse(await f.text()));data=next;save();render();toast(ui('Импортировано','Imported'));}catch{toast(ui('Не удалось прочитать data.json. Проверь структуру.','Could not import data.json. Check its structure.'),true)}e.target.value='';};
 let dialogReturn=null;
 function openDialog(id){dialogReturn=document.activeElement;$('#'+id).classList.add('open');translateStatic();setTimeout(()=>$('#'+id).querySelector('input,textarea,button')?.focus({preventScroll:true}),80);}
 function closeDialog(id){$('#'+id).classList.remove('open');dialogReturn?.focus({preventScroll:true});}
 function openBrief(){openDialog('briefModal');$('#briefResult').textContent='';$('#briefDiscord').hidden=true;}
 $('#briefOpen').onclick=openBrief;
-$('#briefForm').onsubmit=async e=>{e.preventDefault();const task=$('#br_task').value.trim();if(!task)return;const text=ui('РџСЂРёРІРµС‚, Mistral!\n\nР—Р°РґР°С‡Р°: ','Hi Mistral!\n\nTask: ')+task+'\n'+ui('Р‘СЋРґР¶РµС‚: ','Budget: ')+($('#br_budget').value.trim()||'вЂ”')+'\n'+ui('РЎСЂРѕРє: ','Timeline: ')+($('#br_time').value.trim()||'вЂ”')+'\n'+ui('РџСЂРёРјРµСЂС‹: ','References: ')+($('#br_refs').value.trim()||'вЂ”');
- try{await copyText(text);$('#briefResult').textContent=ui('Р—Р°СЏРІРєР° СЃРєРѕРїРёСЂРѕРІР°РЅР°. РћС‚РєСЂРѕР№ Discord Рё РІСЃС‚Р°РІСЊ РµС‘ РІ СЃРѕРѕР±С‰РµРЅРёРµ.','Brief copied. Open Discord and paste it into a message.');if(safeURL(data.dc)!=='#'&&!data.dc.includes('your_invite')){$('#briefDiscord').href=safeURL(data.dc);$('#briefDiscord').hidden=false;}}
- catch{$('#briefResult').textContent=ui('РљРѕРїРёСЂРѕРІР°РЅРёРµ РЅРµРґРѕСЃС‚СѓРїРЅРѕ. Р’С‹РґРµР»Рё С‚РµРєСЃС‚ РЅРёР¶Рµ: ','Copy unavailable. Select the text below: ')+text;}};
-$('#bTranslate').textContent=ui('РџРѕРІС‚РѕСЂРёС‚СЊ РїРµСЂРµРІРѕРґ','Retry translation');
+$('#briefForm').onsubmit=async e=>{e.preventDefault();const task=$('#br_task').value.trim();if(!task)return;const text=ui('Привет, Mistral!\n\nЗадача: ','Hi Mistral!\n\nTask: ')+task+'\n'+ui('Бюджет: ','Budget: ')+($('#br_budget').value.trim()||'—')+'\n'+ui('Срок: ','Timeline: ')+($('#br_time').value.trim()||'—')+'\n'+ui('Примеры: ','References: ')+($('#br_refs').value.trim()||'—');
+ try{await copyText(text);$('#briefResult').textContent=ui('Заявка скопирована. Открой Discord и вставь её в сообщение.','Brief copied. Open Discord and paste it into a message.');if(safeURL(data.dc)!=='#'&&!data.dc.includes('your_invite')){$('#briefDiscord').href=safeURL(data.dc);$('#briefDiscord').hidden=false;}}
+ catch{$('#briefResult').textContent=ui('Копирование недоступно. Выдели текст ниже: ','Copy unavailable. Select the text below: ')+text;}};
+$('#bTranslate').textContent=ui('Повторить перевод','Retry translation');
 $('#bTranslate').onclick=async()=>{
  const b=$('#bTranslate');b.disabled=true;let failures=0;
- try{for(let i=0;i<data.works.length;i++)if(data.works[i]._translation?.pending||!data.en?.['works.'+i+'.title']){const ok=await translateWork(i,data.works[i]._translation?.source||'ru');if(!ok)failures++;}save();render();toast(failures?ui('РќРµ РІСЃРµ С‚РµРєСЃС‚С‹ СѓРґР°Р»РѕСЃСЊ РїРµСЂРµРІРµСЃС‚Рё. РњРѕР¶РЅРѕ РїРѕРІС‚РѕСЂРёС‚СЊ.','Some texts could not be translated. You can retry.'):ui('РџРµСЂРµРІРѕРґС‹ РѕР±РЅРѕРІР»РµРЅС‹','Translations updated'),!!failures);}finally{b.disabled=false;}
+ try{for(let i=0;i<data.works.length;i++)if(data.works[i]._translation?.pending||!data.en?.['works.'+i+'.title']){const ok=await translateWork(i,data.works[i]._translation?.source||'ru');if(!ok)failures++;}save();render();toast(failures?ui('Не все тексты удалось перевести. Можно повторить.','Some texts could not be translated. You can retry.'):ui('Переводы обновлены','Translations updated'),!!failures);}finally{b.disabled=false;}
 };
 // Ambient is synthesized locally, starts only after a click, and fades on pause.
 let audio=null,audioGain=null,audioOn=false,audioNodes=[];
@@ -918,9 +918,9 @@ $('#sound').onclick=async()=>{
  [55,82.41,110,164.81].forEach((freq,i)=>{const o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.value=freq;g.gain.value=.1/(i+1);o.connect(g);g.connect(audioGain);o.start();audioNodes.push(o);});
  const buffer=audio.createBuffer(1,audio.sampleRate*5,audio.sampleRate),channel=buffer.getChannelData(0);let last=0;for(let i=0;i<channel.length;i++){last=(last+Math.random()*.04-.02)/1.02;channel[i]=last;}const noise=audio.createBufferSource(),filter=audio.createBiquadFilter();noise.buffer=buffer;noise.loop=true;filter.type='lowpass';filter.frequency.value=220;noise.connect(filter);filter.connect(audioGain);noise.start();audioNodes.push(noise);
  }audioOn=!audioOn;if(audioOn)await audio.resume();audioGain.gain.setTargetAtTime(audioOn?.22:0,audio.currentTime,.7);$('#sound').setAttribute('aria-pressed',String(audioOn));translateStatic();
- }catch{audioOn=false;toast(ui('Р—РІСѓРє РЅРµРґРѕСЃС‚СѓРїРµРЅ РІ СЌС‚РѕРј Р±СЂР°СѓР·РµСЂРµ','Audio is unavailable in this browser'),true);}
+ }catch{audioOn=false;toast(ui('Звук недоступен в этом браузере','Audio is unavailable in this browser'),true);}
 };
-$('#quality').onclick=()=>{quality=({auto:'lite',lite:'full',full:'auto'})[quality];try{localStorage.setItem('mistral-fx-restored',quality)}catch{}applyQuality();dispatchEvent(new Event('qualitychange'));translateStatic();toast(ui('Р“СЂР°С„РёРєР°: ','Graphics: ')+quality.toUpperCase());};
+$('#quality').onclick=()=>{quality=({auto:'lite',lite:'full',full:'auto'})[quality];try{localStorage.setItem('mistral-fx-restored',quality)}catch{}applyQuality();dispatchEvent(new Event('qualitychange'));translateStatic();toast(ui('Графика: ','Graphics: ')+quality.toUpperCase());};
 matchMedia('(prefers-reduced-motion:reduce)').addEventListener('change',e=>{reduced=e.matches;applyQuality();dispatchEvent(new Event('qualitychange'));});
 document.addEventListener('visibilitychange',()=>{if(audio&&audioGain)audioGain.gain.setTargetAtTime(document.hidden?0:(audioOn?.22:0),audio.currentTime,.3);if(!document.hidden)pollPresence();});
 document.addEventListener('click',e=>{
@@ -932,13 +932,13 @@ document.addEventListener('keydown',e=>{
  if(!dialog&&!editing()&&e.target.matches('.work')&&['Enter',' '].includes(e.key)){e.preventDefault();openLB(+e.target.dataset.i);}
 });
 // Prevent an unfinished Discord URL from sending visitors to a broken invitation.
-['dcTop','dcHero','dcBox','dcFoot'].forEach(id=>$('#'+id).addEventListener('click',e=>{if(!data.dc||data.dc.includes('your_invite')||safeURL(data.dc)==='#'){e.preventDefault();toast(ui('РљРѕРЅС‚Р°РєС‚ РµС‰С‘ РЅР°СЃС‚СЂР°РёРІР°РµС‚СЃСЏ. РџРѕРєР° РјРѕР¶РЅРѕ СЃРѕСЃС‚Р°РІРёС‚СЊ Р·Р°СЏРІРєСѓ.','Contact is being configured. You can prepare a brief for now.'));openBrief();}}));
+['dcTop','dcHero','dcBox','dcFoot'].forEach(id=>$('#'+id).addEventListener('click',e=>{if(!data.dc||data.dc.includes('your_invite')||safeURL(data.dc)==='#'){e.preventDefault();toast(ui('Контакт ещё настраивается. Пока можно составить заявку.','Contact is being configured. You can prepare a brief for now.'));openBrief();}}));
 // Labels, navigation and modal names stay accessible even with the decorative cursor.
 $$('.dots a').forEach(a=>a.setAttribute('aria-label',a.getAttribute('href').slice(1)));
 $$('.modal label').forEach(l=>{if(l.hasAttribute('for'))return;const n=l.nextElementSibling;if(n?.matches('input,textarea,select'))l.htmlFor=n.id;});
 $('#lbx').setAttribute('aria-label','Close preview');$('#wm').setAttribute('aria-labelledby','wmt');
 // Updated reset keeps the canonical data.json, rather than an unrelated browser draft.
-$('#bRes').onclick=()=>{if(confirm(ui('РЈРґР°Р»РёС‚СЊ Р»РѕРєР°Р»СЊРЅС‹Рµ РїСЂР°РІРєРё Рё РІРµСЂРЅСѓС‚СЊ РІСЃС‚СЂРѕРµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ?','Discard local drafts and restore embedded content?'))){localStorage.removeItem(KEY);data=structuredClone(seed);render();}};
+$('#bRes').onclick=()=>{if(confirm(ui('Удалить локальные правки и вернуть встроенные данные?','Discard local drafts and restore embedded content?'))){localStorage.removeItem(KEY);data=structuredClone(seed);render();}};
 
 render();
 })();
