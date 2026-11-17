@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mistral вЂ” Roblox Scripter</title>
-<meta name="description" content="Mistral вЂ” Roblox developer. Luau mechanics, game systems and server logic. Explore the work and discuss your project.">
-<meta property="og:type" content="website"><meta property="og:title" content="Mistral вЂ” Roblox Scripter">
+<title>Mistral &#8212; Roblox Scripter</title>
+<meta name="description" content="Mistral &#8212; Roblox developer. Luau mechanics, game systems and server logic. Explore the work and discuss your project.">
+<meta property="og:type" content="website"><meta property="og:title" content="Mistral &#8212; Roblox Scripter">
 <meta property="og:description" content="Game mechanics. Systems. Server logic. Built with Luau.">
 <meta property="og:url" content="https://korobbka.github.io/Mistral/"><meta property="og:image" content="https://mistral-orbit-studio.justlyric512.chatgpt.site/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -100,7 +100,7 @@ h2.title{font-size:clamp(2.2rem,6.4vw,5rem);margin:14px 0 50px;letter-spacing:-.
 .marq{overflow:hidden;border-block:1px solid var(--line);padding:16px 0;max-width:none;background:rgba(0,0,0,.4)}
 .marq div{display:flex;width:max-content;will-change:transform;font-family:var(--disp);font-size:clamp(1.3rem,3vw,2.2rem);text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.45)}
 .marq span{padding-right:40px;white-space:nowrap}
-.marq span::after{content:"вњ¦";margin-left:40px;color:#fff;-webkit-text-stroke:0}
+.marq span::after{content:"\2726 ";margin-left:40px;color:#fff;-webkit-text-stroke:0}
 
 /* ---------- works ---------- */
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
@@ -224,7 +224,7 @@ body.editing .addrow{display:block}
 .modal label{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:4px}
 .row{display:flex;gap:10px}.row>*{flex:1}
 .toast{position:fixed;right:24px;bottom:24px;display:flex;align-items:center;gap:10px;max-width:calc(100vw - 32px);background:#fff;color:#000;padding:12px 20px;border-radius:14px;font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .35s,transform .45s cubic-bezier(.22,1,.36,1);z-index:600;box-shadow:0 12px 40px rgba(255,255,255,.12)}
-.toast:not(.bad)::before{content:"вњ“";font-weight:700}
+.toast:not(.bad)::before{content:"\2713 ";font-weight:700}
 .toast.on{opacity:1;transform:none}
 body.admin .toast{bottom:84px}
 @media(max-width:600px){
@@ -241,7 +241,7 @@ body.admin .toast{bottom:84px}
 a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid #fff;outline-offset:5px}button:disabled{opacity:.5;cursor:wait}
 .play svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}.status.busy i{background:#999;animation:none}.text-focus #trail,.text-focus .cur,.text-focus .dotc{opacity:0}
 .presence{display:flex;gap:10px;align-items:center;font:10px var(--mono);letter-spacing:.05em;color:var(--mute)}.presence i{width:7px;height:7px;background:#777;border-radius:50%;display:block}.presence[data-status=online] i{background:#79c494}.presence[data-status=idle] i{background:#d9bb7b}.presence[data-status=dnd] i{background:#c87878}
-.faq-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:55px}.section-note{max-width:340px;color:var(--mute);font-size:.93rem;line-height:1.9}#faqList details{border-top:1px solid var(--line);padding:23px 0}#faqList details:last-child{border-bottom:1px solid var(--line)}#faqList summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px}#faqList summary::-webkit-details-marker{display:none}#faqList summary::after{content:'+';font-family:var(--mono)}#faqList details[open] summary::after{content:'в€’'}#faqList details p{color:var(--mute);font-size:.9rem;line-height:1.9;margin-top:18px}
+.faq-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:55px}.section-note{max-width:340px;color:var(--mute);font-size:.93rem;line-height:1.9}#faqList details{border-top:1px solid var(--line);padding:23px 0}#faqList details:last-child{border-bottom:1px solid var(--line)}#faqList summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px}#faqList summary::-webkit-details-marker{display:none}#faqList summary::after{content:'+';font-family:var(--mono)}#faqList details[open] summary::after{content:'\2212 '}#faqList details p{color:var(--mute);font-size:.9rem;line-height:1.9;margin-top:18px}
 .utility{position:fixed;bottom:20px;right:24px;display:flex;gap:8px;z-index:110}.utility button{font:9px var(--mono);letter-spacing:.05em;text-transform:uppercase;background:#080808c9;border:1px solid var(--line);border-radius:99px;padding:10px 14px;backdrop-filter:blur(10px);color:var(--mute)}.utility button:hover{color:#fff;border-color:#aaa}.eq{letter-spacing:2px;margin-right:7px}.utility [aria-pressed=true] .eq{color:#fff}
 .modal form{max-height:calc(100dvh - 32px);overflow:auto}.modal .note{line-height:1.8}.filepick{display:flex!important;align-items:center;justify-content:space-between;gap:12px;position:relative;padding:15px 18px;border:1px dashed #ffffff55;border-radius:14px;cursor:pointer}.filepick input{position:absolute;inset:0;opacity:0;cursor:pointer;padding:0}.filepick small{color:var(--mute);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:45%;letter-spacing:0;text-transform:none}.filepick:focus-within{border-color:#fff}
 #contentModal form{max-width:850px;width:min(850px,100%)}#contentJson{font:11px/1.7 var(--mono);min-height:44vh;white-space:pre}#contentError{color:#e8a5a5}#briefDiscord[hidden]{display:none}.bar{bottom:65px}.bar button{font-size:10px;padding:9px 13px}.translation-state{display:none;margin-top:10px;font:10px var(--mono);color:var(--mute)}
@@ -263,8 +263,8 @@ body.lite .grain{animation:none}body.lite .fog i{animation:none}body.reduced,bod
 
 <header>
   <a href="#top" class="brand" id="brandTop">Mistral</a>
-  <nav id="nav"><a href="#works">Р Р°Р±РѕС‚С‹</a><a href="#terms">РЈСЃР»РѕРІРёСЏ</a><a href="#contact">РљРѕРЅС‚Р°РєС‚С‹</a></nav>
-  <div class="navtools"><div class="language" role="group" aria-label="Language"><button data-lang="ru" class="selected" aria-pressed="true">RU</button><button data-lang="en" aria-pressed="false">EN</button></div><a class="tglink" id="dcTop" target="_blank" rel="noopener">Discord в†—</a></div>
+  <nav id="nav"><a href="#works">&#1056;&#1072;&#1073;&#1086;&#1090;&#1099;</a><a href="#terms">&#1059;&#1089;&#1083;&#1086;&#1074;&#1080;&#1103;</a><a href="#contact">&#1050;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;&#1099;</a></nav>
+  <div class="navtools"><div class="language" role="group" aria-label="Language"><button data-lang="ru" class="selected" aria-pressed="true">RU</button><button data-lang="en" aria-pressed="false">EN</button></div><a class="tglink" id="dcTop" target="_blank" rel="noopener">Discord &#8599;</a></div>
 </header>
 
 <main>
@@ -276,7 +276,7 @@ body.lite .grain{animation:none}body.lite .fog i{animation:none}body.reduced,bod
     <div class="role rv" style="--d:.2s" data-p="role"></div>
     <p class="line rv" style="--d:.3s" data-p="line" data-multi></p>
     <div class="cta rv" style="--d:.4s">
-      <a href="#works" class="btn fill mag">Р Р°Р±РѕС‚С‹ в†“</a>
+      <a href="#works" class="btn fill mag">&#1056;&#1072;&#1073;&#1086;&#1090;&#1099; &#8595;</a>
       <a class="btn ghost mag" id="dcHero" target="_blank" rel="noopener">Discord</a>
     </div>
   </div>
@@ -287,21 +287,21 @@ body.lite .grain{animation:none}body.lite .fog i{animation:none}body.reduced,bod
 <div class="marq"><div id="marq"></div></div>
 
 <section id="works">
-  <div class="rv"><span class="eyebrow">01 / <span data-mirror="sections.works">Р Р°Р±РѕС‚С‹</span></span></div>
-  <h2 class="title rv" data-p="sections.works">Р Р°Р±РѕС‚С‹</h2>
+  <div class="rv"><span class="eyebrow">01 / <span data-mirror="sections.works">&#1056;&#1072;&#1073;&#1086;&#1090;&#1099;</span></span></div>
+  <h2 class="title rv" data-p="sections.works">&#1056;&#1072;&#1073;&#1086;&#1090;&#1099;</h2>
   <div class="filters rv" id="filters"></div>
   <div class="works" id="worksGrid"></div>
-  <p class="empty" id="empty">РџСЂРѕРµРєС‚С‹ СЃРєРѕСЂРѕ РїРѕСЏРІСЏС‚СЃСЏ</p>
+  <p class="empty" id="empty">&#1055;&#1088;&#1086;&#1077;&#1082;&#1090;&#1099; &#1089;&#1082;&#1086;&#1088;&#1086; &#1087;&#1086;&#1103;&#1074;&#1103;&#1090;&#1089;&#1103;</p>
 </section>
 
 <section id="terms">
-  <div class="rv"><span class="eyebrow">02 / <span data-mirror="sections.terms">РЈСЃР»РѕРІРёСЏ</span></span></div>
-  <h2 class="title rv" data-p="sections.terms">РЈСЃР»РѕРІРёСЏ</h2>
+  <div class="rv"><span class="eyebrow">02 / <span data-mirror="sections.terms">&#1059;&#1089;&#1083;&#1086;&#1074;&#1080;&#1103;</span></span></div>
+  <h2 class="title rv" data-p="sections.terms">&#1059;&#1089;&#1083;&#1086;&#1074;&#1080;&#1103;</h2>
   <div class="terms">
     <div class="card rv">
       <h3 data-p="terms.noTitle"></h3>
       <ul class="nolist" id="nodo"></ul>
-      <div class="addrow"><button class="mini" data-add="nodo">+ РџСѓРЅРєС‚</button></div>
+      <div class="addrow"><button class="mini" data-add="nodo">+ &#1055;&#1091;&#1085;&#1082;&#1090;</button></div>
     </div>
     <div class="card rv" style="--d:.1s">
       <h3 data-p="terms.priceTitle"></h3>
@@ -311,75 +311,75 @@ body.lite .grain{animation:none}body.lite .fog i{animation:none}body.reduced,bod
   </div>
 </section>
 
-<section id="faq"><div class="faq-layout"><div class="rv"><span class="eyebrow">03 / FAQ</span><h2 class="title">Р”Рѕ СЃС‚Р°СЂС‚Р°</h2><p class="section-note">РќРµСЃРєРѕР»СЊРєРѕ РѕС‚РІРµС‚РѕРІ, С‡С‚РѕР±С‹ Р±С‹СЃС‚СЂРµРµ РїРµСЂРµР№С‚Рё Рє РґРµР»Сѓ.</p></div><div id="faqList"></div></div></section>
+<section id="faq"><div class="faq-layout"><div class="rv"><span class="eyebrow">03 / FAQ</span><h2 class="title">&#1044;&#1086; &#1089;&#1090;&#1072;&#1088;&#1090;&#1072;</h2><p class="section-note">&#1053;&#1077;&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1086;&#1090;&#1074;&#1077;&#1090;&#1086;&#1074;, &#1095;&#1090;&#1086;&#1073;&#1099; &#1073;&#1099;&#1089;&#1090;&#1088;&#1077;&#1077; &#1087;&#1077;&#1088;&#1077;&#1081;&#1090;&#1080; &#1082; &#1076;&#1077;&#1083;&#1091;.</p></div><div id="faqList"></div></div></section>
 <section id="contact">
-  <div class="rv"><span class="eyebrow">04 / <span data-mirror="sections.contact">РљРѕРЅС‚Р°РєС‚С‹</span></span></div>
-  <h2 class="title rv" data-p="sections.contact">РљРѕРЅС‚Р°РєС‚С‹</h2>
+  <div class="rv"><span class="eyebrow">04 / <span data-mirror="sections.contact">&#1050;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;&#1099;</span></span></div>
+  <h2 class="title rv" data-p="sections.contact">&#1050;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;&#1099;</h2>
   <div class="dcard rv">
     <div style="position:relative;z-index:1">
-      <div class="presence" id="presence" role="status"><i></i><span>РЎС‚Р°С‚СѓСЃ Discord РЅРµ РїРѕРґРєР»СЋС‡С‘РЅ</span></div>
+      <div class="presence" id="presence" role="status"><i></i><span>&#1057;&#1090;&#1072;&#1090;&#1091;&#1089; Discord &#1085;&#1077; &#1087;&#1086;&#1076;&#1082;&#1083;&#1102;&#1095;&#1105;&#1085;</span></div>
       <div class="nick" data-p="nick"></div>
       <p data-p="contactText" data-multi></p>
     </div>
     <div class="dcr">
-      <a class="btn fill mag" id="dcBox" target="_blank" rel="noopener">РћС‚РєСЂС‹С‚СЊ Discord в†’</a>
-      <button class="btn ghost mag" id="briefOpen">РЎРѕСЃС‚Р°РІРёС‚СЊ Р·Р°СЏРІРєСѓ в†—</button><button class="btn ghost mag" id="copyNick">РЎРєРѕРїРёСЂРѕРІР°С‚СЊ РЅРёРє</button>
+      <a class="btn fill mag" id="dcBox" target="_blank" rel="noopener">&#1054;&#1090;&#1082;&#1088;&#1099;&#1090;&#1100; Discord &#8594;</a>
+      <button class="btn ghost mag" id="briefOpen">&#1057;&#1086;&#1089;&#1090;&#1072;&#1074;&#1080;&#1090;&#1100; &#1079;&#1072;&#1103;&#1074;&#1082;&#1091; &#8599;</button><button class="btn ghost mag" id="copyNick">&#1057;&#1082;&#1086;&#1087;&#1080;&#1088;&#1086;&#1074;&#1072;&#1090;&#1100; &#1085;&#1080;&#1082;</button>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="bigword" id="bigword"></div><span data-p="footer"></span> В· <a id="dcFoot" target="_blank" rel="noopener"></a> В· <a href="#top">в†‘</a></footer>
+<footer><div class="bigword" id="bigword"></div><span data-p="footer"></span> &#183; <a id="dcFoot" target="_blank" rel="noopener"></a> &#183; <a href="#top">&#8593;</a></footer>
 <div class="hud mono" id="hud" aria-hidden="true"></div>
-<div class="utility"><button id="sound" aria-pressed="false" aria-label="Toggle ambient audio"><span class="eq">в–‚в–…в–ѓ</span><span data-sound>Р—РІСѓРє РІС‹РєР».</span></button><button id="quality" aria-label="Graphics quality">FX: AUTO</button></div>
+<div class="utility"><button id="sound" aria-pressed="false" aria-label="Toggle ambient audio"><span class="eq">&#9602;&#9605;&#9603;</span><span data-sound>&#1047;&#1074;&#1091;&#1082; &#1074;&#1099;&#1082;&#1083;.</span></button><button id="quality" aria-label="Graphics quality">FX: AUTO</button></div>
 <div class="dots" id="dots"><a href="#top"></a><a href="#works"></a><a href="#terms" aria-label="Terms"></a><a href="#contact"></a></div>
 
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project preview"><button class="x" id="lbx">вњ•</button><div class="box"><div class="m" id="lbm"></div><h3 id="lbt"></h3><p id="lbd"></p></div></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project preview"><button class="x" id="lbx">&#10005;</button><div class="box"><div class="m" id="lbm"></div><h3 id="lbt"></h3><p id="lbd"></p></div></div>
 
 <div class="modal" id="wm" role="dialog" aria-modal="true">
   <form id="wf">
-    <h3 id="wmt">РќРѕРІР°СЏ СЂР°Р±РѕС‚Р°</h3>
-    <label>РќР°Р·РІР°РЅРёРµ</label><input id="w_t" required placeholder="РЎРёСЃС‚РµРјР° РёРЅРІРµРЅС‚Р°СЂСЏ">
-    <div class="row"><div><label>РљР°С‚РµРіРѕСЂРёСЏ</label><input id="w_c" list="cats" placeholder="РњРµС…Р°РЅРёРєРё"><datalist id="cats"></datalist></div>
-    <div><label>РўРёРї</label><select id="w_ty"><option value="youtube">YouTube</option><option value="video">Р’РёРґРµРѕ (С„Р°Р№Р» / .mp4)</option><option value="image">Р¤РѕС‚Рѕ / СЃРєСЂРёРЅС€РѕС‚</option></select></div></div>
-    <label>РЎСЃС‹Р»РєР° (YouTube, mp4, РєР°СЂС‚РёРЅРєР°)</label><input id="w_s" placeholder="https://вЂ¦">
-    <label for="w_f" class="filepick"><span>Р’С‹Р±СЂР°С‚СЊ РјРµРґРёР° в†—</span><small id="fileName">Р¤Р°Р№Р» РЅРµ РІС‹Р±СЂР°РЅ</small><input type="file" id="w_f" accept="image/*,video/*"></label>
-    <p class="note">Р¤Р°Р№Р»С‹ С…СЂР°РЅСЏС‚СЃСЏ РІ СЃР°РјРѕРј СЃР°Р№С‚Рµ, Р±РѕР»СЊС€РёРµ РІРёРґРµРѕ Р»СѓС‡С€Рµ СЃСЃС‹Р»РєРѕР№.</p>
-    <label>РћРїРёСЃР°РЅРёРµ</label><textarea id="w_d" style="min-height:80px"></textarea>
-    <div class="row" style="margin-top:8px"><button type="button" class="btn ghost" id="wcancel">РћС‚РјРµРЅР°</button><button class="btn fill" type="submit" style="justify-content:center">РЎРѕС…СЂР°РЅРёС‚СЊ</button></div>
+    <h3 id="wmt">&#1053;&#1086;&#1074;&#1072;&#1103; &#1088;&#1072;&#1073;&#1086;&#1090;&#1072;</h3>
+    <label>&#1053;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077;</label><input id="w_t" required placeholder="&#1057;&#1080;&#1089;&#1090;&#1077;&#1084;&#1072; &#1080;&#1085;&#1074;&#1077;&#1085;&#1090;&#1072;&#1088;&#1103;">
+    <div class="row"><div><label>&#1050;&#1072;&#1090;&#1077;&#1075;&#1086;&#1088;&#1080;&#1103;</label><input id="w_c" list="cats" placeholder="&#1052;&#1077;&#1093;&#1072;&#1085;&#1080;&#1082;&#1080;"><datalist id="cats"></datalist></div>
+    <div><label>&#1058;&#1080;&#1087;</label><select id="w_ty"><option value="youtube">YouTube</option><option value="video">&#1042;&#1080;&#1076;&#1077;&#1086; (&#1092;&#1072;&#1081;&#1083; / .mp4)</option><option value="image">&#1060;&#1086;&#1090;&#1086; / &#1089;&#1082;&#1088;&#1080;&#1085;&#1096;&#1086;&#1090;</option></select></div></div>
+    <label>&#1057;&#1089;&#1099;&#1083;&#1082;&#1072; (YouTube, mp4, &#1082;&#1072;&#1088;&#1090;&#1080;&#1085;&#1082;&#1072;)</label><input id="w_s" placeholder="https://&#8230;">
+    <label for="w_f" class="filepick"><span>&#1042;&#1099;&#1073;&#1088;&#1072;&#1090;&#1100; &#1084;&#1077;&#1076;&#1080;&#1072; &#8599;</span><small id="fileName">&#1060;&#1072;&#1081;&#1083; &#1085;&#1077; &#1074;&#1099;&#1073;&#1088;&#1072;&#1085;</small><input type="file" id="w_f" accept="image/*,video/*"></label>
+    <p class="note">&#1060;&#1072;&#1081;&#1083;&#1099; &#1093;&#1088;&#1072;&#1085;&#1103;&#1090;&#1089;&#1103; &#1074; &#1089;&#1072;&#1084;&#1086;&#1084; &#1089;&#1072;&#1081;&#1090;&#1077;, &#1073;&#1086;&#1083;&#1100;&#1096;&#1080;&#1077; &#1074;&#1080;&#1076;&#1077;&#1086; &#1083;&#1091;&#1095;&#1096;&#1077; &#1089;&#1089;&#1099;&#1083;&#1082;&#1086;&#1081;.</p>
+    <label>&#1054;&#1087;&#1080;&#1089;&#1072;&#1085;&#1080;&#1077;</label><textarea id="w_d" style="min-height:80px"></textarea>
+    <div class="row" style="margin-top:8px"><button type="button" class="btn ghost" id="wcancel">&#1054;&#1090;&#1084;&#1077;&#1085;&#1072;</button><button class="btn fill" type="submit" style="justify-content:center">&#1057;&#1086;&#1093;&#1088;&#1072;&#1085;&#1080;&#1090;&#1100;</button></div>
   </form>
 </div>
 
 <div class="modal" id="sm" role="dialog" aria-modal="true">
   <form id="sf">
-    <h3>РќР°СЃС‚СЂРѕР№РєРё</h3>
-    <label>РЎСЃС‹Р»РєР° РЅР° Discord (РїСЂРёРіР»Р°С€РµРЅРёРµ РёР»Рё РїСЂРѕС„РёР»СЊ)</label><input id="s_dc" placeholder="https://discord.gg/вЂ¦">
-    <label for="s_id">Discord User ID В· Lanyard</label><input id="s_id" inputmode="numeric" placeholder="123456789012345678"><p class="note">Р”Р»СЏ Р¶РёРІРѕРіРѕ СЃС‚Р°С‚СѓСЃР° РІСЃС‚СѓРїРё РІ Discord-СЃРµСЂРІРµСЂ Lanyard. Р‘РµР· РїРѕРґРєР»СЋС‡РµРЅРёСЏ РїРѕРєР°Р·С‹РІР°РµС‚СЃСЏ В«РЎС‚Р°С‚СѓСЃ РЅРµРґРѕСЃС‚СѓРїРµРЅВ».</p>
-<label for="s_av">Р”РѕСЃС‚СѓРїРЅРѕСЃС‚СЊ</label><select id="s_av"><option value="open">РћС‚РєСЂС‹С‚ РґР»СЏ Р·Р°РєР°Р·РѕРІ</option><option value="busy">Р—Р°РЅСЏС‚</option></select>
-<label for="s_until">Р—Р°РЅСЏС‚ РґРѕ (РЅРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ)</label><input id="s_until" type="date">
-<label for="s_tr">URL СЃРµСЂРІРёСЃР° РїРµСЂРµРІРѕРґР° (LibreTranslate API, РЅРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ)</label><input id="s_tr" type="url" placeholder="https://your-service.example/translate">
-<p class="note">РќРѕРІС‹Рµ СЂР°Р±РѕС‚С‹ РїРµСЂРµРІРѕРґСЏС‚СЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё С‡РµСЂРµР· MyMemory. РњРѕР¶РЅРѕ СѓРєР°Р·Р°С‚СЊ СЃРІРѕР№ LibreTranslate-СЃРµСЂРІРёСЃ. РџСѓР±Р»РёС‡РЅС‹Рµ С‚РµРєСЃС‚С‹ РѕС‚РїСЂР°РІР»СЏСЋС‚СЃСЏ СЃРµСЂРІРёСЃСѓ РїРµСЂРµРІРѕРґР°; СЃРµРєСЂРµС‚РЅС‹Рµ РєР»СЋС‡Рё Р·РґРµСЃСЊ РЅРµ РЅСѓР¶РЅС‹.</p>
-<label for="s_url">РџСѓР±Р»РёС‡РЅС‹Р№ Р°РґСЂРµСЃ СЃР°Р№С‚Р° (РґР»СЏ СЌРєСЃРїРѕСЂС‚Р° OG)</label><input id="s_url" type="url">
-<label>Р‘РµРіСѓС‰Р°СЏ СЃС‚СЂРѕРєР° (С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ)</label><textarea id="s_m" style="min-height:70px"></textarea>
-    <div class="row" style="margin-top:8px"><button type="button" class="btn ghost" id="scancel">РћС‚РјРµРЅР°</button><button class="btn fill" type="submit" style="justify-content:center">РЎРѕС…СЂР°РЅРёС‚СЊ</button></div>
+    <h3>&#1053;&#1072;&#1089;&#1090;&#1088;&#1086;&#1081;&#1082;&#1080;</h3>
+    <label>&#1057;&#1089;&#1099;&#1083;&#1082;&#1072; &#1085;&#1072; Discord (&#1087;&#1088;&#1080;&#1075;&#1083;&#1072;&#1096;&#1077;&#1085;&#1080;&#1077; &#1080;&#1083;&#1080; &#1087;&#1088;&#1086;&#1092;&#1080;&#1083;&#1100;)</label><input id="s_dc" placeholder="https://discord.gg/&#8230;">
+    <label for="s_id">Discord User ID &#183; Lanyard</label><input id="s_id" inputmode="numeric" placeholder="123456789012345678"><p class="note">&#1044;&#1083;&#1103; &#1078;&#1080;&#1074;&#1086;&#1075;&#1086; &#1089;&#1090;&#1072;&#1090;&#1091;&#1089;&#1072; &#1074;&#1089;&#1090;&#1091;&#1087;&#1080; &#1074; Discord-&#1089;&#1077;&#1088;&#1074;&#1077;&#1088; Lanyard. &#1041;&#1077;&#1079; &#1087;&#1086;&#1076;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1080;&#1103; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090;&#1089;&#1103; &#171;&#1057;&#1090;&#1072;&#1090;&#1091;&#1089; &#1085;&#1077;&#1076;&#1086;&#1089;&#1090;&#1091;&#1087;&#1077;&#1085;&#187;.</p>
+<label for="s_av">&#1044;&#1086;&#1089;&#1090;&#1091;&#1087;&#1085;&#1086;&#1089;&#1090;&#1100;</label><select id="s_av"><option value="open">&#1054;&#1090;&#1082;&#1088;&#1099;&#1090; &#1076;&#1083;&#1103; &#1079;&#1072;&#1082;&#1072;&#1079;&#1086;&#1074;</option><option value="busy">&#1047;&#1072;&#1085;&#1103;&#1090;</option></select>
+<label for="s_until">&#1047;&#1072;&#1085;&#1103;&#1090; &#1076;&#1086; (&#1085;&#1077;&#1086;&#1073;&#1103;&#1079;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;)</label><input id="s_until" type="date">
+<label for="s_tr">URL &#1089;&#1077;&#1088;&#1074;&#1080;&#1089;&#1072; &#1087;&#1077;&#1088;&#1077;&#1074;&#1086;&#1076;&#1072; (LibreTranslate API, &#1085;&#1077;&#1086;&#1073;&#1103;&#1079;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;)</label><input id="s_tr" type="url" placeholder="https://your-service.example/translate">
+<p class="note">&#1053;&#1086;&#1074;&#1099;&#1077; &#1088;&#1072;&#1073;&#1086;&#1090;&#1099; &#1087;&#1077;&#1088;&#1077;&#1074;&#1086;&#1076;&#1103;&#1090;&#1089;&#1103; &#1072;&#1074;&#1090;&#1086;&#1084;&#1072;&#1090;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080; &#1095;&#1077;&#1088;&#1077;&#1079; MyMemory. &#1052;&#1086;&#1078;&#1085;&#1086; &#1091;&#1082;&#1072;&#1079;&#1072;&#1090;&#1100; &#1089;&#1074;&#1086;&#1081; LibreTranslate-&#1089;&#1077;&#1088;&#1074;&#1080;&#1089;. &#1055;&#1091;&#1073;&#1083;&#1080;&#1095;&#1085;&#1099;&#1077; &#1090;&#1077;&#1082;&#1089;&#1090;&#1099; &#1086;&#1090;&#1087;&#1088;&#1072;&#1074;&#1083;&#1103;&#1102;&#1090;&#1089;&#1103; &#1089;&#1077;&#1088;&#1074;&#1080;&#1089;&#1091; &#1087;&#1077;&#1088;&#1077;&#1074;&#1086;&#1076;&#1072;; &#1089;&#1077;&#1082;&#1088;&#1077;&#1090;&#1085;&#1099;&#1077; &#1082;&#1083;&#1102;&#1095;&#1080; &#1079;&#1076;&#1077;&#1089;&#1100; &#1085;&#1077; &#1085;&#1091;&#1078;&#1085;&#1099;.</p>
+<label for="s_url">&#1055;&#1091;&#1073;&#1083;&#1080;&#1095;&#1085;&#1099;&#1081; &#1072;&#1076;&#1088;&#1077;&#1089; &#1089;&#1072;&#1081;&#1090;&#1072; (&#1076;&#1083;&#1103; &#1101;&#1082;&#1089;&#1087;&#1086;&#1088;&#1090;&#1072; OG)</label><input id="s_url" type="url">
+<label>&#1041;&#1077;&#1075;&#1091;&#1097;&#1072;&#1103; &#1089;&#1090;&#1088;&#1086;&#1082;&#1072; (&#1095;&#1077;&#1088;&#1077;&#1079; &#1079;&#1072;&#1087;&#1103;&#1090;&#1091;&#1102;)</label><textarea id="s_m" style="min-height:70px"></textarea>
+    <div class="row" style="margin-top:8px"><button type="button" class="btn ghost" id="scancel">&#1054;&#1090;&#1084;&#1077;&#1085;&#1072;</button><button class="btn fill" type="submit" style="justify-content:center">&#1057;&#1086;&#1093;&#1088;&#1072;&#1085;&#1080;&#1090;&#1100;</button></div>
   </form>
 </div>
 
 <div class="modal" id="briefModal" role="dialog" aria-modal="true" aria-labelledby="briefTitle">
-<form id="briefForm"><span class="eyebrow">MISSION BRIEF</span><h3 id="briefTitle">РЎ С‡РµРіРѕ РЅР°С‡РЅС‘Рј?</h3><p class="note">Р—Р°РїРѕР»РЅРё РєРѕСЂРѕС‚РєРѕ вЂ” РїРѕР»СѓС‡РёС€СЊ РіРѕС‚РѕРІС‹Р№ С‚РµРєСЃС‚ РґР»СЏ Discord.</p><label for="br_task">Р§С‚Рѕ РЅСѓР¶РЅРѕ СЃРґРµР»Р°С‚СЊ?</label><textarea id="br_task" required maxlength="4000" placeholder="РќР°РїСЂРёРјРµСЂ, РјР°РіР°Р·РёРЅ РїСЂРµРґРјРµС‚РѕРІ СЃ СЃРѕС…СЂР°РЅРµРЅРёРµРј РїРѕРєСѓРїРѕРє"></textarea><div class="row"><div><label for="br_budget">Р‘СЋРґР¶РµС‚</label><input id="br_budget" maxlength="120" placeholder="Robux / USD"></div><div><label for="br_time">Р–РµР»Р°РµРјС‹Р№ СЃСЂРѕРє</label><input id="br_time" maxlength="120" placeholder="РќР°РїСЂРёРјРµСЂ, 7 РґРЅРµР№"></div></div><label for="br_refs">РЎСЃС‹Р»РєРё Рё РїСЂРёРјРµСЂС‹</label><textarea id="br_refs" maxlength="2000" placeholder="РќРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ"></textarea><div class="row"><button class="btn ghost" type="button" data-close="briefModal">Р—Р°РєСЂС‹С‚СЊ</button><button class="btn fill" type="submit">РЎРєРѕРїРёСЂРѕРІР°С‚СЊ Р·Р°СЏРІРєСѓ</button></div><p class="note" id="briefResult" role="status"></p><a id="briefDiscord" class="btn ghost" target="_blank" rel="noopener" hidden>РџРµСЂРµР№С‚Рё РІ Discord в†—</a></form></div>
-<div class="modal" id="contentModal" role="dialog" aria-modal="true" aria-labelledby="contentTitle"><form id="contentForm"><h3 id="contentTitle">РљРѕРЅС‚РµРЅС‚ / JSON</h3><p class="note">Р—РґРµСЃСЊ СЂРµРґР°РєС‚РёСЂСѓСЋС‚СЃСЏ СЂР°Р±РѕС‚С‹, СѓСЃР»РѕРІРёСЏ, FAQ Рё РїРµСЂРµРІРѕРґС‹. en СЃРѕРґРµСЂР¶РёС‚ РїРµСЂРµРІРѕРґС‹ РїРѕ РїСѓС‚Рё РїРѕР»СЏ, РЅР°РїСЂРёРјРµСЂ works.0.title. РџРѕСЃР»Рµ РїСЂР°РІРѕРє РЅР°Р¶РјРё В«РЎРєР°С‡Р°С‚СЊ СЃР°Р№С‚В» Рё Р·Р°РјРµРЅРё index.html РІ GitHub.</p><textarea id="contentJson" spellcheck="false" aria-label="Content JSON"></textarea><p id="contentError" class="note" role="status"></p><div class="row"><button type="button" class="btn ghost" data-close="contentModal">РћС‚РјРµРЅР°</button><button class="btn fill" type="submit">РџСЂРёРјРµРЅРёС‚СЊ</button></div></form></div>
+<form id="briefForm"><span class="eyebrow">MISSION BRIEF</span><h3 id="briefTitle">&#1057; &#1095;&#1077;&#1075;&#1086; &#1085;&#1072;&#1095;&#1085;&#1105;&#1084;?</h3><p class="note">&#1047;&#1072;&#1087;&#1086;&#1083;&#1085;&#1080; &#1082;&#1086;&#1088;&#1086;&#1090;&#1082;&#1086; &#8212; &#1087;&#1086;&#1083;&#1091;&#1095;&#1080;&#1096;&#1100; &#1075;&#1086;&#1090;&#1086;&#1074;&#1099;&#1081; &#1090;&#1077;&#1082;&#1089;&#1090; &#1076;&#1083;&#1103; Discord.</p><label for="br_task">&#1063;&#1090;&#1086; &#1085;&#1091;&#1078;&#1085;&#1086; &#1089;&#1076;&#1077;&#1083;&#1072;&#1090;&#1100;?</label><textarea id="br_task" required maxlength="4000" placeholder="&#1053;&#1072;&#1087;&#1088;&#1080;&#1084;&#1077;&#1088;, &#1084;&#1072;&#1075;&#1072;&#1079;&#1080;&#1085; &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;&#1086;&#1074; &#1089; &#1089;&#1086;&#1093;&#1088;&#1072;&#1085;&#1077;&#1085;&#1080;&#1077;&#1084; &#1087;&#1086;&#1082;&#1091;&#1087;&#1086;&#1082;"></textarea><div class="row"><div><label for="br_budget">&#1041;&#1102;&#1076;&#1078;&#1077;&#1090;</label><input id="br_budget" maxlength="120" placeholder="Robux / USD"></div><div><label for="br_time">&#1046;&#1077;&#1083;&#1072;&#1077;&#1084;&#1099;&#1081; &#1089;&#1088;&#1086;&#1082;</label><input id="br_time" maxlength="120" placeholder="&#1053;&#1072;&#1087;&#1088;&#1080;&#1084;&#1077;&#1088;, 7 &#1076;&#1085;&#1077;&#1081;"></div></div><label for="br_refs">&#1057;&#1089;&#1099;&#1083;&#1082;&#1080; &#1080; &#1087;&#1088;&#1080;&#1084;&#1077;&#1088;&#1099;</label><textarea id="br_refs" maxlength="2000" placeholder="&#1053;&#1077;&#1086;&#1073;&#1103;&#1079;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;"></textarea><div class="row"><button class="btn ghost" type="button" data-close="briefModal">&#1047;&#1072;&#1082;&#1088;&#1099;&#1090;&#1100;</button><button class="btn fill" type="submit">&#1057;&#1082;&#1086;&#1087;&#1080;&#1088;&#1086;&#1074;&#1072;&#1090;&#1100; &#1079;&#1072;&#1103;&#1074;&#1082;&#1091;</button></div><p class="note" id="briefResult" role="status"></p><a id="briefDiscord" class="btn ghost" target="_blank" rel="noopener" hidden>&#1055;&#1077;&#1088;&#1077;&#1081;&#1090;&#1080; &#1074; Discord &#8599;</a></form></div>
+<div class="modal" id="contentModal" role="dialog" aria-modal="true" aria-labelledby="contentTitle"><form id="contentForm"><h3 id="contentTitle">&#1050;&#1086;&#1085;&#1090;&#1077;&#1085;&#1090; / JSON</h3><p class="note">&#1047;&#1076;&#1077;&#1089;&#1100; &#1088;&#1077;&#1076;&#1072;&#1082;&#1090;&#1080;&#1088;&#1091;&#1102;&#1090;&#1089;&#1103; &#1088;&#1072;&#1073;&#1086;&#1090;&#1099;, &#1091;&#1089;&#1083;&#1086;&#1074;&#1080;&#1103;, FAQ &#1080; &#1087;&#1077;&#1088;&#1077;&#1074;&#1086;&#1076;&#1099;. en &#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1080;&#1090; &#1087;&#1077;&#1088;&#1077;&#1074;&#1086;&#1076;&#1099; &#1087;&#1086; &#1087;&#1091;&#1090;&#1080; &#1087;&#1086;&#1083;&#1103;, &#1085;&#1072;&#1087;&#1088;&#1080;&#1084;&#1077;&#1088; works.0.title. &#1055;&#1086;&#1089;&#1083;&#1077; &#1087;&#1088;&#1072;&#1074;&#1086;&#1082; &#1085;&#1072;&#1078;&#1084;&#1080; &#171;&#1057;&#1082;&#1072;&#1095;&#1072;&#1090;&#1100; &#1089;&#1072;&#1081;&#1090;&#187; &#1080; &#1079;&#1072;&#1084;&#1077;&#1085;&#1080; index.html &#1074; GitHub.</p><textarea id="contentJson" spellcheck="false" aria-label="Content JSON"></textarea><p id="contentError" class="note" role="status"></p><div class="row"><button type="button" class="btn ghost" data-close="contentModal">&#1054;&#1090;&#1084;&#1077;&#1085;&#1072;</button><button class="btn fill" type="submit">&#1055;&#1088;&#1080;&#1084;&#1077;&#1085;&#1080;&#1090;&#1100;</button></div></form></div>
 
 <div class="bar">
-  <button id="tgl">вњЋ Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ</button>
-  <button class="only" id="bAdd">+ Р Р°Р±РѕС‚Р°</button>
-  <button class="only" id="bSet">РќР°СЃС‚СЂРѕР№РєРё</button>
-  <button class="only" id="bContent">РљРѕРЅС‚РµРЅС‚ / JSON</button><button class="only" id="bTranslate">RU в†’ EN</button><button class="only" id="bExp">РЎРєР°С‡Р°С‚СЊ СЃР°Р№С‚</button>
-  <button class="only" id="bImp">РРјРїРѕСЂС‚</button>
-  <button class="only" id="bRes">РЎР±СЂРѕСЃ</button>
+  <button id="tgl">&#9998; &#1056;&#1077;&#1076;&#1072;&#1082;&#1090;&#1080;&#1088;&#1086;&#1074;&#1072;&#1090;&#1100;</button>
+  <button class="only" id="bAdd">+ &#1056;&#1072;&#1073;&#1086;&#1090;&#1072;</button>
+  <button class="only" id="bSet">&#1053;&#1072;&#1089;&#1090;&#1088;&#1086;&#1081;&#1082;&#1080;</button>
+  <button class="only" id="bContent">&#1050;&#1086;&#1085;&#1090;&#1077;&#1085;&#1090; / JSON</button><button class="only" id="bTranslate">RU &#8594; EN</button><button class="only" id="bExp">&#1057;&#1082;&#1072;&#1095;&#1072;&#1090;&#1100; &#1089;&#1072;&#1081;&#1090;</button>
+  <button class="only" id="bImp">&#1048;&#1084;&#1087;&#1086;&#1088;&#1090;</button>
+  <button class="only" id="bRes">&#1057;&#1073;&#1088;&#1086;&#1089;</button>
 </div>
 <input type="file" id="impf" accept=".json" hidden>
 
-<script id="seed" type="application/json">{"_v": 1794938369368, "dc": "https://discord.gg/your_invite", "nick": "Mistral", "brand": "Mistral", "role": "Roblox Scripter", "status": "РћС‚РєСЂС‹С‚ РґР»СЏ Р·Р°РєР°Р·РѕРІ", "line": "РРіСЂРѕРІС‹Рµ РјРµС…Р°РЅРёРєРё, СЃРёСЃС‚РµРјС‹ Рё СЃРµСЂРІРµСЂРЅР°СЏ Р»РѕРіРёРєР°. Luau / Roblox Studio.", "marquee": ["Luau", "Roblox Studio", "РњРµС…Р°РЅРёРєРё", "РЎРёСЃС‚РµРјС‹", "РЎРµСЂРІРµСЂРЅР°СЏ Р»РѕРіРёРєР°"], "stats": [], "sections": {"works": "Р Р°Р±РѕС‚С‹", "terms": "РЈСЃР»РѕРІРёСЏ", "contact": "РљРѕРЅС‚Р°РєС‚С‹"}, "works": [{"title": "Р Р°Р±РѕС‚Р° 1", "cat": "РњРµС…Р°РЅРёРєРё", "type": "youtube", "src": "", "desc": "РћРїРёСЃР°РЅРёРµ СЂР°Р±РѕС‚С‹"}, {"title": "Р Р°Р±РѕС‚Р° 2", "cat": "РЎРёСЃС‚РµРјС‹", "type": "youtube", "src": "", "desc": "РћРїРёСЃР°РЅРёРµ СЂР°Р±РѕС‚С‹"}, {"title": "Р Р°Р±РѕС‚Р° 3", "cat": "РЎРµСЂРІРµСЂРЅР°СЏ Р»РѕРіРёРєР°", "type": "youtube", "src": "", "desc": "РћРїРёСЃР°РЅРёРµ СЂР°Р±РѕС‚С‹"}], "terms": {"noTitle": "РќРµ Р±РµСЂСѓСЃСЊ", "priceTitle": "РќР°С‡Р°Р»СЊРЅР°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ", "price": "РѕС‚ 250 Robux", "priceText": "Р·Р° РЅРµР±РѕР»СЊС€РёРµ Р·Р°РґР°С‡Рё. РћСЃС‚Р°Р»СЊРЅРѕРµ Р·Р°РІРёСЃРёС‚ РѕС‚ СЃР»РѕР¶РЅРѕСЃС‚Рё Рё РѕР±СЉС‘РјР°."}, "nodo": ["РџСЂРѕРґРІРёРЅСѓС‚С‹Р№ NPC AI", "РЎР»РѕР¶РЅС‹Рµ СЃРёСЃС‚РµРјС‹ С‚СЂР°РЅСЃРїРѕСЂС‚Р°", "РљРѕРјРїР»РµРєСЃРЅС‹Рµ Р°РЅС‚РёС‡РёС‚С‹", "3D-РјРѕРґРµР»РёСЂРѕРІР°РЅРёРµ Рё Р°РЅРёРјР°С†РёСЏ", "РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ UI/UX-РґРёР·Р°Р№РЅ"], "contactText": "РќР°РїРёС€Рё РІ Discord, РѕРїРёС€Рё Р·Р°РґР°С‡Сѓ, СЃСЂРѕРєРё Рё Р±СЋРґР¶РµС‚.", "footer": "Mistral В© 2026", "discordId": "", "availability": "open", "busyUntil": "", "completed": null, "translationEndpoint": "", "siteUrl": "https://korobbka.github.io/Mistral", "reviews": [], "snippets": [], "prices": [], "faq": [{"q": "РљР°Рє РЅР°С‡Р°С‚СЊ?", "a": "РћРїРёС€Рё РёРґРµСЋ, РїСЂРёР»РѕР¶Рё РїСЂРёРјРµСЂС‹ Рё СѓРєР°Р¶Рё Р¶РµР»Р°РµРјС‹Р№ СЃСЂРѕРє Рё Р±СЋРґР¶РµС‚. Р”Р°Р»СЊС€Рµ СЃРѕРіР»Р°СЃСѓРµРј РѕР±СЉС‘Рј Рё СЃС‚РѕРёРјРѕСЃС‚СЊ."}, {"q": "РњРѕР¶РЅРѕ Р·Р°РєР°Р·Р°С‚СЊ РѕС‚РґРµР»СЊРЅСѓСЋ РјРµС…Р°РЅРёРєСѓ?", "a": "Р”Р°. РќРµР±РѕР»СЊС€РёРµ СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅС‹Рµ Р·Р°РґР°С‡Рё вЂ” РїРѕРґС…РѕРґСЏС‰РёР№ С„РѕСЂРјР°С‚. РЎРЅР°С‡Р°Р»Р° РїСЂРѕРІРµСЂРёРј, РєР°Рє РјРµС…Р°РЅРёРєР° РІСЃС‚СЂР°РёРІР°РµС‚СЃСЏ РІ С‚РІРѕР№ РїСЂРѕРµРєС‚."}, {"q": "Р§С‚Рѕ СЃ РѕРїР»Р°С‚РѕР№ Рё РїСЂР°РІРєР°РјРё?", "a": "РЎРїРѕСЃРѕР± РѕРїР»Р°С‚С‹, СЌС‚Р°РїС‹ Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂР°РІРѕРє СЃРѕРіР»Р°СЃСѓРµРј РґРѕ РЅР°С‡Р°Р»Р° СЂР°Р±РѕС‚С‹. Р—РґРµСЃСЊ РїРѕСЏРІСЏС‚СЃСЏ С„РёРЅР°Р»СЊРЅС‹Рµ СѓСЃР»РѕРІРёСЏ."}], "en": {"status": "Open for commissions", "role": "Roblox Scripter", "line": "Game mechanics, systems and server logic. Luau / Roblox Studio.", "sections.works": "Work", "sections.terms": "Terms", "sections.contact": "Contact", "terms.noTitle": "Outside my scope", "terms.priceTitle": "Starting price", "terms.price": "From 250 Robux", "terms.priceText": "For small tasks. Final pricing depends on complexity and scope.", "nodo.0": "Advanced NPC AI", "nodo.1": "Complex vehicle systems", "nodo.2": "Comprehensive anti-cheat", "nodo.3": "3D modelling & animation", "nodo.4": "Professional UI/UX design", "contactText": "Tell me about your idea, timeline and budget.", "faq.0.q": "How do we start?", "faq.0.a": "Describe your idea, share references, and include your timeline and budget. We will agree on scope and pricing.", "faq.1.q": "Can I order a single mechanic?", "faq.1.a": "Yes. Small, self-contained tasks are welcome. First, we will check how it fits into your project.", "faq.2.q": "What about payment and revisions?", "faq.2.a": "Payment, milestones and the number of revisions are agreed before work begins. Final terms will appear here.", "works.0.title": "Work 1", "works.0.desc": "Project description", "works.0.cat": "Mechanics", "works.1.title": "Work 2", "works.1.desc": "Project description", "works.1.cat": "Systems", "works.2.title": "Work 3", "works.2.desc": "Project description", "works.2.cat": "Server logic", "marquee.0": "Luau", "marquee.1": "Roblox Studio", "marquee.2": "Mechanics", "marquee.3": "Systems", "marquee.4": "Server logic"}}</script>
+<script id="seed" type="application/json">{"_v": 1794938369368, "dc": "https://discord.gg/your_invite", "nick": "Mistral", "brand": "Mistral", "role": "Roblox Scripter", "status": "\u041e\u0442\u043a\u0440\u044b\u0442 \u0434\u043b\u044f \u0437\u0430\u043a\u0430\u0437\u043e\u0432", "line": "\u0418\u0433\u0440\u043e\u0432\u044b\u0435 \u043c\u0435\u0445\u0430\u043d\u0438\u043a\u0438, \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0438 \u0441\u0435\u0440\u0432\u0435\u0440\u043d\u0430\u044f \u043b\u043e\u0433\u0438\u043a\u0430. Luau / Roblox Studio.", "marquee": ["Luau", "Roblox Studio", "\u041c\u0435\u0445\u0430\u043d\u0438\u043a\u0438", "\u0421\u0438\u0441\u0442\u0435\u043c\u044b", "\u0421\u0435\u0440\u0432\u0435\u0440\u043d\u0430\u044f \u043b\u043e\u0433\u0438\u043a\u0430"], "stats": [], "sections": {"works": "\u0420\u0430\u0431\u043e\u0442\u044b", "terms": "\u0423\u0441\u043b\u043e\u0432\u0438\u044f", "contact": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b"}, "works": [{"title": "\u0420\u0430\u0431\u043e\u0442\u0430 1", "cat": "\u041c\u0435\u0445\u0430\u043d\u0438\u043a\u0438", "type": "youtube", "src": "", "desc": "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u0440\u0430\u0431\u043e\u0442\u044b"}, {"title": "\u0420\u0430\u0431\u043e\u0442\u0430 2", "cat": "\u0421\u0438\u0441\u0442\u0435\u043c\u044b", "type": "youtube", "src": "", "desc": "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u0440\u0430\u0431\u043e\u0442\u044b"}, {"title": "\u0420\u0430\u0431\u043e\u0442\u0430 3", "cat": "\u0421\u0435\u0440\u0432\u0435\u0440\u043d\u0430\u044f \u043b\u043e\u0433\u0438\u043a\u0430", "type": "youtube", "src": "", "desc": "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u0440\u0430\u0431\u043e\u0442\u044b"}], "terms": {"noTitle": "\u041d\u0435 \u0431\u0435\u0440\u0443\u0441\u044c", "priceTitle": "\u041d\u0430\u0447\u0430\u043b\u044c\u043d\u0430\u044f \u0441\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c", "price": "\u043e\u0442 250 Robux", "priceText": "\u0437\u0430 \u043d\u0435\u0431\u043e\u043b\u044c\u0448\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438. \u041e\u0441\u0442\u0430\u043b\u044c\u043d\u043e\u0435 \u0437\u0430\u0432\u0438\u0441\u0438\u0442 \u043e\u0442 \u0441\u043b\u043e\u0436\u043d\u043e\u0441\u0442\u0438 \u0438 \u043e\u0431\u044a\u0451\u043c\u0430."}, "nodo": ["\u041f\u0440\u043e\u0434\u0432\u0438\u043d\u0443\u0442\u044b\u0439 NPC AI", "\u0421\u043b\u043e\u0436\u043d\u044b\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0442\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442\u0430", "\u041a\u043e\u043c\u043f\u043b\u0435\u043a\u0441\u043d\u044b\u0435 \u0430\u043d\u0442\u0438\u0447\u0438\u0442\u044b", "3D-\u043c\u043e\u0434\u0435\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0438 \u0430\u043d\u0438\u043c\u0430\u0446\u0438\u044f", "\u041f\u0440\u043e\u0444\u0435\u0441\u0441\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 UI/UX-\u0434\u0438\u0437\u0430\u0439\u043d"], "contactText": "\u041d\u0430\u043f\u0438\u0448\u0438 \u0432 Discord, \u043e\u043f\u0438\u0448\u0438 \u0437\u0430\u0434\u0430\u0447\u0443, \u0441\u0440\u043e\u043a\u0438 \u0438 \u0431\u044e\u0434\u0436\u0435\u0442.", "footer": "Mistral \u00a9 2026", "discordId": "", "availability": "open", "busyUntil": "", "completed": null, "translationEndpoint": "", "siteUrl": "https://korobbka.github.io/Mistral", "reviews": [], "snippets": [], "prices": [], "faq": [{"q": "\u041a\u0430\u043a \u043d\u0430\u0447\u0430\u0442\u044c?", "a": "\u041e\u043f\u0438\u0448\u0438 \u0438\u0434\u0435\u044e, \u043f\u0440\u0438\u043b\u043e\u0436\u0438 \u043f\u0440\u0438\u043c\u0435\u0440\u044b \u0438 \u0443\u043a\u0430\u0436\u0438 \u0436\u0435\u043b\u0430\u0435\u043c\u044b\u0439 \u0441\u0440\u043e\u043a \u0438 \u0431\u044e\u0434\u0436\u0435\u0442. \u0414\u0430\u043b\u044c\u0448\u0435 \u0441\u043e\u0433\u043b\u0430\u0441\u0443\u0435\u043c \u043e\u0431\u044a\u0451\u043c \u0438 \u0441\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c."}, {"q": "\u041c\u043e\u0436\u043d\u043e \u0437\u0430\u043a\u0430\u0437\u0430\u0442\u044c \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u0443\u044e \u043c\u0435\u0445\u0430\u043d\u0438\u043a\u0443?", "a": "\u0414\u0430. \u041d\u0435\u0431\u043e\u043b\u044c\u0448\u0438\u0435 \u0441\u0430\u043c\u043e\u0441\u0442\u043e\u044f\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0437\u0430\u0434\u0430\u0447\u0438 \u2014 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0439 \u0444\u043e\u0440\u043c\u0430\u0442. \u0421\u043d\u0430\u0447\u0430\u043b\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u043c, \u043a\u0430\u043a \u043c\u0435\u0445\u0430\u043d\u0438\u043a\u0430 \u0432\u0441\u0442\u0440\u0430\u0438\u0432\u0430\u0435\u0442\u0441\u044f \u0432 \u0442\u0432\u043e\u0439 \u043f\u0440\u043e\u0435\u043a\u0442."}, {"q": "\u0427\u0442\u043e \u0441 \u043e\u043f\u043b\u0430\u0442\u043e\u0439 \u0438 \u043f\u0440\u0430\u0432\u043a\u0430\u043c\u0438?", "a": "\u0421\u043f\u043e\u0441\u043e\u0431 \u043e\u043f\u043b\u0430\u0442\u044b, \u044d\u0442\u0430\u043f\u044b \u0438 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0440\u0430\u0432\u043e\u043a \u0441\u043e\u0433\u043b\u0430\u0441\u0443\u0435\u043c \u0434\u043e \u043d\u0430\u0447\u0430\u043b\u0430 \u0440\u0430\u0431\u043e\u0442\u044b. \u0417\u0434\u0435\u0441\u044c \u043f\u043e\u044f\u0432\u044f\u0442\u0441\u044f \u0444\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0443\u0441\u043b\u043e\u0432\u0438\u044f."}], "en": {"status": "Open for commissions", "role": "Roblox Scripter", "line": "Game mechanics, systems and server logic. Luau / Roblox Studio.", "sections.works": "Work", "sections.terms": "Terms", "sections.contact": "Contact", "terms.noTitle": "Outside my scope", "terms.priceTitle": "Starting price", "terms.price": "From 250 Robux", "terms.priceText": "For small tasks. Final pricing depends on complexity and scope.", "nodo.0": "Advanced NPC AI", "nodo.1": "Complex vehicle systems", "nodo.2": "Comprehensive anti-cheat", "nodo.3": "3D modelling & animation", "nodo.4": "Professional UI/UX design", "contactText": "Tell me about your idea, timeline and budget.", "faq.0.q": "How do we start?", "faq.0.a": "Describe your idea, share references, and include your timeline and budget. We will agree on scope and pricing.", "faq.1.q": "Can I order a single mechanic?", "faq.1.a": "Yes. Small, self-contained tasks are welcome. First, we will check how it fits into your project.", "faq.2.q": "What about payment and revisions?", "faq.2.a": "Payment, milestones and the number of revisions are agreed before work begins. Final terms will appear here.", "works.0.title": "Work 1", "works.0.desc": "Project description", "works.0.cat": "Mechanics", "works.1.title": "Work 2", "works.1.desc": "Project description", "works.1.cat": "Systems", "works.2.title": "Work 3", "works.2.desc": "Project description", "works.2.cat": "Server logic", "marquee.0": "Luau", "marquee.1": "Roblox Studio", "marquee.2": "Mechanics", "marquee.3": "Systems", "marquee.4": "Server logic"}}</script>
 
 <script>
 (async()=>{
@@ -399,16 +399,35 @@ let seed=JSON.parse($('#seed').textContent);
 let data; try{data=JSON.parse(localStorage.getItem(KEY))}catch(e){}
 if(!data||(data._v||0)<(seed._v||0))data=JSON.parse(JSON.stringify(seed));
 for(const k in seed) if(data[k]==null) data[k]=JSON.parse(JSON.stringify(seed[k]));
-if(data.sections&&data.sections.contact==='Discord')data.sections.contact='РљРѕРЅС‚Р°РєС‚С‹';
+if(data.sections&&data.sections.contact==='Discord')data.sections.contact='\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b';
 data.stats=[];
-if(data.line==='1 РіРѕРґ СЃ Luau Рё Roblox Studio. РРіСЂРѕРІС‹Рµ РјРµС…Р°РЅРёРєРё, СЃРёСЃС‚РµРјС‹ Рё СЃРµСЂРІРµСЂРЅР°СЏ Р»РѕРіРёРєР°.')data.line='РРіСЂРѕРІС‹Рµ РјРµС…Р°РЅРёРєРё, СЃРёСЃС‚РµРјС‹ Рё СЃРµСЂРІРµСЂРЅР°СЏ Р»РѕРіРёРєР°. Luau / Roblox Studio.';
+if(data.line==='1 \u0433\u043e\u0434 \u0441 Luau \u0438 Roblox Studio. \u0418\u0433\u0440\u043e\u0432\u044b\u0435 \u043c\u0435\u0445\u0430\u043d\u0438\u043a\u0438, \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0438 \u0441\u0435\u0440\u0432\u0435\u0440\u043d\u0430\u044f \u043b\u043e\u0433\u0438\u043a\u0430.')data.line='\u0418\u0433\u0440\u043e\u0432\u044b\u0435 \u043c\u0435\u0445\u0430\u043d\u0438\u043a\u0438, \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0438 \u0441\u0435\u0440\u0432\u0435\u0440\u043d\u0430\u044f \u043b\u043e\u0433\u0438\u043a\u0430. Luau / Roblox Studio.';
 data.en??={};
 if(data.en.line==='1 year with Luau & Roblox Studio. Game mechanics, systems and server logic.')data.en.line='Game mechanics, systems and server logic. Luau / Roblox Studio.';
-let filter='Р’СЃРµ', editIdx=null, mx=0, my=0, first=true;
+
+// Repair older browser drafts affected by UTF-8 text copied as Windows-1251.
+function repairStoredEncoding(value){
+ if(typeof TextDecoder==='undefined')return value;
+ const win=new TextDecoder('windows-1251'),utf=new TextDecoder('utf-8',{fatal:true}),reverse=new Map();
+ for(let i=0;i<256;i++)reverse.set(win.decode(new Uint8Array([i])),i);
+ const score=t=>(t.match(/[\u0420\u0421][\u0400-\u04ff\u0080-\u00ff ]|\u0432\u0402|\u0432\u201e|\u0432\u20ac|\u00d0|\u00d1/g)||[]).length;
+ function fix(t){
+  if(typeof t!=='string')return t;let result=t;
+  for(let pass=0;pass<2&&score(result)>0;pass++){
+   try{const normalized=result.replace(/\u0420 /g,'\u0420\u00a0');const bytes=[];for(const ch of normalized){if(!reverse.has(ch))throw Error();bytes.push(reverse.get(ch));}const decoded=utf.decode(new Uint8Array(bytes));if(score(decoded)>=score(result))break;result=decoded;}catch{break;}
+  }
+  return result;
+ }
+ function walk(v){if(typeof v==='string')return fix(v);if(Array.isArray(v))return v.map(walk);if(v&&typeof v==='object'){const out={};for(const [k,x] of Object.entries(v))out[k]=walk(x);return out;}return v;}
+ return walk(value);
+}
+
+data=repairStoredEncoding(data);
+let filter='\u0412\u0441\u0435', editIdx=null, mx=0, my=0, first=true;
 const editing=()=>document.body.classList.contains('editing');
 const admin=()=>document.body.classList.contains('admin');
 const toast=(t,bad)=>{const e=$('#toast');e.textContent=t;e.classList.toggle('bad',!!bad);e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),2400)};
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({...data,_v:Date.now()}))}catch(e){toast('РќРµ С…РІР°С‚РёР»Рѕ РјРµСЃС‚Р°, РёСЃРїРѕР»СЊР·СѓР№ СЃСЃС‹Р»РєРё РІРјРµСЃС‚Рѕ С„Р°Р№Р»РѕРІ',true)}};
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({...data,_v:Date.now()}))}catch(e){toast('\u041d\u0435 \u0445\u0432\u0430\u0442\u0438\u043b\u043e \u043c\u0435\u0441\u0442\u0430, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439 \u0441\u0441\u044b\u043b\u043a\u0438 \u0432\u043c\u0435\u0441\u0442\u043e \u0444\u0430\u0439\u043b\u043e\u0432',true)}};
 function setAdmin(on){document.body.classList.toggle('admin',on);if(!on&&editing())toggleEdit(false)}
 const raw=p=>p.split('.').reduce((o,k)=>o?.[k],data);
 const get=p=>lang==='en'&&data.en?.[p]!=null?data.en[p]:raw(p);
@@ -427,12 +446,12 @@ function bindText(){
 function links(){
   const u=data.dc||'#';
   ['dcTop','dcHero','dcBox'].forEach(i=>$('#'+i).href=u);
-  const f=$('#dcFoot');f.href=u;f.textContent='Discord В· '+data.nick;
+  const f=$('#dcFoot');f.href=u;f.textContent='Discord \u00b7 '+data.nick;
   $('#bigword').textContent=data.brand;
   $('#brandTop').textContent=data.brand;
-  document.title=data.brand+' вЂ” '+data.role;
+  document.title=data.brand+' \u2014 '+data.role;
 }
-const ctl=p=>`<div class="ctl"><button data-del="${p}" title="РЈРґР°Р»РёС‚СЊ">вњ•</button></div>`;
+const ctl=p=>`<div class="ctl"><button data-del="${p}" title="\u0423\u0434\u0430\u043b\u0438\u0442\u044c">\u2715</button></div>`;
 
 function render(){
   const m=(data.marquee||[]).map((t,i)=>`<span>${esc(get('marquee.'+i))}</span>`).join('');
@@ -476,10 +495,10 @@ function mediaHTML(w,i){
 }
 function renderWorks(){
   const cs=cats();
-  if(filter!=='Р’СЃРµ'&&!cs.includes(filter))filter='Р’СЃРµ';
-  $('#filters').innerHTML=cs.length>1?['Р’СЃРµ',...cs].map(c=>`<button class="chip ${c===filter?'on':''}" data-f="${esc(c)}">${esc(c==='Р’СЃРµ'?ui('Р’СЃРµ','All'):get('works.'+data.works.findIndex(w=>w.cat===c)+'.cat'))}</button>`).join(''):'';
+  if(filter!=='\u0412\u0441\u0435'&&!cs.includes(filter))filter='\u0412\u0441\u0435';
+  $('#filters').innerHTML=cs.length>1?['\u0412\u0441\u0435',...cs].map(c=>`<button class="chip ${c===filter?'on':''}" data-f="${esc(c)}">${esc(c==='\u0412\u0441\u0435'?ui('\u0412\u0441\u0435','All'):get('works.'+data.works.findIndex(w=>w.cat===c)+'.cat'))}</button>`).join(''):'';
   $('#cats').innerHTML=cs.map(c=>`<option value="${esc(get('works.'+data.works.findIndex(w=>w.cat===c)+'.cat'))}">`).join('');
-  $('#worksGrid').innerHTML=data.works.map((w,i)=>`<article tabindex="0" role="button" aria-label="${esc(get('works.'+i+'.title'))}" class="work tilt rv ${filter!=='Р’СЃРµ'&&w.cat!==filter?'hide':''}" data-i="${i}" style="--d:${(i%3)*.08}s"><div class="ctl"><button data-edit="${i}" title="РР·РјРµРЅРёС‚СЊ">вњЋ</button><button data-del="works.${i}" title="РЈРґР°Р»РёС‚СЊ">вњ•</button></div><div class="media">${mediaHTML(w,i)}</div><div class="info"><small>${esc(get('works.'+i+'.cat'))}</small><h3>${esc(get('works.'+i+'.title'))}</h3><p>${esc(get('works.'+i+'.desc'))}</p>${w._translation?.pending?`<span class="translation-state">${ui('РџРµСЂРµРІРѕРґ РѕР¶РёРґР°РµС‚ РїРѕРІС‚РѕСЂР°','Translation pending вЂ” retry')}</span>`:''}</div></article>`).join('')+'<button class="addtile" id="addTile">+ Р”РѕР±Р°РІРёС‚СЊ СЂР°Р±РѕС‚Сѓ</button>';
+  $('#worksGrid').innerHTML=data.works.map((w,i)=>`<article tabindex="0" role="button" aria-label="${esc(get('works.'+i+'.title'))}" class="work tilt rv ${filter!=='\u0412\u0441\u0435'&&w.cat!==filter?'hide':''}" data-i="${i}" style="--d:${(i%3)*.08}s"><div class="ctl"><button data-edit="${i}" title="\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c">\u270e</button><button data-del="works.${i}" title="\u0423\u0434\u0430\u043b\u0438\u0442\u044c">\u2715</button></div><div class="media">${mediaHTML(w,i)}</div><div class="info"><small>${esc(get('works.'+i+'.cat'))}</small><h3>${esc(get('works.'+i+'.title'))}</h3><p>${esc(get('works.'+i+'.desc'))}</p>${w._translation?.pending?`<span class="translation-state">${ui('\u041f\u0435\u0440\u0435\u0432\u043e\u0434 \u043e\u0436\u0438\u0434\u0430\u0435\u0442 \u043f\u043e\u0432\u0442\u043e\u0440\u0430','Translation pending \u2014 retry')}</span>`:''}</div></article>`).join('')+'<button class="addtile" id="addTile">+ \u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0440\u0430\u0431\u043e\u0442\u0443</button>';
   $('#empty').style.display=data.works.length?'none':'block';
 }
 
@@ -589,12 +608,12 @@ addEventListener('scroll',()=>{
 document.addEventListener('click',e=>{
   const t=e.target;
   const f=t.closest('[data-f]');if(f){filter=f.dataset.f;renderWorks();bindText();$$('.work').forEach(w=>w.classList.add('in'));return}
-  const del=t.closest('[data-del]');if(del){e.stopPropagation();if(!confirm('РЈРґР°Р»РёС‚СЊ?'))return;
+  const del=t.closest('[data-del]');if(del){e.stopPropagation();if(!confirm('\u0423\u0434\u0430\u043b\u0438\u0442\u044c?'))return;
     const ks=del.dataset.del.split('.');const i=+ks.pop();const base=ks.join('.');get(base).splice(i,1);
     const translated={};for(const [key,value] of Object.entries(data.en||{})){const prefix=base+'.';if(key.startsWith(prefix)){const rest=key.slice(prefix.length),m=rest.match(/^(\d+)(.*)$/);if(m){const old=+m[1];if(old===i)continue;translated[prefix+(old>i?old-1:old)+m[2]]=value;continue;}}translated[key]=value;}data.en=translated;
     save();render();return}
   const eb=t.closest('[data-edit]');if(eb){e.stopPropagation();openWork(+eb.dataset.edit);return}
-  const add=t.closest('[data-add]');if(add){if(add.dataset.add==='nodo')data.nodo.push('РќРѕРІС‹Р№ РїСѓРЅРєС‚');save();render();return}
+  const add=t.closest('[data-add]');if(add){if(add.dataset.add==='nodo')data.nodo.push('\u041d\u043e\u0432\u044b\u0439 \u043f\u0443\u043d\u043a\u0442');save();render();return}
   if(t.closest('#addTile')){openWork(null);return}
   const w=t.closest('.work');if(w&&!editing())openLB(+w.dataset.i);
 });
@@ -604,7 +623,7 @@ document.addEventListener('focusout',e=>{
   if(p==='brand'||p==='role'||p==='nick')links();
 });
 document.addEventListener('keydown',e=>{
-  if((e.ctrlKey||e.metaKey)&&e.shiftKey&&e.code==='KeyE'){e.preventDefault();const on=!admin();setAdmin(on);toast(on?'РђРґРјРёРЅ-РїР°РЅРµР»СЊ РѕС‚РєСЂС‹С‚Р°':'РђРґРјРёРЅ-РїР°РЅРµР»СЊ СЃРєСЂС‹С‚Р°');return}
+  if((e.ctrlKey||e.metaKey)&&e.shiftKey&&e.code==='KeyE'){e.preventDefault();const on=!admin();setAdmin(on);toast(on?'\u0410\u0434\u043c\u0438\u043d-\u043f\u0430\u043d\u0435\u043b\u044c \u043e\u0442\u043a\u0440\u044b\u0442\u0430':'\u0410\u0434\u043c\u0438\u043d-\u043f\u0430\u043d\u0435\u043b\u044c \u0441\u043a\u0440\u044b\u0442\u0430');return}
   if(e.key==='Enter'&&e.target.dataset?.p&&e.target.dataset.multi===undefined){e.preventDefault();e.target.blur()}
   if(e.key==='Escape'){closeLB();$$('.modal').forEach(m=>m.classList.remove('open'))}
 });
@@ -613,10 +632,10 @@ document.addEventListener('pointerout',e=>{const w=e.target.closest?.('.work');i
 
 function openLB(i){
   const w=data.works[i];if(!w)return;let h;
-  if(w.type==='youtube'){const y=ytParse(w.src);h=y.id?`<iframe src="https://www.youtube.com/embed/${y.id}?autoplay=1&rel=0&playsinline=1${y.start?'&start='+y.start:''}" title="${esc(get('works.'+i+'.title'))}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`:'<p style="color:#888">РќРµРІРµСЂРЅР°СЏ СЃСЃС‹Р»РєР° РЅР° YouTube</p>'}
+  if(w.type==='youtube'){const y=ytParse(w.src);h=y.id?`<iframe src="https://www.youtube.com/embed/${y.id}?autoplay=1&rel=0&playsinline=1${y.start?'&start='+y.start:''}" title="${esc(get('works.'+i+'.title'))}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`:'<p style="color:#888">\u041d\u0435\u0432\u0435\u0440\u043d\u0430\u044f \u0441\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 YouTube</p>'}
   else if(w.type==='video'&&w.src)h=`<video src="${esc(w.src)}" controls autoplay loop playsinline></video>`;
   else if(w.src)h=`<img src="${esc(w.src)}" alt="">`;
-  else h='<p style="color:#888">Р’РёРґРµРѕ РїРѕРєР° РЅРµ РґРѕР±Р°РІР»РµРЅРѕ</p>';
+  else h='<p style="color:#888">\u0412\u0438\u0434\u0435\u043e \u043f\u043e\u043a\u0430 \u043d\u0435 \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u043e</p>';
   $('#lbm').innerHTML=h;$('#lbt').textContent=get('works.'+i+'.title');$('#lbd').textContent=get('works.'+i+'.desc');$('#lb').classList.add('open');document.body.classList.add('media-open');$('#lbx').focus();
 }
 function closeLB(){const was=$('#lb').classList.contains('open');$('#lb').classList.remove('open');document.body.classList.remove('media-open');$('#lbm').innerHTML='';if(was)$('#worksGrid .work')?.focus({preventScroll:true});}
@@ -625,8 +644,8 @@ $('#lbx').onclick=closeLB;$('#lb').addEventListener('click',e=>{if(e.target.id==
 let fileData=null;
 function openWork(i){
   editIdx=i;fileData=null;const w=i==null?{title:'',cat:'',type:'youtube',src:'',desc:''}:data.works[i];
-  $('#wmt').textContent=i==null?'РќРѕРІР°СЏ СЂР°Р±РѕС‚Р°':'РР·РјРµРЅРёС‚СЊ СЂР°Р±РѕС‚Сѓ';
-  $('#w_t').value=i==null?'':get('works.'+i+'.title');$('#w_c').value=i==null?'':get('works.'+i+'.cat');$('#w_ty').value=w.type;$('#w_s').value=w.src.startsWith('data:')?'':w.src;$('#w_d').value=i==null?'':get('works.'+i+'.desc');$('#w_f').value='';$('#fileName').textContent=ui('Р¤Р°Р№Р» РЅРµ РІС‹Р±СЂР°РЅ','No file selected');
+  $('#wmt').textContent=i==null?'\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430':'\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c \u0440\u0430\u0431\u043e\u0442\u0443';
+  $('#w_t').value=i==null?'':get('works.'+i+'.title');$('#w_c').value=i==null?'':get('works.'+i+'.cat');$('#w_ty').value=w.type;$('#w_s').value=w.src.startsWith('data:')?'':w.src;$('#w_d').value=i==null?'':get('works.'+i+'.desc');$('#w_f').value='';$('#fileName').textContent=ui('\u0424\u0430\u0439\u043b \u043d\u0435 \u0432\u044b\u0431\u0440\u0430\u043d','No file selected');
   $('#wm').classList.add('open');translateStatic();
   setTimeout(()=>$('#w_t').focus({preventScroll:true}),60);
 }
@@ -634,12 +653,12 @@ $('#wcancel').onclick=()=>$('#wm').classList.remove('open');
 $('#w_f').onchange=e=>{
   const f=e.target.files[0];if(!f)return;
   $('#fileName').textContent=f.name;$('#w_ty').value=f.type.startsWith('video/')?'video':'image';
-  if(f.size>3*1024*1024)toast('Р¤Р°Р№Р» Р±РѕР»СЊС€Рµ 3 РњР‘, РјРѕР¶РµС‚ РЅРµ СЃРѕС…СЂР°РЅРёС‚СЊСЃСЏ. Р›СѓС‡С€Рµ СЃСЃС‹Р»РєР°.');
-  const r=new FileReader();r.onload=()=>{fileData=r.result;toast('Р¤Р°Р№Р» Р·Р°РіСЂСѓР¶РµРЅ')};r.readAsDataURL(f);
+  if(f.size>3*1024*1024)toast('\u0424\u0430\u0439\u043b \u0431\u043e\u043b\u044c\u0448\u0435 3 \u041c\u0411, \u043c\u043e\u0436\u0435\u0442 \u043d\u0435 \u0441\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c\u0441\u044f. \u041b\u0443\u0447\u0448\u0435 \u0441\u0441\u044b\u043b\u043a\u0430.');
+  const r=new FileReader();r.onload=()=>{fileData=r.result;toast('\u0424\u0430\u0439\u043b \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043d')};r.readAsDataURL(f);
 };
-/* Automatic RU в†” EN translation for newly saved work. */
+/* Automatic RU \u2194 EN translation for newly saved work. */
 const translationCache=new Map();
-function detectLanguage(text,fallback=lang){return /[Р°-СЏС‘]/i.test(text)?'ru':/[a-z]/i.test(text)?'en':fallback;}
+function detectLanguage(text,fallback=lang){return /[\u0430-\u044f\u0451]/i.test(text)?'ru':/[a-z]/i.test(text)?'en':fallback;}
 function chunksForTranslation(text){
  const chunks=[];let current='';
  for(const ch of text){if(new TextEncoder().encode(current+ch).length>450){chunks.push(current);current='';}current+=ch;}
@@ -685,9 +704,9 @@ async function translateWork(i,sourceFallback='ru'){
 let workSaving=false;
 $('#wf').onsubmit=async e=>{
  e.preventDefault();if(workSaving)return;workSaving=true;
- const submit=$('#wf button[type=submit]'),previousLabel=submit.textContent;submit.disabled=true;submit.textContent=ui('РџРµСЂРµРІРѕР¶СѓвЂ¦','TranslatingвЂ¦');
+ const submit=$('#wf button[type=submit]'),previousLabel=submit.textContent;submit.disabled=true;submit.textContent=ui('\u041f\u0435\u0440\u0435\u0432\u043e\u0436\u0443\u2026','Translating\u2026');
  const index=editIdx==null?data.works.length:editIdx,old=data.works[index];
- const sourceInput={title:$('#w_t').value.trim(),cat:$('#w_c').value.trim()||ui('Р Р°Р·РЅРѕРµ','Other'),desc:$('#w_d').value.trim()};
+ const sourceInput={title:$('#w_t').value.trim(),cat:$('#w_c').value.trim()||ui('\u0420\u0430\u0437\u043d\u043e\u0435','Other'),desc:$('#w_d').value.trim()};
  const src=fileData||$('#w_s').value.trim()||(old?.src.startsWith('data:')?old.src:'');let type=$('#w_ty').value;
  if(ytId(src))type='youtube';else if(type==='youtube'&&/\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(src))type='video';
  const w={...old,...sourceInput,type,src,_translation:{inputs:sourceInput,source:lang,pending:['title','desc','cat']}};
@@ -699,7 +718,7 @@ $('#wf').onsubmit=async e=>{
   for(const f of ['title','desc','cat'])data.en['works.'+index+'.'+f]=sourceInput[f];
   save(); // A failed service never loses the new work.
   const ok=await translateWork(index,lang);save();$('#wm').classList.remove('open');render();
-  toast(ok?ui('Р Р°Р±РѕС‚Р° СЃРѕС…СЂР°РЅРµРЅР° Рё РїРµСЂРµРІРµРґРµРЅР°','Work saved and translated'):ui('Р Р°Р±РѕС‚Р° СЃРѕС…СЂР°РЅРµРЅР°. РџРµСЂРµРІРѕРґ РЅРµРґРѕСЃС‚СѓРїРµРЅ вЂ” РїРѕРІС‚РѕСЂРё РёР· СЂРµРґР°РєС‚РѕСЂР°.','Work saved. Translation unavailable вЂ” retry from the editor.'),!ok);
+  toast(ok?ui('\u0420\u0430\u0431\u043e\u0442\u0430 \u0441\u043e\u0445\u0440\u0430\u043d\u0435\u043d\u0430 \u0438 \u043f\u0435\u0440\u0435\u0432\u0435\u0434\u0435\u043d\u0430','Work saved and translated'):ui('\u0420\u0430\u0431\u043e\u0442\u0430 \u0441\u043e\u0445\u0440\u0430\u043d\u0435\u043d\u0430. \u041f\u0435\u0440\u0435\u0432\u043e\u0434 \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d \u2014 \u043f\u043e\u0432\u0442\u043e\u0440\u0438 \u0438\u0437 \u0440\u0435\u0434\u0430\u043a\u0442\u043e\u0440\u0430.','Work saved. Translation unavailable \u2014 retry from the editor.'),!ok);
  }finally{formInputs.forEach(n=>n.disabled=false);submit.textContent=previousLabel;workSaving=false;}
 };
 
@@ -710,14 +729,14 @@ $$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classLi
 
 function toggleEdit(force){
   const on=document.body.classList.toggle('editing',force);
-  $('#tgl').textContent=on?'вњ“ Р“РѕС‚РѕРІРѕ':'вњЋ Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ';
-  render();if(admin())toast(on?'РљР»РёРєР°Р№ РїРѕ С‚РµРєСЃС‚Сѓ, С‡С‚РѕР±С‹ РјРµРЅСЏС‚СЊ':'РЎРѕС…СЂР°РЅРµРЅРѕ');
+  $('#tgl').textContent=on?'\u2713 \u0413\u043e\u0442\u043e\u0432\u043e':'\u270e \u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c';
+  render();if(admin())toast(on?'\u041a\u043b\u0438\u043a\u0430\u0439 \u043f\u043e \u0442\u0435\u043a\u0441\u0442\u0443, \u0447\u0442\u043e\u0431\u044b \u043c\u0435\u043d\u044f\u0442\u044c':'\u0421\u043e\u0445\u0440\u0430\u043d\u0435\u043d\u043e');
 }
 $('#tgl').onclick=()=>toggleEdit();
 if(new URLSearchParams(location.search).get('edit')==='1')setAdmin(true);
 $$('.modal,.lb').forEach(n=>new MutationObserver(()=>document.documentElement.classList.toggle('lock',!!$('.modal.open,.lb.open'))).observe(n,{attributes:true,attributeFilter:['class']}));
 $('#bAdd').onclick=()=>openWork(null);
-$('#bRes').onclick=()=>{if(confirm('РЎР±СЂРѕСЃРёС‚СЊ РІСЃС‘?')){localStorage.removeItem(KEY);data=JSON.parse(JSON.stringify(seed));render()}};
+$('#bRes').onclick=()=>{if(confirm('\u0421\u0431\u0440\u043e\u0441\u0438\u0442\u044c \u0432\u0441\u0451?')){localStorage.removeItem(KEY);data=JSON.parse(JSON.stringify(seed));render()}};
 $('#bExp').onclick=()=>{
   data._v=Date.now();save();
   const c=document.documentElement.cloneNode(true);
@@ -738,16 +757,16 @@ $('#bExp').onclick=()=>{
   const url=URL.createObjectURL(new Blob(['<!doctype html>\n'+c.outerHTML],{type:'text/html'}));
   const a=document.createElement('a');a.href=url;a.download='index.html';document.body.appendChild(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(url),4000);
-  toast('РЎРєР°С‡Р°РЅ index.html вЂ” Р·Р°РіСЂСѓР·Рё РµРіРѕ РІ GitHub');
+  toast('\u0421\u043a\u0430\u0447\u0430\u043d index.html \u2014 \u0437\u0430\u0433\u0440\u0443\u0437\u0438 \u0435\u0433\u043e \u0432 GitHub');
 };
 $('#bImp').onclick=()=>$('#impf').click();
-$('#impf').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{data=JSON.parse(r.result);save();render();toast('РРјРїРѕСЂС‚РёСЂРѕРІР°РЅРѕ')}catch(x){toast('Р¤Р°Р№Р» РЅРµ РїРѕРґРѕС€С‘Р»')}};r.readAsText(f)};
+$('#impf').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{data=JSON.parse(r.result);save();render();toast('\u0418\u043c\u043f\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u043e')}catch(x){toast('\u0424\u0430\u0439\u043b \u043d\u0435 \u043f\u043e\u0434\u043e\u0448\u0451\u043b')}};r.readAsText(f)};
 function copyText(t){
   if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t);
   return new Promise((res,rej)=>{try{const a=document.createElement('textarea');a.value=t;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();const ok=document.execCommand('copy');a.remove();ok?res():rej()}catch(e){rej(e)}});
 }
 $('#copyNick').onclick=()=>{const b=$('#copyNick');
-  copyText(data.nick).then(()=>{toast('РќРёРє СЃРєРѕРїРёСЂРѕРІР°РЅ!');b.textContent='РЎРєРѕРїРёСЂРѕРІР°РЅРѕ вњ“';clearTimeout(b.t);b.t=setTimeout(()=>{b.textContent='РЎРєРѕРїРёСЂРѕРІР°С‚СЊ РЅРёРє'},1800)},()=>toast('РќРµ СѓРґР°Р»РѕСЃСЊ СЃРєРѕРїРёСЂРѕРІР°С‚СЊ: '+data.nick,true))};
+  copyText(data.nick).then(()=>{toast('\u041d\u0438\u043a \u0441\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d!');b.textContent='\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u2713';clearTimeout(b.t);b.t=setTimeout(()=>{b.textContent='\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043d\u0438\u043a'},1800)},()=>toast('\u041d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c \u0441\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c: '+data.nick,true))};
 
 /* ---------- intro ---------- */
 (()=>{const it=$('#intro'),cn=$('#cnt'),b=$('#bar2');const t0=performance.now();
@@ -850,7 +869,7 @@ $('#copyNick').onclick=()=>{const b=$('#copyNick');
 })();
 
 /* -------- Portfolio functionality -------- */
-const staticPairs = [["Р Р°Р±РѕС‚С‹", "Work"], ["РЈСЃР»РѕРІРёСЏ", "Details"], ["РљРѕРЅС‚Р°РєС‚С‹", "Contact"], ["Р Р°Р±РѕС‚С‹ в†“", "Explore work в†“"], ["Р”Рѕ СЃС‚Р°СЂС‚Р°", "Before we start"], ["РќРµСЃРєРѕР»СЊРєРѕ РѕС‚РІРµС‚РѕРІ, С‡С‚РѕР±С‹ Р±С‹СЃС‚СЂРµРµ РїРµСЂРµР№С‚Рё Рє РґРµР»Сѓ.", "A few answers to get things moving."], ["РћС‚РєСЂС‹С‚СЊ Discord в†’", "Open Discord в†’"], ["РЎРѕСЃС‚Р°РІРёС‚СЊ Р·Р°СЏРІРєСѓ в†—", "Create a brief в†—"], ["РЎРєРѕРїРёСЂРѕРІР°С‚СЊ РЅРёРє", "Copy username"], ["РџСЂРѕРµРєС‚С‹ СЃРєРѕСЂРѕ РїРѕСЏРІСЏС‚СЃСЏ", "Projects are coming soon"], ["РќРѕРІР°СЏ СЂР°Р±РѕС‚Р°", "New work"], ["РР·РјРµРЅРёС‚СЊ СЂР°Р±РѕС‚Сѓ", "Edit work"], ["РќР°Р·РІР°РЅРёРµ", "Title"], ["РљР°С‚РµРіРѕСЂРёСЏ", "Category"], ["РўРёРї", "Type"], ["Р’РёРґРµРѕ (С„Р°Р№Р» / .mp4)", "Video (file / .mp4)"], ["Р¤РѕС‚Рѕ / СЃРєСЂРёРЅС€РѕС‚", "Image / screenshot"], ["РЎСЃС‹Р»РєР° (YouTube, mp4, РєР°СЂС‚РёРЅРєР°)", "URL (YouTube, mp4, image)"], ["Р’С‹Р±СЂР°С‚СЊ РјРµРґРёР° в†—", "Choose media в†—"], ["Р¤Р°Р№Р» РЅРµ РІС‹Р±СЂР°РЅ", "No file selected"], ["Р¤Р°Р№Р»С‹ С…СЂР°РЅСЏС‚СЃСЏ РІ СЃР°РјРѕРј СЃР°Р№С‚Рµ, Р±РѕР»СЊС€РёРµ РІРёРґРµРѕ Р»СѓС‡С€Рµ СЃСЃС‹Р»РєРѕР№.", "Files are embedded in the site. Use links for large videos."], ["РћРїРёСЃР°РЅРёРµ", "Description"], ["РћС‚РјРµРЅР°", "Cancel"], ["РЎРѕС…СЂР°РЅРёС‚СЊ", "Save"], ["РќР°СЃС‚СЂРѕР№РєРё", "Settings"], ["РЎСЃС‹Р»РєР° РЅР° Discord (РїСЂРёРіР»Р°С€РµРЅРёРµ РёР»Рё РїСЂРѕС„РёР»СЊ)", "Discord URL (invite or profile)"], ["Р”РѕСЃС‚СѓРїРЅРѕСЃС‚СЊ", "Availability"], ["РћС‚РєСЂС‹С‚ РґР»СЏ Р·Р°РєР°Р·РѕРІ", "Open for commissions"], ["Р—Р°РЅСЏС‚", "Busy"], ["Р—Р°РЅСЏС‚ РґРѕ (РЅРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ)", "Busy until (optional)"], ["Р‘РµРіСѓС‰Р°СЏ СЃС‚СЂРѕРєР° (С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ)", "Marquee (comma-separated)"], ["URL СЃРµСЂРІРёСЃР° РїРµСЂРµРІРѕРґР° (LibreTranslate API, РЅРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ)", "Translation endpoint (LibreTranslate API, optional)"], ["РќРѕРІС‹Рµ СЂР°Р±РѕС‚С‹ РїРµСЂРµРІРѕРґСЏС‚СЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё С‡РµСЂРµР· MyMemory. РњРѕР¶РЅРѕ СѓРєР°Р·Р°С‚СЊ СЃРІРѕР№ LibreTranslate-СЃРµСЂРІРёСЃ. РџСѓР±Р»РёС‡РЅС‹Рµ С‚РµРєСЃС‚С‹ РѕС‚РїСЂР°РІР»СЏСЋС‚СЃСЏ СЃРµСЂРІРёСЃСѓ РїРµСЂРµРІРѕРґР°; СЃРµРєСЂРµС‚РЅС‹Рµ РєР»СЋС‡Рё Р·РґРµСЃСЊ РЅРµ РЅСѓР¶РЅС‹.", "New work is translated automatically with MyMemory. You can set a custom LibreTranslate endpoint. Public text is sent to the translation service; no secret keys are needed."], ["Р”Р»СЏ Р¶РёРІРѕРіРѕ СЃС‚Р°С‚СѓСЃР° РІСЃС‚СѓРїРё РІ Discord-СЃРµСЂРІРµСЂ Lanyard. Р‘РµР· РїРѕРґРєР»СЋС‡РµРЅРёСЏ РїРѕРєР°Р·С‹РІР°РµС‚СЃСЏ В«РЎС‚Р°С‚СѓСЃ РЅРµРґРѕСЃС‚СѓРїРµРЅВ».", "Join the Lanyard Discord server to enable live presence. Without a connection the status is unavailable."], ["РџСѓР±Р»РёС‡РЅС‹Р№ Р°РґСЂРµСЃ СЃР°Р№С‚Р° (РґР»СЏ СЌРєСЃРїРѕСЂС‚Р° OG)", "Public site URL (for OG export)"], ["вњЋ Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ", "вњЋ Edit"], ["вњ“ Р“РѕС‚РѕРІРѕ", "вњ“ Done"], ["+ Р Р°Р±РѕС‚Р°", "+ Work"], ["+ Р”РѕР±Р°РІРёС‚СЊ СЂР°Р±РѕС‚Сѓ", "+ Add work"], ["+ РџСѓРЅРєС‚", "+ Item"], ["РљРѕРЅС‚РµРЅС‚ / JSON", "Content / JSON"], ["ZIP РёСЃС…РѕРґРЅРёРєРѕРІ", "Source ZIP"], ["РЎРєР°С‡Р°С‚СЊ data.json", "Export data.json"], ["РЎРєР°С‡Р°С‚СЊ СЃР°Р№С‚", "Export site"], ["РРјРїРѕСЂС‚", "Import"], ["РЎР±СЂРѕСЃ", "Reset"], ["РЎ С‡РµРіРѕ РЅР°С‡РЅС‘Рј?", "What are we building?"], ["Р—Р°РїРѕР»РЅРё РєРѕСЂРѕС‚РєРѕ вЂ” РїРѕР»СѓС‡РёС€СЊ РіРѕС‚РѕРІС‹Р№ С‚РµРєСЃС‚ РґР»СЏ Discord.", "Fill this in to get a ready-to-copy Discord message."], ["Р§С‚Рѕ РЅСѓР¶РЅРѕ СЃРґРµР»Р°С‚СЊ?", "What needs to be built?"], ["Р‘СЋРґР¶РµС‚", "Budget"], ["Р–РµР»Р°РµРјС‹Р№ СЃСЂРѕРє", "Preferred timeline"], ["РЎСЃС‹Р»РєРё Рё РїСЂРёРјРµСЂС‹", "Links and references"], ["РќРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ", "Optional"], ["Р—Р°РєСЂС‹С‚СЊ", "Close"], ["РЎРєРѕРїРёСЂРѕРІР°С‚СЊ Р·Р°СЏРІРєСѓ", "Copy brief"], ["РџРµСЂРµР№С‚Рё РІ Discord в†—", "Continue to Discord в†—"], ["РџСЂРёРјРµРЅРёС‚СЊ", "Apply"], ["Р—РґРµСЃСЊ СЂРµРґР°РєС‚РёСЂСѓСЋС‚СЃСЏ СЂР°Р±РѕС‚С‹, СѓСЃР»РѕРІРёСЏ, FAQ Рё РїРµСЂРµРІРѕРґС‹. en СЃРѕРґРµСЂР¶РёС‚ РїРµСЂРµРІРѕРґС‹ РїРѕ РїСѓС‚Рё РїРѕР»СЏ, РЅР°РїСЂРёРјРµСЂ works.0.title. РџРѕСЃР»Рµ РїСЂР°РІРѕРє РЅР°Р¶РјРё В«РЎРєР°С‡Р°С‚СЊ СЃР°Р№С‚В» Рё Р·Р°РјРµРЅРё index.html РІ GitHub.", "Edit work, terms, FAQ and translations here. en stores translations by field path, e.g. works.0.title. After editing, export the site and replace index.html in GitHub."], ["РџРѕРІС‚РѕСЂРёС‚СЊ РїРµСЂРµРІРѕРґ", "Retry translation"]];
+const staticPairs = [["\u0420\u0430\u0431\u043e\u0442\u044b", "Work"], ["\u0423\u0441\u043b\u043e\u0432\u0438\u044f", "Details"], ["\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b", "Contact"], ["\u0420\u0430\u0431\u043e\u0442\u044b \u2193", "Explore work \u2193"], ["\u0414\u043e \u0441\u0442\u0430\u0440\u0442\u0430", "Before we start"], ["\u041d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432, \u0447\u0442\u043e\u0431\u044b \u0431\u044b\u0441\u0442\u0440\u0435\u0435 \u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u043a \u0434\u0435\u043b\u0443.", "A few answers to get things moving."], ["\u041e\u0442\u043a\u0440\u044b\u0442\u044c Discord \u2192", "Open Discord \u2192"], ["\u0421\u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u044f\u0432\u043a\u0443 \u2197", "Create a brief \u2197"], ["\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043d\u0438\u043a", "Copy username"], ["\u041f\u0440\u043e\u0435\u043a\u0442\u044b \u0441\u043a\u043e\u0440\u043e \u043f\u043e\u044f\u0432\u044f\u0442\u0441\u044f", "Projects are coming soon"], ["\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430", "New work"], ["\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c \u0440\u0430\u0431\u043e\u0442\u0443", "Edit work"], ["\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", "Title"], ["\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f", "Category"], ["\u0422\u0438\u043f", "Type"], ["\u0412\u0438\u0434\u0435\u043e (\u0444\u0430\u0439\u043b / .mp4)", "Video (file / .mp4)"], ["\u0424\u043e\u0442\u043e / \u0441\u043a\u0440\u0438\u043d\u0448\u043e\u0442", "Image / screenshot"], ["\u0421\u0441\u044b\u043b\u043a\u0430 (YouTube, mp4, \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0430)", "URL (YouTube, mp4, image)"], ["\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043c\u0435\u0434\u0438\u0430 \u2197", "Choose media \u2197"], ["\u0424\u0430\u0439\u043b \u043d\u0435 \u0432\u044b\u0431\u0440\u0430\u043d", "No file selected"], ["\u0424\u0430\u0439\u043b\u044b \u0445\u0440\u0430\u043d\u044f\u0442\u0441\u044f \u0432 \u0441\u0430\u043c\u043e\u043c \u0441\u0430\u0439\u0442\u0435, \u0431\u043e\u043b\u044c\u0448\u0438\u0435 \u0432\u0438\u0434\u0435\u043e \u043b\u0443\u0447\u0448\u0435 \u0441\u0441\u044b\u043b\u043a\u043e\u0439.", "Files are embedded in the site. Use links for large videos."], ["\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435", "Description"], ["\u041e\u0442\u043c\u0435\u043d\u0430", "Cancel"], ["\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", "Save"], ["\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438", "Settings"], ["\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 Discord (\u043f\u0440\u0438\u0433\u043b\u0430\u0448\u0435\u043d\u0438\u0435 \u0438\u043b\u0438 \u043f\u0440\u043e\u0444\u0438\u043b\u044c)", "Discord URL (invite or profile)"], ["\u0414\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0441\u0442\u044c", "Availability"], ["\u041e\u0442\u043a\u0440\u044b\u0442 \u0434\u043b\u044f \u0437\u0430\u043a\u0430\u0437\u043e\u0432", "Open for commissions"], ["\u0417\u0430\u043d\u044f\u0442", "Busy"], ["\u0417\u0430\u043d\u044f\u0442 \u0434\u043e (\u043d\u0435\u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e)", "Busy until (optional)"], ["\u0411\u0435\u0433\u0443\u0449\u0430\u044f \u0441\u0442\u0440\u043e\u043a\u0430 (\u0447\u0435\u0440\u0435\u0437 \u0437\u0430\u043f\u044f\u0442\u0443\u044e)", "Marquee (comma-separated)"], ["URL \u0441\u0435\u0440\u0432\u0438\u0441\u0430 \u043f\u0435\u0440\u0435\u0432\u043e\u0434\u0430 (LibreTranslate API, \u043d\u0435\u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e)", "Translation endpoint (LibreTranslate API, optional)"], ["\u041d\u043e\u0432\u044b\u0435 \u0440\u0430\u0431\u043e\u0442\u044b \u043f\u0435\u0440\u0435\u0432\u043e\u0434\u044f\u0442\u0441\u044f \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0447\u0435\u0440\u0435\u0437 MyMemory. \u041c\u043e\u0436\u043d\u043e \u0443\u043a\u0430\u0437\u0430\u0442\u044c \u0441\u0432\u043e\u0439 LibreTranslate-\u0441\u0435\u0440\u0432\u0438\u0441. \u041f\u0443\u0431\u043b\u0438\u0447\u043d\u044b\u0435 \u0442\u0435\u043a\u0441\u0442\u044b \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0442\u0441\u044f \u0441\u0435\u0440\u0432\u0438\u0441\u0443 \u043f\u0435\u0440\u0435\u0432\u043e\u0434\u0430; \u0441\u0435\u043a\u0440\u0435\u0442\u043d\u044b\u0435 \u043a\u043b\u044e\u0447\u0438 \u0437\u0434\u0435\u0441\u044c \u043d\u0435 \u043d\u0443\u0436\u043d\u044b.", "New work is translated automatically with MyMemory. You can set a custom LibreTranslate endpoint. Public text is sent to the translation service; no secret keys are needed."], ["\u0414\u043b\u044f \u0436\u0438\u0432\u043e\u0433\u043e \u0441\u0442\u0430\u0442\u0443\u0441\u0430 \u0432\u0441\u0442\u0443\u043f\u0438 \u0432 Discord-\u0441\u0435\u0440\u0432\u0435\u0440 Lanyard. \u0411\u0435\u0437 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u044f \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u00ab\u0421\u0442\u0430\u0442\u0443\u0441 \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d\u00bb.", "Join the Lanyard Discord server to enable live presence. Without a connection the status is unavailable."], ["\u041f\u0443\u0431\u043b\u0438\u0447\u043d\u044b\u0439 \u0430\u0434\u0440\u0435\u0441 \u0441\u0430\u0439\u0442\u0430 (\u0434\u043b\u044f \u044d\u043a\u0441\u043f\u043e\u0440\u0442\u0430 OG)", "Public site URL (for OG export)"], ["\u270e \u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c", "\u270e Edit"], ["\u2713 \u0413\u043e\u0442\u043e\u0432\u043e", "\u2713 Done"], ["+ \u0420\u0430\u0431\u043e\u0442\u0430", "+ Work"], ["+ \u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0440\u0430\u0431\u043e\u0442\u0443", "+ Add work"], ["+ \u041f\u0443\u043d\u043a\u0442", "+ Item"], ["\u041a\u043e\u043d\u0442\u0435\u043d\u0442 / JSON", "Content / JSON"], ["ZIP \u0438\u0441\u0445\u043e\u0434\u043d\u0438\u043a\u043e\u0432", "Source ZIP"], ["\u0421\u043a\u0430\u0447\u0430\u0442\u044c data.json", "Export data.json"], ["\u0421\u043a\u0430\u0447\u0430\u0442\u044c \u0441\u0430\u0439\u0442", "Export site"], ["\u0418\u043c\u043f\u043e\u0440\u0442", "Import"], ["\u0421\u0431\u0440\u043e\u0441", "Reset"], ["\u0421 \u0447\u0435\u0433\u043e \u043d\u0430\u0447\u043d\u0451\u043c?", "What are we building?"], ["\u0417\u0430\u043f\u043e\u043b\u043d\u0438 \u043a\u043e\u0440\u043e\u0442\u043a\u043e \u2014 \u043f\u043e\u043b\u0443\u0447\u0438\u0448\u044c \u0433\u043e\u0442\u043e\u0432\u044b\u0439 \u0442\u0435\u043a\u0441\u0442 \u0434\u043b\u044f Discord.", "Fill this in to get a ready-to-copy Discord message."], ["\u0427\u0442\u043e \u043d\u0443\u0436\u043d\u043e \u0441\u0434\u0435\u043b\u0430\u0442\u044c?", "What needs to be built?"], ["\u0411\u044e\u0434\u0436\u0435\u0442", "Budget"], ["\u0416\u0435\u043b\u0430\u0435\u043c\u044b\u0439 \u0441\u0440\u043e\u043a", "Preferred timeline"], ["\u0421\u0441\u044b\u043b\u043a\u0438 \u0438 \u043f\u0440\u0438\u043c\u0435\u0440\u044b", "Links and references"], ["\u041d\u0435\u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e", "Optional"], ["\u0417\u0430\u043a\u0440\u044b\u0442\u044c", "Close"], ["\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0437\u0430\u044f\u0432\u043a\u0443", "Copy brief"], ["\u041f\u0435\u0440\u0435\u0439\u0442\u0438 \u0432 Discord \u2197", "Continue to Discord \u2197"], ["\u041f\u0440\u0438\u043c\u0435\u043d\u0438\u0442\u044c", "Apply"], ["\u0417\u0434\u0435\u0441\u044c \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u0443\u044e\u0442\u0441\u044f \u0440\u0430\u0431\u043e\u0442\u044b, \u0443\u0441\u043b\u043e\u0432\u0438\u044f, FAQ \u0438 \u043f\u0435\u0440\u0435\u0432\u043e\u0434\u044b. en \u0441\u043e\u0434\u0435\u0440\u0436\u0438\u0442 \u043f\u0435\u0440\u0435\u0432\u043e\u0434\u044b \u043f\u043e \u043f\u0443\u0442\u0438 \u043f\u043e\u043b\u044f, \u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440 works.0.title. \u041f\u043e\u0441\u043b\u0435 \u043f\u0440\u0430\u0432\u043e\u043a \u043d\u0430\u0436\u043c\u0438 \u00ab\u0421\u043a\u0430\u0447\u0430\u0442\u044c \u0441\u0430\u0439\u0442\u00bb \u0438 \u0437\u0430\u043c\u0435\u043d\u0438 index.html \u0432 GitHub.", "Edit work, terms, FAQ and translations here. en stores translations by field path, e.g. works.0.title. After editing, export the site and replace index.html in GitHub."], ["\u041f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u044c \u043f\u0435\u0440\u0435\u0432\u043e\u0434", "Retry translation"]];
 const ruEn=new Map(staticPairs), enRu=new Map(staticPairs.map(([r,e])=>[e,r]));
 function translateStatic(){
   document.documentElement.lang=lang;
@@ -860,17 +879,17 @@ function translateStatic(){
     const text=n.textContent.trim(),r=enRu.get(text)||text;
     if(ruEn.has(r))n.textContent=n.textContent.replace(text,lang==='en'?ruEn.get(r):r);
   }
-  $$('[placeholder]').forEach(e=>{const r=e.dataset.ruPlaceholder||e.getAttribute('placeholder');e.dataset.ruPlaceholder=r;const map={'РЎРёСЃС‚РµРјР° РёРЅРІРµРЅС‚Р°СЂСЏ':'Inventory system','РњРµС…Р°РЅРёРєРё':'Mechanics','РќР°РїСЂРёРјРµСЂ, РјР°РіР°Р·РёРЅ РїСЂРµРґРјРµС‚РѕРІ СЃ СЃРѕС…СЂР°РЅРµРЅРёРµРј РїРѕРєСѓРїРѕРє':'For example, an item shop with persistent purchases','РќР°РїСЂРёРјРµСЂ, 7 РґРЅРµР№':'For example, 7 days','РќРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ':'Optional'};e.placeholder=lang==='en'?(map[r]||r):r;});
+  $$('[placeholder]').forEach(e=>{const r=e.dataset.ruPlaceholder||e.getAttribute('placeholder');e.dataset.ruPlaceholder=r;const map={'\u0421\u0438\u0441\u0442\u0435\u043c\u0430 \u0438\u043d\u0432\u0435\u043d\u0442\u0430\u0440\u044f':'Inventory system','\u041c\u0435\u0445\u0430\u043d\u0438\u043a\u0438':'Mechanics','\u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u043c\u0430\u0433\u0430\u0437\u0438\u043d \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u043e\u0432 \u0441 \u0441\u043e\u0445\u0440\u0430\u043d\u0435\u043d\u0438\u0435\u043c \u043f\u043e\u043a\u0443\u043f\u043e\u043a':'For example, an item shop with persistent purchases','\u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, 7 \u0434\u043d\u0435\u0439':'For example, 7 days','\u041d\u0435\u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e':'Optional'};e.placeholder=lang==='en'?(map[r]||r):r;});
   $$('[data-lang]').forEach(b=>{b.classList.toggle('selected',b.dataset.lang===lang);b.setAttribute('aria-pressed',b.dataset.lang===lang?'true':'false')});
-  if($('#tgl'))$('#tgl').textContent=editing()?ui('вњ“ Р“РѕС‚РѕРІРѕ','вњ“ Done'):ui('вњЋ Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ','вњЋ Edit');
+  if($('#tgl'))$('#tgl').textContent=editing()?ui('\u2713 \u0413\u043e\u0442\u043e\u0432\u043e','\u2713 Done'):ui('\u270e \u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c','\u270e Edit');
   $('#quality').textContent='FX: '+({auto:'AUTO',lite:'LITE',full:'FULL'}[quality]||'AUTO');
-  $('#sound [data-sound]').textContent=audioOn?ui('Р—РІСѓРє РІРєР».','Sound on'):ui('Р—РІСѓРє РІС‹РєР».','Sound off');
+  $('#sound [data-sound]').textContent=audioOn?ui('\u0417\u0432\u0443\u043a \u0432\u043a\u043b.','Sound on'):ui('\u0417\u0432\u0443\u043a \u0432\u044b\u043a\u043b.','Sound off');
 }
 function safeURL(url){try{const u=new URL(url);return ['http:','https:'].includes(u.protocol)?u.href:'#'}catch{return '#'}}
 function field(path){return `<span data-p="${path}">${esc(get(path)??'')}</span>`}
 function renderExtras(){
   const busy=data.availability==='busy',until=data.busyUntil?new Date(data.busyUntil+'T12:00:00'):null;
-  const status=busy?(until&&!isNaN(until)?ui('Р—Р°РЅСЏС‚ РґРѕ ','Busy until ')+until.toLocaleDateString(lang==='ru'?'ru-RU':'en-GB',{day:'numeric',month:'short'}):ui('РЎРµР№С‡Р°СЃ Р·Р°РЅСЏС‚','Currently busy')):get('status');
+  const status=busy?(until&&!isNaN(until)?ui('\u0417\u0430\u043d\u044f\u0442 \u0434\u043e ','Busy until ')+until.toLocaleDateString(lang==='ru'?'ru-RU':'en-GB',{day:'numeric',month:'short'}):ui('\u0421\u0435\u0439\u0447\u0430\u0441 \u0437\u0430\u043d\u044f\u0442','Currently busy')):get('status');
   $('.status [data-p=status]').textContent=status;$('.status').classList.toggle('busy',busy);
   $('#faqList').innerHTML=(data.faq||[]).map((f,i)=>`<details class="rv"><summary>${field('faq.'+i+'.q')}</summary><p>${field('faq.'+i+'.a')}</p></details>`).join('');
   $$('[data-p]').forEach(el=>{el.contentEditable=editing()?'plaintext-only':'false';el.spellcheck=false});pollPresence();
@@ -878,9 +897,9 @@ function renderExtras(){
 let presenceTimer=null,presenceRequest=0;
 async function pollPresence(){
   clearTimeout(presenceTimer);const request=++presenceRequest,p=$('#presence'),id=data.discordId;
-  if(!/^\d{17,20}$/.test(id||'')){p.dataset.status='unknown';p.querySelector('span').textContent=ui('РЎС‚Р°С‚СѓСЃ Discord РЅРµ РїРѕРґРєР»СЋС‡С‘РЅ','Discord presence not connected');return;}
-  try{const r=await fetch('https://api.lanyard.rest/v1/users/'+id,{signal:AbortSignal.timeout(6000)});const j=await r.json();if(request!==presenceRequest)return;if(!j.success||!j.data)throw Error();const st=j.data.discord_status||'offline';p.dataset.status=st;p.querySelector('span').textContent=({online:ui('Discord В· РІ СЃРµС‚Рё','Discord В· online'),idle:ui('Discord В· РѕС‚РѕС€С‘Р»','Discord В· idle'),dnd:ui('Discord В· РЅРµ Р±РµСЃРїРѕРєРѕРёС‚СЊ','Discord В· do not disturb'),offline:ui('Discord В· РЅРµ РІ СЃРµС‚Рё','Discord В· offline')})[st]||ui('РЎС‚Р°С‚СѓСЃ РЅРµРґРѕСЃС‚СѓРїРµРЅ','Presence unavailable');}
-  catch{if(request!==presenceRequest)return;p.dataset.status='unknown';p.querySelector('span').textContent=ui('РЎС‚Р°С‚СѓСЃ Discord РЅРµРґРѕСЃС‚СѓРїРµРЅ','Discord presence unavailable');}
+  if(!/^\d{17,20}$/.test(id||'')){p.dataset.status='unknown';p.querySelector('span').textContent=ui('\u0421\u0442\u0430\u0442\u0443\u0441 Discord \u043d\u0435 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0451\u043d','Discord presence not connected');return;}
+  try{const r=await fetch('https://api.lanyard.rest/v1/users/'+id,{signal:AbortSignal.timeout(6000)});const j=await r.json();if(request!==presenceRequest)return;if(!j.success||!j.data)throw Error();const st=j.data.discord_status||'offline';p.dataset.status=st;p.querySelector('span').textContent=({online:ui('Discord \u00b7 \u0432 \u0441\u0435\u0442\u0438','Discord \u00b7 online'),idle:ui('Discord \u00b7 \u043e\u0442\u043e\u0448\u0451\u043b','Discord \u00b7 idle'),dnd:ui('Discord \u00b7 \u043d\u0435 \u0431\u0435\u0441\u043f\u043e\u043a\u043e\u0438\u0442\u044c','Discord \u00b7 do not disturb'),offline:ui('Discord \u00b7 \u043d\u0435 \u0432 \u0441\u0435\u0442\u0438','Discord \u00b7 offline')})[st]||ui('\u0421\u0442\u0430\u0442\u0443\u0441 \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d','Presence unavailable');}
+  catch{if(request!==presenceRequest)return;p.dataset.status='unknown';p.querySelector('span').textContent=ui('\u0421\u0442\u0430\u0442\u0443\u0441 Discord \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d','Discord presence unavailable');}
   presenceTimer=setTimeout(()=>{if(!document.hidden)pollPresence()},45000);
 }
 function download(name,content,type='application/json'){const url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);}
@@ -894,21 +913,21 @@ function validateContent(d){
  if(!d.sections||!d.terms)throw Error('sections and terms are required');
  return d;
 }
-$('#contentForm').onsubmit=e=>{e.preventDefault();try{const next=validateContent(JSON.parse($('#contentJson').value));data=next;save();closeDialog('contentModal');render();toast(ui('РљРѕРЅС‚РµРЅС‚ РѕР±РЅРѕРІР»С‘РЅ','Content updated'));}catch(e){$('#contentError').textContent=ui('РџСЂРѕРІРµСЂСЊ JSON: ','Check JSON: ')+e.message;}};
+$('#contentForm').onsubmit=e=>{e.preventDefault();try{const next=validateContent(JSON.parse($('#contentJson').value));data=next;save();closeDialog('contentModal');render();toast(ui('\u041a\u043e\u043d\u0442\u0435\u043d\u0442 \u043e\u0431\u043d\u043e\u0432\u043b\u0451\u043d','Content updated'));}catch(e){$('#contentError').textContent=ui('\u041f\u0440\u043e\u0432\u0435\u0440\u044c JSON: ','Check JSON: ')+e.message;}};
 // Validate imported data before applying any changes.
-$('#impf').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const next=validateContent(JSON.parse(await f.text()));data=next;save();render();toast(ui('РРјРїРѕСЂС‚РёСЂРѕРІР°РЅРѕ','Imported'));}catch{toast(ui('РќРµ СѓРґР°Р»РѕСЃСЊ РїСЂРѕС‡РёС‚Р°С‚СЊ data.json. РџСЂРѕРІРµСЂСЊ СЃС‚СЂСѓРєС‚СѓСЂСѓ.','Could not import data.json. Check its structure.'),true)}e.target.value='';};
+$('#impf').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const next=validateContent(JSON.parse(await f.text()));data=next;save();render();toast(ui('\u0418\u043c\u043f\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u043e','Imported'));}catch{toast(ui('\u041d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c \u043f\u0440\u043e\u0447\u0438\u0442\u0430\u0442\u044c data.json. \u041f\u0440\u043e\u0432\u0435\u0440\u044c \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0443.','Could not import data.json. Check its structure.'),true)}e.target.value='';};
 let dialogReturn=null;
 function openDialog(id){dialogReturn=document.activeElement;$('#'+id).classList.add('open');translateStatic();setTimeout(()=>$('#'+id).querySelector('input,textarea,button')?.focus({preventScroll:true}),80);}
 function closeDialog(id){$('#'+id).classList.remove('open');dialogReturn?.focus({preventScroll:true});}
 function openBrief(){openDialog('briefModal');$('#briefResult').textContent='';$('#briefDiscord').hidden=true;}
 $('#briefOpen').onclick=openBrief;
-$('#briefForm').onsubmit=async e=>{e.preventDefault();const task=$('#br_task').value.trim();if(!task)return;const text=ui('РџСЂРёРІРµС‚, Mistral!\n\nР—Р°РґР°С‡Р°: ','Hi Mistral!\n\nTask: ')+task+'\n'+ui('Р‘СЋРґР¶РµС‚: ','Budget: ')+($('#br_budget').value.trim()||'вЂ”')+'\n'+ui('РЎСЂРѕРє: ','Timeline: ')+($('#br_time').value.trim()||'вЂ”')+'\n'+ui('РџСЂРёРјРµСЂС‹: ','References: ')+($('#br_refs').value.trim()||'вЂ”');
- try{await copyText(text);$('#briefResult').textContent=ui('Р—Р°СЏРІРєР° СЃРєРѕРїРёСЂРѕРІР°РЅР°. РћС‚РєСЂРѕР№ Discord Рё РІСЃС‚Р°РІСЊ РµС‘ РІ СЃРѕРѕР±С‰РµРЅРёРµ.','Brief copied. Open Discord and paste it into a message.');if(safeURL(data.dc)!=='#'&&!data.dc.includes('your_invite')){$('#briefDiscord').href=safeURL(data.dc);$('#briefDiscord').hidden=false;}}
- catch{$('#briefResult').textContent=ui('РљРѕРїРёСЂРѕРІР°РЅРёРµ РЅРµРґРѕСЃС‚СѓРїРЅРѕ. Р’С‹РґРµР»Рё С‚РµРєСЃС‚ РЅРёР¶Рµ: ','Copy unavailable. Select the text below: ')+text;}};
-$('#bTranslate').textContent=ui('РџРѕРІС‚РѕСЂРёС‚СЊ РїРµСЂРµРІРѕРґ','Retry translation');
+$('#briefForm').onsubmit=async e=>{e.preventDefault();const task=$('#br_task').value.trim();if(!task)return;const text=ui('\u041f\u0440\u0438\u0432\u0435\u0442, Mistral!\n\n\u0417\u0430\u0434\u0430\u0447\u0430: ','Hi Mistral!\n\nTask: ')+task+'\n'+ui('\u0411\u044e\u0434\u0436\u0435\u0442: ','Budget: ')+($('#br_budget').value.trim()||'\u2014')+'\n'+ui('\u0421\u0440\u043e\u043a: ','Timeline: ')+($('#br_time').value.trim()||'\u2014')+'\n'+ui('\u041f\u0440\u0438\u043c\u0435\u0440\u044b: ','References: ')+($('#br_refs').value.trim()||'\u2014');
+ try{await copyText(text);$('#briefResult').textContent=ui('\u0417\u0430\u044f\u0432\u043a\u0430 \u0441\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0430. \u041e\u0442\u043a\u0440\u043e\u0439 Discord \u0438 \u0432\u0441\u0442\u0430\u0432\u044c \u0435\u0451 \u0432 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435.','Brief copied. Open Discord and paste it into a message.');if(safeURL(data.dc)!=='#'&&!data.dc.includes('your_invite')){$('#briefDiscord').href=safeURL(data.dc);$('#briefDiscord').hidden=false;}}
+ catch{$('#briefResult').textContent=ui('\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e. \u0412\u044b\u0434\u0435\u043b\u0438 \u0442\u0435\u043a\u0441\u0442 \u043d\u0438\u0436\u0435: ','Copy unavailable. Select the text below: ')+text;}};
+$('#bTranslate').textContent=ui('\u041f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u044c \u043f\u0435\u0440\u0435\u0432\u043e\u0434','Retry translation');
 $('#bTranslate').onclick=async()=>{
  const b=$('#bTranslate');b.disabled=true;let failures=0;
- try{for(let i=0;i<data.works.length;i++)if(data.works[i]._translation?.pending||!data.en?.['works.'+i+'.title']){const ok=await translateWork(i,data.works[i]._translation?.source||'ru');if(!ok)failures++;}save();render();toast(failures?ui('РќРµ РІСЃРµ С‚РµРєСЃС‚С‹ СѓРґР°Р»РѕСЃСЊ РїРµСЂРµРІРµСЃС‚Рё. РњРѕР¶РЅРѕ РїРѕРІС‚РѕСЂРёС‚СЊ.','Some texts could not be translated. You can retry.'):ui('РџРµСЂРµРІРѕРґС‹ РѕР±РЅРѕРІР»РµРЅС‹','Translations updated'),!!failures);}finally{b.disabled=false;}
+ try{for(let i=0;i<data.works.length;i++)if(data.works[i]._translation?.pending||!data.en?.['works.'+i+'.title']){const ok=await translateWork(i,data.works[i]._translation?.source||'ru');if(!ok)failures++;}save();render();toast(failures?ui('\u041d\u0435 \u0432\u0441\u0435 \u0442\u0435\u043a\u0441\u0442\u044b \u0443\u0434\u0430\u043b\u043e\u0441\u044c \u043f\u0435\u0440\u0435\u0432\u0435\u0441\u0442\u0438. \u041c\u043e\u0436\u043d\u043e \u043f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u044c.','Some texts could not be translated. You can retry.'):ui('\u041f\u0435\u0440\u0435\u0432\u043e\u0434\u044b \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u044b','Translations updated'),!!failures);}finally{b.disabled=false;}
 };
 // Ambient is synthesized locally, starts only after a click, and fades on pause.
 let audio=null,audioGain=null,audioOn=false,audioNodes=[];
@@ -918,9 +937,9 @@ $('#sound').onclick=async()=>{
  [55,82.41,110,164.81].forEach((freq,i)=>{const o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.value=freq;g.gain.value=.1/(i+1);o.connect(g);g.connect(audioGain);o.start();audioNodes.push(o);});
  const buffer=audio.createBuffer(1,audio.sampleRate*5,audio.sampleRate),channel=buffer.getChannelData(0);let last=0;for(let i=0;i<channel.length;i++){last=(last+Math.random()*.04-.02)/1.02;channel[i]=last;}const noise=audio.createBufferSource(),filter=audio.createBiquadFilter();noise.buffer=buffer;noise.loop=true;filter.type='lowpass';filter.frequency.value=220;noise.connect(filter);filter.connect(audioGain);noise.start();audioNodes.push(noise);
  }audioOn=!audioOn;if(audioOn)await audio.resume();audioGain.gain.setTargetAtTime(audioOn?.22:0,audio.currentTime,.7);$('#sound').setAttribute('aria-pressed',String(audioOn));translateStatic();
- }catch{audioOn=false;toast(ui('Р—РІСѓРє РЅРµРґРѕСЃС‚СѓРїРµРЅ РІ СЌС‚РѕРј Р±СЂР°СѓР·РµСЂРµ','Audio is unavailable in this browser'),true);}
+ }catch{audioOn=false;toast(ui('\u0417\u0432\u0443\u043a \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d \u0432 \u044d\u0442\u043e\u043c \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0435','Audio is unavailable in this browser'),true);}
 };
-$('#quality').onclick=()=>{quality=({auto:'lite',lite:'full',full:'auto'})[quality];try{localStorage.setItem('mistral-fx-restored',quality)}catch{}applyQuality();dispatchEvent(new Event('qualitychange'));translateStatic();toast(ui('Р“СЂР°С„РёРєР°: ','Graphics: ')+quality.toUpperCase());};
+$('#quality').onclick=()=>{quality=({auto:'lite',lite:'full',full:'auto'})[quality];try{localStorage.setItem('mistral-fx-restored',quality)}catch{}applyQuality();dispatchEvent(new Event('qualitychange'));translateStatic();toast(ui('\u0413\u0440\u0430\u0444\u0438\u043a\u0430: ','Graphics: ')+quality.toUpperCase());};
 matchMedia('(prefers-reduced-motion:reduce)').addEventListener('change',e=>{reduced=e.matches;applyQuality();dispatchEvent(new Event('qualitychange'));});
 document.addEventListener('visibilitychange',()=>{if(audio&&audioGain)audioGain.gain.setTargetAtTime(document.hidden?0:(audioOn?.22:0),audio.currentTime,.3);if(!document.hidden)pollPresence();});
 document.addEventListener('click',e=>{
@@ -932,13 +951,13 @@ document.addEventListener('keydown',e=>{
  if(!dialog&&!editing()&&e.target.matches('.work')&&['Enter',' '].includes(e.key)){e.preventDefault();openLB(+e.target.dataset.i);}
 });
 // Prevent an unfinished Discord URL from sending visitors to a broken invitation.
-['dcTop','dcHero','dcBox','dcFoot'].forEach(id=>$('#'+id).addEventListener('click',e=>{if(!data.dc||data.dc.includes('your_invite')||safeURL(data.dc)==='#'){e.preventDefault();toast(ui('РљРѕРЅС‚Р°РєС‚ РµС‰С‘ РЅР°СЃС‚СЂР°РёРІР°РµС‚СЃСЏ. РџРѕРєР° РјРѕР¶РЅРѕ СЃРѕСЃС‚Р°РІРёС‚СЊ Р·Р°СЏРІРєСѓ.','Contact is being configured. You can prepare a brief for now.'));openBrief();}}));
+['dcTop','dcHero','dcBox','dcFoot'].forEach(id=>$('#'+id).addEventListener('click',e=>{if(!data.dc||data.dc.includes('your_invite')||safeURL(data.dc)==='#'){e.preventDefault();toast(ui('\u041a\u043e\u043d\u0442\u0430\u043a\u0442 \u0435\u0449\u0451 \u043d\u0430\u0441\u0442\u0440\u0430\u0438\u0432\u0430\u0435\u0442\u0441\u044f. \u041f\u043e\u043a\u0430 \u043c\u043e\u0436\u043d\u043e \u0441\u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u044f\u0432\u043a\u0443.','Contact is being configured. You can prepare a brief for now.'));openBrief();}}));
 // Labels, navigation and modal names stay accessible even with the decorative cursor.
 $$('.dots a').forEach(a=>a.setAttribute('aria-label',a.getAttribute('href').slice(1)));
 $$('.modal label').forEach(l=>{if(l.hasAttribute('for'))return;const n=l.nextElementSibling;if(n?.matches('input,textarea,select'))l.htmlFor=n.id;});
 $('#lbx').setAttribute('aria-label','Close preview');$('#wm').setAttribute('aria-labelledby','wmt');
 // Updated reset keeps the canonical data.json, rather than an unrelated browser draft.
-$('#bRes').onclick=()=>{if(confirm(ui('РЈРґР°Р»РёС‚СЊ Р»РѕРєР°Р»СЊРЅС‹Рµ РїСЂР°РІРєРё Рё РІРµСЂРЅСѓС‚СЊ РІСЃС‚СЂРѕРµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ?','Discard local drafts and restore embedded content?'))){localStorage.removeItem(KEY);data=structuredClone(seed);render();}};
+$('#bRes').onclick=()=>{if(confirm(ui('\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u043f\u0440\u0430\u0432\u043a\u0438 \u0438 \u0432\u0435\u0440\u043d\u0443\u0442\u044c \u0432\u0441\u0442\u0440\u043e\u0435\u043d\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435?','Discard local drafts and restore embedded content?'))){localStorage.removeItem(KEY);data=structuredClone(seed);render();}};
 
 render();
 })();
