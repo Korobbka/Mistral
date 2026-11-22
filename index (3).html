@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mistral — Roblox Scripter</title>
+<meta name="description" content="Mistral — Roblox developer. Luau mechanics, game systems and server logic. Explore the work and discuss your project.">
+<meta property="og:type" content="website"><meta property="og:title" content="Mistral — Roblox Scripter">
+<meta property="og:description" content="Game mechanics. Systems. Server logic. Built with Luau.">
+<meta property="og:url" content="https://korobbka.github.io/Mistral/"><meta property="og:image" content="https://mistral-orbit-studio.justlyric512.chatgpt.site/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://mistral-orbit-studio.justlyric512.chatgpt.site/og.png">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwODA4MDgiLz48ZWxsaXBzZSBjeD0iMzIiIGN5PSIzMiIgcng9IjI3IiByeT0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiB0cmFuc2Zvcm09InJvdGF0ZSgtMjAgMzIgMzIpIi8+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMTMiIGZpbGw9ImJsYWNrIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=" type="image/svg+xml">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700&amp;family=JetBrains+Mono:wght@300;400;500&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--ink:#fff;--mute:#8d8d8d;--line:rgba(255,255,255,.14);--card:rgba(255,255,255,.035);--mono:'JetBrains Mono',monospace;--disp:'Unbounded',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html.lock{overflow:hidden}
+body{background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:#fff;color:#000}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+h1,h2,h3{font-family:var(--disp);font-weight:500;line-height:1.05}
+.mono{font-family:var(--mono)}
+@media(pointer:fine){body,a,button{cursor:none}}
+
+/* ---------- living background ---------- */
+#stars{position:fixed;inset:0;z-index:-4}
+.fog{position:fixed;inset:0;z-index:-3;overflow:hidden;pointer-events:none}
+.fog i{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.11),transparent 65%);filter:blur(70px);animation:drift 26s ease-in-out infinite alternate}
+.fog i:nth-child(1){width:60vmax;height:60vmax;left:-20vmax;top:-20vmax}
+.fog i:nth-child(2){width:50vmax;height:50vmax;right:-18vmax;top:30vh;animation-duration:36s;animation-delay:-9s;opacity:.7}
+.fog i:nth-child(3){width:45vmax;height:45vmax;left:25vw;bottom:-25vmax;animation-duration:44s;animation-delay:-20s;opacity:.55}
+@keyframes drift{to{transform:translate3d(14vw,10vh,0) scale(1.25)}}
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:90;opacity:.09;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .8 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:grain .9s steps(1) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-5%,3%)}40%{transform:translate(4%,-6%)}60%{transform:translate(-3%,5%)}80%{transform:translate(6%,2%)}}
+.cur{position:fixed;left:0;top:0;width:36px;height:36px;margin:-18px 0 0 -18px;border:1px solid #fff;border-radius:50%;pointer-events:none;z-index:500;mix-blend-mode:difference;transition:width .25s,height .25s,margin .25s,background .25s}
+.cur.big{width:70px;height:70px;margin:-35px 0 0 -35px;background:#fff}
+.dotc{position:fixed;left:0;top:0;width:5px;height:5px;margin:-2.5px 0 0 -2.5px;background:#fff;border-radius:50%;pointer-events:none;z-index:501;mix-blend-mode:difference}
+@media(pointer:coarse){.cur,.dotc{display:none}}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:#fff;z-index:100}
+
+/* ---------- nav ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px clamp(18px,4vw,48px);mix-blend-mode:difference}
+.brand{font-family:var(--disp);font-weight:700;letter-spacing:.06em;font-size:1rem;text-transform:uppercase}
+nav{display:flex;gap:30px}
+nav a{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.6;transition:.3s;position:relative}
+nav a:hover,nav a.on{opacity:1}
+nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:#fff;transition:width .35s}
+nav a:hover::after,nav a.on::after{width:100%}
+.tglink{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;border:1px solid #fff;padding:8px 18px;border-radius:99px;transition:.3s}
+.tglink:hover{background:#fff;color:#000}
+@media(max-width:760px){nav{display:none}}
+
+/* ---------- layout ---------- */
+section{padding:clamp(80px,12vw,150px) clamp(18px,5vw,72px);max-width:1320px;margin:auto;position:relative}
+.eyebrow{font-family:var(--mono);font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+h2.title{font-size:clamp(2.2rem,6.4vw,5rem);margin:14px 0 50px;letter-spacing:-.02em;text-transform:uppercase}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.rv.done{transition-delay:0s!important}
+.tilt.rv.in{transform:perspective(900px) translateY(var(--ly,0px)) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .4s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .45s,opacity .9s cubic-bezier(.22,1,.36,1);transition-delay:var(--d,0s)}
+
+/* ---------- hero ---------- */
+#top{overflow-x:clip;min-height:100vh;display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:center;padding-top:120px}
+.rings{position:absolute;right:-18%;top:50%;width:90vmin;height:90vmin;margin-top:-45vmin;pointer-events:none;z-index:-1}
+.rings i{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,255,255,.07);animation:spin 90s linear infinite}
+.rings i:nth-child(2){inset:12%;animation-duration:70s;animation-direction:reverse;border-style:dashed}
+.rings i:nth-child(3){inset:26%;animation-duration:50s;border-color:rgba(255,255,255,.1)}
+.rings i::after{content:"";position:absolute;top:-3px;left:50%;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 14px #fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+.status{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:28px}
+.status i{width:8px;height:8px;border-radius:50%;background:#fff;animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}80%,100%{box-shadow:0 0 0 12px rgba(255,255,255,0)}}
+#top h1{overflow-wrap:anywhere;font-size:clamp(2.6rem,8.6vw,7.4rem);font-weight:700;letter-spacing:-.04em;text-transform:uppercase;line-height:.95}
+.role{font-family:var(--mono);font-size:clamp(.9rem,1.6vw,1.2rem);letter-spacing:.3em;text-transform:uppercase;margin-top:18px;color:#d6d6d6}
+.line{max-width:480px;margin:30px 0 38px;color:var(--mute);font-size:1.05rem}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:99px;font-family:var(--mono);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;transition:transform .3s,background .3s,color .3s;will-change:transform}
+.btn.fill{background:#fff;color:#000}
+.btn.fill:hover{background:#000;color:#fff;box-shadow:inset 0 0 0 1px #fff}
+.btn.ghost{border:1px solid var(--line)}
+.btn.ghost:hover{border-color:#fff}
+.stats{display:flex;gap:clamp(22px,4vw,54px);margin-top:60px;flex-wrap:wrap}
+.stat b{display:block;font-family:var(--disp);font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:500}
+.stat span{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+
+.scene{position:relative;aspect-ratio:1;width:100%;max-width:640px;margin:auto}
+#hole{display:block;width:100%;height:100%}
+.scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll::after{content:"";width:1px;height:42px;background:linear-gradient(#fff,transparent);animation:drop 2s infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:900px){#top{grid-template-columns:1fr;padding-top:110px}.scene{max-width:340px;order:-1}.scroll{display:none}}
+
+/* marquee */
+.marq{overflow:hidden;border-block:1px solid var(--line);padding:16px 0;max-width:none;background:rgba(0,0,0,.4)}
+.marq div{display:flex;width:max-content;will-change:transform;font-family:var(--disp);font-size:clamp(1.3rem,3vw,2.2rem);text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.45)}
+.marq span{padding-right:40px;white-space:nowrap}
+.marq span::after{content:"\2726 ";margin-left:40px;color:#fff;-webkit-text-stroke:0}
+
+/* ---------- works ---------- */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.chip{padding:8px 18px;border-radius:99px;border:1px solid var(--line);font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);transition:.25s}
+.chip:hover{color:#fff;border-color:#fff}.chip.on{background:#fff;color:#000;border-color:#fff}
+.works{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:22px}
+.work{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:rgba(0,0,0,.55);backdrop-filter:blur(6px);transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .25s ease-out,border-color .3s}
+.work:hover{border-color:rgba(255,255,255,.75);--ly:-6px;box-shadow:0 24px 60px -24px rgba(255,255,255,.35),0 0 40px -10px rgba(255,255,255,.25)}
+.work .media{aspect-ratio:16/10;position:relative;overflow:hidden;background:#0a0a0a}
+.work .media>img,.work .media>video{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);transition:transform 1.1s cubic-bezier(.22,1,.36,1),filter .6s}
+.work:hover .media>img,.work:hover .media>video{transform:scale(1.07);filter:none}
+.ph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--disp);font-size:4rem;font-weight:300;color:rgba(255,255,255,.9);background:radial-gradient(circle at var(--px,30%) var(--py,30%),rgba(255,255,255,.2),transparent 55%),#070707}
+.ph::before{content:"";position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 30%,#fff,transparent),radial-gradient(1px 1px at 70% 60%,#fff,transparent),radial-gradient(1.5px 1.5px at 45% 80%,#fff,transparent),radial-gradient(1px 1px at 85% 20%,#fff,transparent);opacity:.6}
+.play{position:absolute;right:14px;bottom:14px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.55);backdrop-filter:blur(8px);display:grid;place-items:center;font-size:.78rem;transition:.3s}
+.work:hover .play{background:#fff;color:#000;transform:scale(1.12)}
+.info{padding:18px 22px 24px}
+.info small{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.info h3{font-size:1.25rem;margin:6px 0 6px;font-weight:500}
+.info p{font-size:.88rem;color:var(--mute)}
+.work.hide{display:none}
+.addtile{display:none;min-height:240px;place-items:center;border:1px dashed var(--line);border-radius:22px;color:var(--mute);font-family:var(--mono);font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;transition:.3s}
+.addtile:hover{border-color:#fff;color:#fff}
+.empty{display:none;color:var(--mute);padding:30px 0}
+
+/* ---------- terms ---------- */
+.terms{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.card{position:relative;padding:34px 30px;border-radius:24px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(8px);overflow:hidden;transition:border-color .3s}
+.card:hover{border-color:rgba(255,255,255,.5)}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.09),transparent 60%);opacity:0;transition:.3s;pointer-events:none}
+.card:hover::before{opacity:1}
+.card h3{font-size:1.3rem;text-transform:uppercase;letter-spacing:.02em}
+.nolist{list-style:none;margin-top:22px;display:grid;gap:10px}
+.nolist li{display:flex;gap:16px;align-items:center;padding:14px 18px;border-radius:14px;border:1px solid var(--line);color:#cfcfcf;position:relative;transition:.3s}
+.nolist li:hover{border-color:#fff;padding-left:26px}
+.nolist li b{font-family:var(--mono);font-weight:400;color:var(--mute);font-size:.8rem}
+.big{font-family:var(--disp);font-size:clamp(2.2rem,4.6vw,3.6rem);font-weight:700;margin:22px 0 10px;line-height:1}
+.card p.pt{color:var(--mute)}
+@media(max-width:860px){.terms{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.cbox{border-radius:30px;padding:clamp(28px,5vw,64px);border:1px solid var(--line);background:rgba(0,0,0,.5);backdrop-filter:blur(10px);display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.cbox h2{font-size:clamp(2rem,4.6vw,3.6rem);text-transform:uppercase;margin:14px 0 18px}
+.cbox p.t{color:var(--mute);margin-bottom:26px}
+form{display:grid;gap:12px}
+input,textarea,select{width:100%;padding:14px 18px;border-radius:14px;background:transparent;border:1px solid var(--line);color:#fff;font:inherit;outline:none;transition:.25s}
+input:focus,textarea:focus,select:focus{border-color:#fff}
+textarea{min-height:110px;resize:vertical}
+select option{background:#000}
+.note{font-size:.76rem;color:var(--mute)}
+@media(max-width:860px){.cbox{grid-template-columns:1fr}}
+footer{text-align:center;padding:40px 20px 100px;color:var(--mute);font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;border-top:1px solid var(--line)}
+footer a:hover{color:#fff}
+
+
+/* intro */
+.intro{position:fixed;inset:0;z-index:1000;background:#000;display:grid;place-items:center;transition:transform 1s cubic-bezier(.8,0,.2,1)}
+.intro.gone{transform:translateY(-100%)}
+.intro.off{display:none}
+.intro .cnt{font-family:var(--disp);font-weight:300;font-size:clamp(3rem,12vw,8rem);letter-spacing:-.04em}
+.intro .b2{position:absolute;left:0;bottom:0;height:2px;width:100%}
+.intro .b2 i{display:block;height:100%;width:0;background:#fff}
+@media (prefers-reduced-motion:reduce){.intro{display:none}}
+#trail{position:fixed;inset:0;z-index:80;pointer-events:none}
+.hud{position:fixed;left:clamp(18px,4vw,48px);bottom:20px;z-index:60;font-size:.68rem;letter-spacing:.14em;color:var(--mute);mix-blend-mode:difference;pointer-events:none}
+.dots{position:fixed;right:clamp(14px,2vw,28px);top:50%;transform:translateY(-50%);z-index:60;display:grid;gap:14px}
+.dots a{width:9px;height:9px;border-radius:50%;border:1px solid #fff;transition:.3s;mix-blend-mode:difference}
+.dots a.on{background:#fff;transform:scale(1.5)}
+@media(max-width:900px){.hud,.dots{display:none}}
+h2.title{color:#fff}
+@supports((-webkit-background-clip:text) or (background-clip:text)){h2.title{background:linear-gradient(100deg,#5c5c5c 20%,#fff 45%,#5c5c5c 70%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s linear infinite}}
+@keyframes sheen{to{background-position:-250% 0}}
+body.editing h2.title{background:none;color:#fff;-webkit-text-fill-color:#fff;animation:none}
+@property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes angle{to{--ang:360deg}}
+.work::after,.card::after,.dcard::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--ang),transparent 0 62%,#fff 88%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:angle 4s linear infinite;pointer-events:none;opacity:0;transition:opacity .4s}
+.work:hover::after,.card:hover::after,.dcard::after{opacity:1}
+.dcard{position:relative;border-radius:30px;padding:clamp(30px,5vw,70px);background:rgba(0,0,0,.55);backdrop-filter:blur(10px);display:flex;gap:40px;align-items:center;justify-content:space-between;flex-wrap:wrap;overflow:hidden}
+.dcard::before{content:"";position:absolute;right:-12%;top:50%;width:520px;height:520px;margin-top:-260px;border-radius:50%;border:1px dashed rgba(255,255,255,.12);animation:spin 40s linear infinite;pointer-events:none}
+.dcard small{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.nick{overflow-wrap:anywhere;font-family:var(--disp);font-weight:700;font-size:clamp(2.6rem,9vw,7rem);letter-spacing:-.04em;text-transform:uppercase;line-height:1;margin:14px 0 10px}
+.dcard p{color:var(--mute)}
+.dcr{display:grid;gap:12px;position:relative;z-index:1}
+.bigword{font-family:var(--disp);font-weight:700;font-size:clamp(2.2rem,14vw,15rem);text-transform:uppercase;letter-spacing:-.05em;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.3);transition:.6s;margin-bottom:34px;user-select:none;overflow:hidden}
+.bigword:hover{color:#fff;-webkit-text-stroke:0}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:200;display:none;place-items:center;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);padding:24px}
+.lb.open{display:grid;animation:fade .3s}
+@keyframes fade{from{opacity:0}}
+@keyframes pop{from{transform:scale(.93);opacity:0}}
+.lb .box{max-width:min(1100px,100%);width:100%;animation:pop .4s cubic-bezier(.2,.8,.2,1)}
+.lb .m{border-radius:18px;overflow:hidden;background:#000;aspect-ratio:16/9;display:grid;place-items:center;border:1px solid var(--line)}
+.lb img,.lb video,.lb iframe{width:100%;height:100%;object-fit:contain;border:0}
+.lb h3{font-size:1.6rem;margin-top:18px}.lb p{color:var(--mute)}
+.x{position:absolute;top:18px;right:22px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);font-size:1.1rem}
+.x:hover{background:#fff;color:#000}
+
+/* ---------- editor ---------- */
+.bar{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:150;display:none;gap:6px;padding:7px;border-radius:99px;background:rgba(0,0,0,.85);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.3);max-width:calc(100vw - 20px);overflow-x:auto}
+body.admin .bar{display:flex}
+.bar button{padding:9px 16px;border-radius:99px;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:.2s}
+.bar button:hover{background:rgba(255,255,255,.12)}
+.bar .only{display:none}
+.bar #tgl{background:#fff;color:#000;font-weight:600}
+body.editing .bar .only{display:block}
+body.editing [data-p]{outline:1px dashed rgba(255,255,255,.35);outline-offset:3px;border-radius:3px;min-width:1ch}
+body.editing [data-p]:focus{outline:2px solid #fff;background:rgba(255,255,255,.08)}
+body.editing .addtile{display:grid}
+.ctl{display:none;position:absolute;z-index:5;gap:6px;top:10px;right:10px}
+body.editing .ctl{display:flex}
+.nolist .ctl{top:50%;transform:translateY(-50%)}
+.ctl button{width:34px;height:34px;border-radius:50%;background:#000;border:1px solid rgba(255,255,255,.4);font-size:.85rem}
+.ctl button:hover{background:#fff;color:#000}
+.addrow{display:none;margin-top:20px}
+body.editing .addrow{display:block}
+.mini{padding:10px 18px;border-radius:99px;border:1px dashed rgba(255,255,255,.5);font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.mini:hover{background:#fff;color:#000}
+.modal{position:fixed;inset:0;z-index:300;display:none;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);padding:20px;overflow:auto;overscroll-behavior:contain}
+.modal.open{display:flex}
+.modal form{margin:auto;width:min(520px,100%);padding:28px;border-radius:24px;background:#080808;border:1px solid rgba(255,255,255,.25);animation:pop .35s cubic-bezier(.2,.8,.2,1)}
+.modal h3{font-size:1.4rem;margin-bottom:6px;text-transform:uppercase}
+.modal label{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:4px}
+.row{display:flex;gap:10px}.row>*{flex:1}
+.toast{position:fixed;right:24px;bottom:24px;display:flex;align-items:center;gap:10px;max-width:calc(100vw - 32px);background:#fff;color:#000;padding:12px 20px;border-radius:14px;font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .35s,transform .45s cubic-bezier(.22,1,.36,1);z-index:600;box-shadow:0 12px 40px rgba(255,255,255,.12)}
+.toast:not(.bad)::before{content:"\2713 ";font-weight:700}
+.toast.on{opacity:1;transform:none}
+body.admin .toast{bottom:84px}
+@media(max-width:600px){
+ header{padding:14px 16px;gap:10px}.brand{font-size:.9rem}.tglink{padding:7px 14px;font-size:.7rem}
+ .dcard{padding:28px 22px}.dcr{width:100%}.dcr .btn{justify-content:center;width:100%}
+ .stats{gap:22px}.toast{left:16px;right:16px;bottom:16px}body.admin .toast{bottom:84px}
+ .modal form{padding:22px 18px}.row{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}}
+/* Original graphics and layout are retained. These rules only support added controls. */
+#stars{z-index:0;pointer-events:none}.fog{z-index:0}main,body>footer{position:relative;z-index:1}#trail{pointer-events:none}html{scroll-padding-top:85px}
+.navtools{display:flex;align-items:center;gap:18px}.language{display:flex;gap:3px;border:1px solid var(--line);padding:3px;border-radius:99px}.language button{font:11px var(--mono);padding:6px 9px;border-radius:99px;color:var(--mute)}.language .selected{color:#000;background:#fff}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid #fff;outline-offset:5px}button:disabled{opacity:.5;cursor:wait}
+.play svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}.status.busy i{background:#999;animation:none}.text-focus #trail,.text-focus .cur,.text-focus .dotc{opacity:0}
+.presence{display:flex;gap:10px;align-items:center;font:10px var(--mono);letter-spacing:.05em;color:var(--mute)}.presence i{width:7px;height:7px;background:#777;border-radius:50%;display:block}.presence[data-status=online] i{background:#79c494}.presence[data-status=idle] i{background:#d9bb7b}.presence[data-status=dnd] i{background:#c87878}
+.faq-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:55px}.section-note{max-width:340px;color:var(--mute);font-size:.93rem;line-height:1.9}#faqList details{border-top:1px solid var(--line);padding:23px 0}#faqList details:last-child{border-bottom:1px solid var(--line)}#faqList summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px}#faqList summary::-webkit-details-marker{display:none}#faqList summary::after{content:'+';font-family:var(--mono)}#faqList details[open] summary::after{content:'\2212 '}#faqList details p{color:var(--mute);font-size:.9rem;line-height:1.9;margin-top:18px}
+.utility{position:fixed;bottom:20px;right:24px;display:flex;gap:8px;z-index:110}.utility button{font:9px var(--mono);letter-spacing:.05em;text-transform:uppercase;background:#080808c9;border:1px solid var(--line);border-radius:99px;padding:10px 14px;backdrop-filter:blur(10px);color:var(--mute)}.utility button:hover{color:#fff;border-color:#aaa}.eq{letter-spacing:2px;margin-right:7px}.utility [aria-pressed=true] .eq{color:#fff}
+.modal form{max-height:calc(100dvh - 32px);overflow:auto}.modal .note{line-height:1.8}.filepick{display:flex!important;align-items:center;justify-content:space-between;gap:12px;position:relative;padding:15px 18px;border:1px dashed #ffffff55;border-radius:14px;cursor:pointer}.filepick input{position:absolute;inset:0;opacity:0;cursor:pointer;padding:0}.filepick small{color:var(--mute);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:45%;letter-spacing:0;text-transform:none}.filepick:focus-within{border-color:#fff}
+#contentModal form{max-width:850px;width:min(850px,100%)}#contentJson{font:11px/1.7 var(--mono);min-height:44vh;white-space:pre}#contentError{color:#e8a5a5}#briefDiscord[hidden]{display:none}.bar{bottom:65px}.bar button{font-size:10px;padding:9px 13px}.translation-state{display:block;margin-top:10px;font:10px var(--mono);color:var(--mute)}
+body.admin .toast{bottom:125px}.lb .box{max-height:94dvh;overflow:auto}.lb .m{max-height:76dvh}.lb img,.lb video,.lb iframe{max-height:76dvh}.x{z-index:1;background:#000a}
+body.lite .grain{animation:none}body.lite .fog i{animation:none}body.reduced,body.reduced a,body.reduced button{cursor:auto}body.reduced .cur,body.reduced .dotc,body.reduced #trail{display:none}
+@media(max-width:900px){.navtools{gap:12px}.faq-layout{grid-template-columns:1fr;gap:28px}#faq .title{margin-bottom:24px}.utility{bottom:18px;right:18px}}
+@media(max-width:600px){.navtools{gap:8px}.language button{font-size:9px;padding:6px}.tglink{font-size:.62rem;padding:8px 12px}.utility{right:14px;bottom:14px}.utility button{font-size:8px;padding:9px 11px}.bar{bottom:58px}.modal{padding:14px}.modal .row>div{width:100%}.faq-layout{gap:25px}.presence{font-size:8px}.dcard .dcr .btn{font-size:.72rem;justify-content:center}.hud{display:none}}
+.editor-launch{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:149;background:#fff;color:#000;border:1px solid #fff;border-radius:99px;padding:12px 24px;font:12px var(--mono);box-shadow:0 0 0 6px #000b}body.admin .editor-launch{display:none}.bar{bottom:18px}.bar #bEditorClose{border:1px solid var(--line);font-size:9px}#stats[hidden]{display:none}
+#textEditor form,#manageWorks form{width:min(760px,100%);max-width:760px}.editor-fields{display:grid;gap:10px;max-height:48vh;overflow:auto;padding:5px 4px}.editor-fields label{margin-top:12px}.editor-fields textarea{min-height:68px}.editor-check{display:flex;align-items:center;gap:10px}.editor-check input{width:auto}.work-manager-row{border:1px solid var(--line);border-radius:14px;padding:15px;display:flex;justify-content:space-between;align-items:center;gap:16px;margin:10px 0}.work-manager-row strong{font-size:.9rem;overflow-wrap:anywhere}.work-manager-row small{display:block;color:var(--mute);font-size:.7rem}.work-manager-actions{display:flex;gap:5px;flex-wrap:wrap}.work-manager-actions button{border:1px solid var(--line);border-radius:99px;padding:7px 11px;font:10px var(--mono)}.work-manager-actions button:hover{border-color:#fff}.editor-hint{font-size:.75rem;color:var(--mute);line-height:1.8;margin:12px 0}.editor-fields input,.editor-fields textarea{font-size:.88rem}body.admin .toast{bottom:85px}
+@media(max-width:600px){.work-manager-row{display:block}.work-manager-actions{margin-top:12px}.editor-launch{font-size:11px;padding:11px 20px}.editor-fields{max-height:45vh}.bar{bottom:14px}}
+
+/* Owner access controls. Portfolio visuals are unchanged. */
+#editorLaunch[hidden],#ownerPublish[hidden]{display:none!important}body:not(.owner-verified) .bar,body:not(.owner-verified) .ctl,body:not(.owner-verified) .addrow{display:none!important}
+.owner-login{position:fixed;bottom:16px;left:18px;z-index:149;border:1px solid var(--line);border-radius:99px;background:#080808c9;padding:9px 13px;font:9px var(--mono);color:var(--mute)}.owner-login:hover{color:#fff;border-color:#888}#ownerAuthMessage{color:#d8d8d8;overflow-wrap:anywhere}#ownerAuthForm .note{font-size:.76rem;line-height:1.8}#ownerPublish{border:1px solid #fff}body.owner-verified .owner-login{bottom:72px}
+
+#ownerSaveStatus,#ownerCommit{font:9px var(--mono);padding:8px 10px;white-space:nowrap;color:var(--mute)}#ownerCommit[hidden]{display:none}.bar{align-items:center}
+
+#devForm{max-width:760px;width:min(760px,100%)}.dev-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.dev-metrics>div{border:1px solid var(--line);border-radius:12px;padding:14px}.dev-metrics small{display:block;color:var(--mute);font:10px var(--mono)}.dev-metrics strong{display:block;font-size:1rem;margin-top:6px}#devForm h4{margin-top:18px;font-size:.95rem}#devErrors{max-height:150px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.7 var(--mono)}#devDashboard[hidden]{display:none}@media(max-width:600px){.dev-metrics{grid-template-columns:1fr 1fr}}
+</style>
+<style>/* Preserve the original design. Only spacing and new editor controls are added. */
+#top{min-height:88svh;padding-top:110px;padding-bottom:70px}
+#works{padding-top:clamp(50px,7vw,90px)}
+.info p.work-summary{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+[data-p="terms.priceText"]{white-space:pre-line}
+.project-copy{color:var(--mute);font-size:1rem;line-height:1.75;margin-top:12px}
+.project-copy p{margin:0 0 14px}.project-copy ul{padding-left:22px;display:grid;gap:8px;margin:14px 0}
+.project-copy details{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}.project-copy summary{cursor:pointer;color:#ddd}
+.project-copy pre{margin:14px 0;overflow:auto;padding:18px;border:1px solid var(--line);border-radius:12px;font:13px/1.7 var(--mono);color:#ddd;text-align:left}
+.project-copy .source-link{display:inline-flex;margin:10px 0;text-decoration:underline;text-underline-offset:5px}
+#sectionsModal form{width:min(760px,100%);max-width:760px}.section-editor-row{border:1px solid var(--line);border-radius:14px;padding:18px;margin:18px 0}.section-editor-row legend{font:12px var(--mono);padding:0 8px;color:var(--mute)}.section-editor-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.custom-section-body{white-space:pre-wrap;overflow-wrap:anywhere;color:#cfcfcf;font-size:1rem}.custom-section-body:empty{min-height:1em}
+[hidden]{display:none!important}
+body.page-hidden .fog i,body.page-hidden .grain,body.page-hidden .rings i,body.page-hidden .rings i::after,body.page-hidden .dcard::before,body.page-hidden .dcard::after,body.page-hidden h2.title{animation-play-state:paused!important}
+@media(max-width:900px){#top{padding-top:95px;padding-bottom:55px}.scene{max-width:300px}#works{padding-top:55px}}
+</style></head>
+<body>
+<div class="intro" id="intro"><div class="cnt" id="cnt">000</div><div class="b2"><i id="bar2"></i></div></div>
+<canvas id="stars" width="1863" height="925" style="width: 1491px; height: 740px;"></canvas>
+<canvas id="trail" width="1863" height="925" style="width: 1491px; height: 740px;"></canvas>
+<div class="fog"><i></i><i></i><i></i></div>
+<div class="grain"></div>
+<div class="cur" id="cur"></div><div class="dotc" id="dotc"></div>
+<div class="progress" id="prog"></div>
+<div class="toast" id="toast"></div>
+
+<header>
+  <a href="#top" class="brand" id="brandTop">Mistral</a>
+  <nav id="nav"><a href="#works" class="">Work</a><a href="#terms" class="">Terms</a><a href="#contact" class="">Contact</a></nav>
+  <div class="navtools"><a class="tglink" id="dcTop" target="_blank" rel="noopener" href="https://discord.com/users/1225974137978097815">Discord ↗</a></div>
+</header>
+
+<main>
+<section id="top">
+  <div class="rings"><i></i><i></i><i></i></div>
+  <div>
+    <div class="status rv"><i></i><span data-p="status" spellcheck="false">Open for commissions</span></div>
+    <h1 class="rv" style="--d:.1s" data-p="brand" id="h1" spellcheck="false">Mistral</h1>
+    <div class="role rv" style="--d:.2s" data-p="role" spellcheck="false">Roblox Scripter</div>
+    <p class="line rv" style="--d:.3s" data-p="line" data-multi="" spellcheck="false">Luau &amp; Roblox Studio. Gameplay systems, RemoteEvents and ProfileStore.</p>
+    <div class="cta rv" style="--d:.4s">
+      <a href="#works" class="btn fill mag" style="">Explore work ↓</a>
+      <a class="btn ghost mag" id="dcHero" target="_blank" rel="noopener" href="https://discord.com/users/1225974137978097815" style="">Discord</a>
+    </div>
+    <div class="stats" id="stats"></div>
+  </div>
+  <div class="scene rv" id="scene" style="--d:.2s"><canvas id="hole" role="button" tabindex="0" aria-label="Pulse the black hole" width="614" height="614"></canvas></div>
+  <div class="scroll">scroll to explore</div>
+</section>
+
+<div class="marq"><div id="marq"></div></div>
+
+<section id="works">
+  <div class="rv" style="--d: 0s;"><span class="eyebrow">01 / <span data-mirror="sections.works">Work</span></span></div>
+  <h2 class="title rv" data-p="sections.works" spellcheck="false" style="--d: 0.07s;">Work</h2>
+  <div class="filters rv" id="filters" style="--d: 0.14s;"></div>
+  <div class="works" id="worksGrid"></div>
+  <p class="empty" id="empty" style="display: none;">Projects are coming soon</p>
+</section>
+
+<div id="customSections"></div>
+<section id="terms">
+  <div class="rv" style="--d: 0s;"><span class="eyebrow">02 / <span data-mirror="sections.terms">Terms</span></span></div>
+  <h2 class="title rv" data-p="sections.terms" spellcheck="false" style="--d: 0.07s;">Terms</h2>
+  <div class="terms">
+    <div class="card rv" style="--d: 0.14s;">
+      <h3 data-p="terms.noTitle" spellcheck="false">Outside my scope</h3>
+      <ul class="nolist" id="nodo"></ul>
+      <div class="addrow"><button class="mini" data-add="nodo">+ Item</button></div>
+    </div>
+    <div class="card rv" style="--d: .1s;">
+      <h3 data-p="terms.priceTitle" spellcheck="false">Starting price</h3>
+      <div class="big" data-p="terms.price" spellcheck="false">From 250 Robux</div>
+      <p class="pt" data-p="terms.priceText" data-multi="" spellcheck="false">For small tasks. Final pricing depends on complexity and scope.
+
+Timeline: agreed after reviewing the task.
+Payment, milestones and revisions: agreed before work starts. Additional features are quoted separately.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="rv" style="--d: 0s;"><span class="eyebrow">03 / <span data-mirror="sections.contact">Contact</span></span></div>
+  <h2 class="title rv" data-p="sections.contact" spellcheck="false" style="--d: 0.07s;">Contact</h2>
+  <div class="dcard rv" style="--d: 0.14s;">
+    <div style="position:relative;z-index:1">
+      <div class="presence" id="presence" role="status" data-status="unknown"><i></i><span>Discord · @misterkorobkaa</span></div>
+      <div class="nick" data-p="nick" spellcheck="false">Mistral</div>
+      <p data-p="contactText" data-multi="" spellcheck="false">Tell me about your idea, timeline and budget.</p>
+    </div>
+    <div class="dcr">
+      <a class="btn fill mag" id="dcBox" target="_blank" rel="noopener" href="https://discord.com/users/1225974137978097815" style="">Open Discord →</a>
+      <button class="btn ghost mag" id="briefOpen" style="">Create a brief ↗</button><button class="btn ghost mag" id="copyNick" style="">Copy username</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="bigword" id="bigword">Mistral</div><span data-p="footer" spellcheck="false">Mistral © 2026</span> · <a id="dcFoot" target="_blank" rel="noopener" href="https://discord.com/users/1225974137978097815">Discord · Mistral</a> · <a href="#top">↑</a></footer>
+<div class="hud mono" id="hud" aria-hidden="true"></div>
+<div class="utility"><button id="sound" aria-pressed="true" aria-label="Toggle ambient audio"><span class="eq">▂▅▃</span><span data-sound="">Sound off</span></button><button id="quality" aria-label="Graphics quality">FX: AUTO</button></div>
+<div class="dots" id="dots"><a href="#top" aria-label="top" class=""></a><a href="#works" aria-label="works" class=""></a><a href="#terms" aria-label="terms" class=""></a><a href="#contact" aria-label="contact" class=""></a></div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project preview"><button class="x" id="lbx" aria-label="Close preview">✕</button><div class="box"><div class="m" id="lbm"></div><h3 id="lbt"></h3><div id="lbd" class="project-copy"></div></div></div>
+
+<div class="modal" id="wm" role="dialog" aria-modal="true" aria-labelledby="wmt">
+  <form id="wf">
+    <h3 id="wmt">Edit work</h3>
+    <label for="w_t">Title</label><input id="w_t" required="" placeholder="Inventory system">
+    <div class="row"><div><label for="w_c">Category</label><input id="w_c" list="cats" placeholder="Mechanics"><datalist id="cats"><option value="Mechanics"></option><option value="Systems"></option><option value="Server logic"></option></datalist></div>
+    <div><label for="w_ty">Type</label><select id="w_ty"><option value="youtube">YouTube</option><option value="video">Video (file / .mp4)</option><option value="image">Image / screenshot</option></select></div></div>
+    <label for="w_s">URL (YouTube, mp4, image)</label><input id="w_s" placeholder="https://…">
+    <label for="w_f" class="filepick"><span>Choose media ↗</span><small id="fileName">No file selected</small><input type="file" id="w_f" accept="image/*,video/*"></label>
+    <p class="note">Files are embedded in the site. Use links for large videos.</p>
+    <label for="w_d">Description</label><textarea id="w_d" style="min-height:80px"></textarea>
+    <details class="editor-extra"><summary>Optional source code</summary><label for="w_source">Source code URL</label><input id="w_source" type="url" placeholder="https://github.com/…"><label for="w_code">Code example</label><textarea id="w_code" rows="6" spellcheck="false"></textarea></details><div class="row" style="margin-top:8px"><button type="button" class="btn ghost" id="wcancel">Cancel</button><button class="btn fill" type="submit" style="justify-content:center">Save</button></div>
+  </form>
+</div>
+
+<div class="modal" id="sm" role="dialog" aria-modal="true">
+  <form id="sf">
+    <h3>Settings</h3>
+    <label for="s_dc">Discord URL (invite or profile)</label><input id="s_dc" placeholder="https://discord.gg/…">
+    <label for="s_username">Discord username (copy button)</label><input id="s_username" autocomplete="off">
+<label for="s_id">Discord User ID · Lanyard</label><input id="s_id" inputmode="numeric" placeholder="123456789012345678"><p class="note">Join the Lanyard Discord server to enable live presence. Without a connection the status is unavailable.</p>
+<label class="editor-check"><input type="checkbox" id="s_stats"> Show statistics</label><label for="s_av">Availability</label><select id="s_av"><option value="open">Open for commissions</option><option value="busy">Busy</option></select>
+<label for="s_until">Busy until (optional)</label><input id="s_until" type="date">
+<label for="s_url">Public site URL (for OG export)</label><input id="s_url" type="url">
+<label for="s_m">Marquee (comma-separated)</label><textarea id="s_m" style="min-height:70px"></textarea>
+    <div class="row" style="margin-top:8px"><button type="button" class="btn ghost" id="scancel">Cancel</button><button class="btn fill" type="submit" style="justify-content:center">Save</button></div>
+  </form>
+</div>
+
+<div class="modal" id="briefModal" role="dialog" aria-modal="true" aria-labelledby="briefTitle">
+<form id="briefForm"><span class="eyebrow">MISSION BRIEF</span><h3 id="briefTitle">What are we building?</h3><p class="note">Fill this in to get a ready-to-copy Discord message.</p><label for="br_task">What needs to be built?</label><textarea id="br_task" required="" maxlength="4000" placeholder="For example, an item shop with persistent purchases"></textarea><div class="row"><div><label for="br_budget">Budget</label><input id="br_budget" maxlength="120" placeholder="Robux / USD"></div><div><label for="br_time">Preferred timeline</label><input id="br_time" maxlength="120" placeholder="For example, 7 days"></div></div><label for="br_refs">Links and references</label><textarea id="br_refs" maxlength="2000" placeholder="Optional"></textarea><div class="row"><button class="btn ghost" type="button" data-close="briefModal">Close</button><button class="btn fill" type="submit">Copy brief</button></div><p class="note" id="briefResult" role="status"></p><a id="briefDiscord" class="btn ghost" target="_blank" rel="noopener" hidden="">Continue to Discord ↗</a></form></div>
+<div class="modal" id="contentModal" role="dialog" aria-modal="true" aria-labelledby="contentTitle"><form id="contentForm"><h3 id="contentTitle">Content / JSON</h3><p class="note">Edit work, terms, FAQ and custom sections here. Export the site or save your changes to GitHub.</p><textarea id="contentJson" spellcheck="false" aria-label="Content JSON"></textarea><p id="contentError" class="note" role="status"></p><div class="row"><button type="button" class="btn ghost" data-close="contentModal">Cancel</button><button class="btn fill" type="submit">Apply</button></div></form></div>
+
+<button class="editor-launch" id="editorLaunch" aria-label="Open site editor" hidden="">✎ Editor</button>
+<div class="modal" id="textEditor" role="dialog" aria-modal="true" aria-labelledby="textEditorTitle"><form id="textEditorForm"><h3 id="textEditorTitle">Text editor</h3><p class="editor-hint">Edit the English content. Your changes stay exactly as you enter them.</p><label for="textEditorGroup">Choose a section</label><select id="textEditorGroup"><option value="hero">Hero</option><option value="stats">Statistics</option><option value="terms">Terms and pricing</option><option value="contact">Contact and footer</option><option value="all">All text</option></select><div id="textEditorFields" class="editor-fields"></div><div class="row"><button type="button" class="btn ghost" data-close="textEditor">Cancel</button><button type="submit" class="btn fill">Apply changes</button></div></form></div>
+<div class="modal" id="manageWorks" role="dialog" aria-modal="true" aria-labelledby="manageWorksTitle"><form id="manageWorksForm"><h3 id="manageWorksTitle">Manage work</h3><div id="manageWorksList"></div><div class="row"><button type="button" class="btn ghost" data-close="manageWorks">Done</button><button type="button" class="btn fill" id="managerAdd">+ Work</button></div></form></div>
+
+<button id="ownerLogin" class="owner-login" type="button">Owner · Korobbka</button>
+<div class="modal" id="ownerAuthModal" role="dialog" aria-modal="true" aria-labelledby="ownerAuthTitle"><form id="ownerAuthForm" autocomplete="off"><h3 id="ownerAuthTitle">Korobbka · GitHub</h3><p class="note" id="ownerAuthHelp">Owner sign-in through the GitHub API. Use a fine-grained token for Korobbka/Mistral with Contents: Read and write permission. The token stays in tab memory and is never included in exported HTML or browser storage.</p><a class="note" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">Create a token on GitHub ↗</a><label for="ownerTokenInput">GitHub personal access token</label><input type="password" id="ownerTokenInput" required="" autocomplete="off" spellcheck="false" autocapitalize="off"><p class="note" id="ownerAuthMessage" role="status"></p><div class="row"><button type="button" class="btn ghost" id="ownerAuthCancel">Cancel</button><button type="submit" class="btn fill" id="ownerAuthSubmit">Verify GitHub</button></div></form></div>
+
+<div class="modal" id="devPanel" role="dialog" aria-modal="true" aria-labelledby="devTitle"><form id="devForm"><h3 id="devTitle">Developer</h3><p class="note">Only available after signing in as Korobbka.</p><div class="dev-metrics" id="devMetrics"></div><h4>Visits · this browser</h4><p class="note">Local views and clicks from this browser, not global visitor statistics.</p><div id="devLocal"></div><h4>Global analytics</h4><p class="note" id="devAnalyticsState"></p><label for="devCounterCode">GoatCounter site code</label><input id="devCounterCode" placeholder="my-mistral" autocomplete="off" pattern="[a-z0-9][a-z0-9-]{0,61}"><p class="note">Create a free counter at goatcounter.com and enter its site code. After saving to GitHub, it tracks views, referrers, countries, browsers and events. Visitor names are not collected. No API key is needed here.</p><a href="https://www.goatcounter.com/" target="_blank" rel="noopener noreferrer" class="mini">Create a counter ↗</a><a id="devDashboard" target="_blank" rel="noopener noreferrer" class="btn ghost" hidden>Open analytics ↗</a><h4>Content checks</h4><div id="devChecks"></div><h4>Session errors</h4><pre id="devErrors"></pre><div class="row"><button type="button" class="btn ghost" id="devExport">Export diagnostics</button><button type="submit" class="btn fill">Save settings</button></div><button type="button" class="btn ghost" data-close="devPanel">Close</button></form></div>
+
+<div class="bar">
+  <button id="tgl">✓ Done</button>
+  <button class="only" id="bAdd">+ Work</button>
+  <button class="only" id="bSet">Settings</button>
+  <button class="only" id="ownerDev">Dev</button><button class="only" id="bText">Text editor</button><button class="only" id="bSections">Sections</button><button class="only" id="bManage">Work</button><button class="only" id="bUndo">↶ Undo</button><button class="only" id="bRedo" disabled>↷ Redo</button><button class="only" id="bBackup">Backup JSON</button><button id="bEditorClose">Hide editor</button><button class="only" id="bContent">Content / JSON</button><span id="ownerSaveStatus" role="status"></span><a id="ownerCommit" hidden target="_blank" rel="noopener noreferrer"></a><button class="only" id="ownerPublish" hidden="">Save to GitHub</button><button class="only" id="bExp">Export site</button>
+  <button class="only" id="bImp">Import</button>
+  <button class="only" id="bRes">Reset</button>
+</div>
+<input type="file" id="impf" accept=".json" hidden="">
+
+<div class="modal" id="sectionsModal" role="dialog" aria-modal="true" aria-labelledby="sectionsTitle"><form id="sectionsForm"><h3 id="sectionsTitle">Sections</h3><p class="editor-hint">Show or hide existing sections, and add your own below Work.</p><div id="builtinSections"></div><div id="customSectionsEditor"></div><button class="btn ghost" type="button" id="addSection">Add section</button><div class="row" style="margin-top:16px"><button class="btn ghost" type="button" data-close="sectionsModal">Cancel</button><button class="btn fill" type="submit">Save sections</button></div></form></div>
+<script id="seed" type="application/json">{"_v": 1795341006183, "dc": "https://discord.com/users/1225974137978097815", "nick": "Mistral", "brand": "Mistral", "role": "Roblox Scripter", "status": "Open for commissions", "line": "Luau & Roblox Studio. Gameplay systems, RemoteEvents and ProfileStore.", "marquee": ["Luau", "Roblox Studio", "Mechanics", "Systems", "Server logic"], "stats": [{"n": "1", "l": "year of experience"}, {"n": "250+", "l": "Robux"}], "sections": {"works": "Work", "terms": "Terms", "contact": "Contact"}, "works": [{"title": "Generator system", "cat": "Mechanics", "type": "youtube", "src": "https://youtu.be/QqmfYHLJO6U", "desc": "Cooperative generator repair with three minigames and server-side checks.\n\n- Energy, Labyr and Wire: memory sequences, a draggable maze and wire matching.\n- Three repair sides, with one player per spot.\n- The server checks distance, character state, occupied spots and repair timing.\n- Repairs stop when a player dies, moves away or leaves the game.\n- The server tracks generator state; the client handles the interface and minigames.\n\nSpawn points are chosen without repeats. In the published v1.5 source, spawning runs when a player joins; round integration is not implemented.", "sourceURL": "https://github.com/Korobbka/GeneratorsV1.5/blob/main/Server", "code": "for _, spot in pairs(generator:GetChildren()) do\n    if spot:IsA(\"Attachment\") and not info.Players[spot] then\n        local distance = (hrp.Position - spot.WorldPosition).Magnitude\n        if distance \u003c minDistance then\n            minDistance = distance\n            spoot = spot\n        end\n    end\nend"}, {"title": "M1 combat system", "cat": "Systems", "type": "youtube", "src": "https://youtu.be/W-nzfXX0P_g?si=u8lXdbA6lh0ViBjY", "desc": "Melee combat with combos, directional blocking and three finishers.\n\n- Damage, combos and hit detection run on the server.\n- Three finishers: knockback, downslam and uppercut.\n- Directional blocking with a configurable angle, set to 110° by default.\n- Keyboard, touch and gamepad controls.\n- Damage, hitboxes, knockback and movement settings are configured in a ModuleScript.\n\nThe client handles animations and effects. The first three hits move the character closer to the opponent; attacks from behind and downslams bypass the block."}, {"title": "Item collection & economy", "cat": "Server logic", "type": "youtube", "src": "https://youtu.be/xxAlk5EkKSo", "desc": "An item collection loop with inventory, currency, stamina and persistent player data.\n\n- Item rarities with individual spawn chances and a 15–30 second respawn interval.\n- Server-side checks for balances, prices and collection speed.\n- Profile and inventory persistence with ProfileStore.\n- Inventory APIs for adding, removing, transferring and clearing items.\n- APIs for coins, stamina and stamina recovery.\n\nItem prices can change over time. Item settings, prices and spawn chances are configured in ModuleScripts; visual effects run on the client."}], "terms": {"noTitle": "Outside my scope", "priceTitle": "Starting price", "price": "From 250 Robux", "priceText": "For small tasks. Final pricing depends on complexity and scope.\n\nTimeline: agreed after reviewing the task.\nPayment, milestones and revisions: agreed before work starts. Additional features are quoted separately."}, "nodo": ["Advanced NPC AI", "Complex vehicle systems", "Comprehensive anti-cheat", "3D modelling & animation", "Professional UI/UX design"], "contactText": "Tell me about your idea, timeline and budget.", "footer": "Mistral © 2026", "discordId": "1225974137978097815", "availability": "open", "busyUntil": "", "completed": null, "translationEndpoint": "", "siteUrl": "https://korobbka.github.io/Mistral", "reviews": [], "snippets": [], "prices": [], "faq": [{"q": "How do we start?", "a": "Describe your idea, share references, and include your timeline and budget. We will agree on scope and pricing."}, {"q": "Can I order a single mechanic?", "a": "Yes. Small, self-contained tasks are welcome. First, we will check how it fits into your project."}, {"q": "What about payment and revisions?", "a": "We agree on payment, milestones and revisions before work starts. Features outside the agreed scope are quoted separately."}], "en": {}, "showStats": true, "language": "en", "contentVersion": 2, "customSections": [], "hiddenSections": [], "discordUsername": "misterkorobkaa"}</script>
+<script>
+
+(async()=>{
+const KEY='mistral-admin-v5';
+const textJobs=new Set(),textJobIds=new Map();let textJobSequence=0;
+const OWNER_ID=227437044,OWNER_LOGIN='Korobbka',OWNER_DRAFT_KEY='mistral-owner-227437044';
+let ownerToken='',ownerIdentity=null,ownerAuthEpoch=0,ownerExpiryTimer=null;
+const ownerApiControllers=new Set();
+
+const lang='en';
+const ui=(ru,en)=>en;
+let quality;try{quality=localStorage.getItem('mistral-fx-restored')||'auto'}catch{quality='auto'}
+let reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let low=false,heroVisible=true,holePulse=0;
+function applyQuality(){low=quality==='lite'||(quality==='auto'&&(reduced||innerWidth<700));document.body.classList.toggle('lite',low);document.body.classList.toggle('reduced',reduced);}
+applyQuality();
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let seed=JSON.parse($('#seed').textContent);
+
+let data=structuredClone(seed); // Visitors always see published data; drafts load only after owner verification.
+
+function repairStoredEncoding(value){
+ if(typeof TextDecoder==='undefined')return value;
+ const win=new TextDecoder('windows-1251'),utf=new TextDecoder('utf-8',{fatal:true}),reverse=new Map();
+ for(let i=0;i<256;i++)reverse.set(win.decode(new Uint8Array([i])),i);
+ const score=t=>(t.match(/[РС][Ѐ-ӿ\u0080-\u00ff ]|вЂ|в\u201e|в\u20ac|\u00d0|\u00d1/g)||[]).length;
+ function fix(t){
+  if(typeof t!=='string')return t;let result=t;
+  for(let pass=0;pass<2&&score(result)>0;pass++){
+   try{const normalized=result.replace(/Р /g,'Р\u00a0');const bytes=[];for(const ch of normalized){if(!reverse.has(ch))throw Error();bytes.push(reverse.get(ch));}const decoded=utf.decode(new Uint8Array(bytes));if(score(decoded)>=score(result))break;result=decoded;}catch{break;}
+  }
+  return result;
+ }
+ function walk(v){if(typeof v==='string')return fix(v);if(Array.isArray(v))return v.map(walk);if(v&&typeof v==='object'){const out={};for(const [k,x] of Object.entries(v))out[k]=walk(x);return out;}return v;}
+ return walk(value);
+}
+
+
+data=repairStoredEncoding(data);
+let editorHistory=[JSON.stringify(data)],editorHistoryAt=0,editorReplaying=false;
+let filter="All", editIdx=null, mx=0, my=0, first=true;
+const editing=()=>ownerSession()&&document.body.classList.contains('editing');
+const admin=()=>ownerSession()&&document.body.classList.contains('admin');
+const toast=(t,bad)=>{const e=$('#toast');e.textContent=t;e.classList.toggle('bad',!!bad);e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),2400)};
+const save=()=>{if(!requireOwner())return false;normalizeStats(data);recordEditorHistory();updateSyncState();try{localStorage.setItem(OWNER_DRAFT_KEY,JSON.stringify({...data,_v:Date.now()}))}catch(e){toast("Storage is full. Use media links instead of embedded files.",true)}};
+function setAdmin(on){if(on&&!ownerSession()){showOwnerLogin();return false;}document.body.classList.toggle('admin',on);if(!on&&editing())toggleEdit(false);return true;}
+const raw=p=>p.split('.').reduce((o,k)=>o?.[k],data);
+const get=p=>raw(p);
+const set=(p,v)=>setPortfolioText(p,v);
+
+function bindText(){
+  $$('[data-mirror]').forEach(el=>{const v=get(el.dataset.mirror);if(v!=null)el.textContent=v});
+  $$('[data-p]').forEach(el=>{
+    const p=el.dataset.p,v=get(p);
+    if(v==null||el===document.activeElement)return;
+    el.textContent=v;
+    el.contentEditable=editing()?'plaintext-only':'false';
+    el.spellcheck=false;
+  });
+}
+function links(){
+  const u=data.dc||'#';
+  ['dcTop','dcHero','dcBox'].forEach(i=>$('#'+i).href=u);
+  const f=$('#dcFoot');f.href=u;f.textContent='Discord \u00b7 '+data.nick;
+  $('#bigword').textContent=data.brand;
+  $('#brandTop').textContent=data.brand;
+  document.title=data.brand+' \u2014 '+data.role;
+}
+const ctl=p=>`<div class="ctl"><button data-del="${p}" title="Delete">\u2715</button></div>`;
+
+function render(){
+  normalizeStats(data);
+  $('#stats').hidden=data.showStats===false;
+  $('#stats').innerHTML=data.stats.map((s,i)=>`<div class="stat rv" style="--d:${.5+i*.1}s"><b data-count="${esc(s.n)}" data-p="stats.${i}.n"></b><span data-p="stats.${i}.l"></span></div>`).join('');
+  const m=(data.marquee||[]).map((t,i)=>`<span>${esc(get('marquee.'+i))}</span>`).join('');
+  $('#marq').innerHTML=m.repeat(6);startMarq();
+  $('#nodo').innerHTML=data.nodo.map((t,i)=>`<li><b>${String(i+1).padStart(2,'0')}</b><span data-p="nodo.${i}"></span>${ctl('nodo.'+i)}</li>`).join('');
+  renderWorks();
+  const boot=first&&!editing();first=false;
+  renderCustomSections();bindText();links();renderExtras();translateStatic();refreshEditorButtons();updateSyncState();
+  if(boot){setTimeout(observe,1450);setTimeout(counters,1450);setTimeout(()=>scramble($('#h1'),data.brand),1500)}else{observe();counters()}
+}
+function scramble(el,text){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const ch='01ABCDEFGHIJKLMNOPQRSTUVWXYZ<>/\\|{}[]#',n=text.length;let f=0;
+  const id=setInterval(()=>{
+    el.textContent=text.split('').map((c,i)=>i<f/3?c:(c===' '?' ':ch[Math.random()*ch.length|0])).join('');
+    if(++f>n*3+2){clearInterval(id);el.textContent=text}
+  },40);
+}
+const cats=()=>[...new Set(data.works.map(w=>w.cat).filter(Boolean))];
+function ytParse(u){
+  u=String(u||'').trim();if(!u)return{};
+  let url;try{url=new URL(/^https?:\/\//i.test(u)?u:'https://'+u)}catch(e){return{}}
+  const h=url.hostname.replace(/^www\.|^m\.|^music\./,'');
+  let id='';
+  if(h==='youtu.be')id=url.pathname.split('/')[1]||'';
+  else if(h==='youtube.com'||h==='youtube-nocookie.com'){
+    id=url.searchParams.get('v')||'';
+    if(!id){const m=url.pathname.match(/^\/(?:embed|shorts|live|v)\/([^/?#]+)/);if(m)id=m[1]}
+  }
+  if(!/^[\w-]{11}$/.test(id))return{};
+  let start=0;const t=url.searchParams.get('t')||url.searchParams.get('start');
+  if(t){const m=String(t).match(/^(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s?)?$/);if(m)start=(+m[1]||0)*3600+(+m[2]||0)*60+(+m[3]||0)}
+  return{id,start};
+}
+const ytId=u=>ytParse(u).id;
+function mediaHTML(w,i){
+  const ph=`<div class="ph" style="--px:${20+(i*23)%60}%;--py:${15+(i*37)%60}%">${String(i+1).padStart(2,'0')}</div>`;
+  if(w.type==='youtube'){const id=ytId(w.src);return (id?`<img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="">`:ph)+'<div class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></div>'}
+  if(w.type==='video')return (w.src?`<video src="${esc(w.src)}" muted loop playsinline preload="none"></video>`:ph)+'<div class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></div>';
+  return w.src?`<img loading="lazy" src="${esc(w.src)}" alt="${esc(get('works.'+i+'.title'))}">`:ph;
+}
+function renderWorks(){
+  const cs=cats();
+  if(filter!=="All"&&!cs.includes(filter))filter="All";
+  $('#filters').innerHTML=cs.length>1?["All",...cs].map(c=>`<button class="chip ${c===filter?'on':''}" data-f="${esc(c)}">${esc(c==="All"?'All':get('works.'+data.works.findIndex(w=>w.cat===c)+'.cat'))}</button>`).join(''):'';
+  $('#cats').innerHTML=cs.map(c=>`<option value="${esc(get('works.'+data.works.findIndex(w=>w.cat===c)+'.cat'))}">`).join('');
+  $('#worksGrid').innerHTML=data.works.map((w,i)=>`<article tabindex="0" role="button" aria-label="${esc(get('works.'+i+'.title'))}" class="work tilt rv ${filter!=="All"&&w.cat!==filter?'hide':''}" data-i="${i}" style="--d:${(i%3)*.08}s"><div class="ctl"><button data-edit="${i}" title="Edit">\u270e</button><button data-del="works.${i}" title="Delete">\u2715</button></div><div class="media">${mediaHTML(w,i)}</div><div class="info"><small>${esc(get('works.'+i+'.cat'))}</small><h3>${esc(get('works.'+i+'.title'))}</h3><p class="work-summary">${esc(String(get('works.'+i+'.desc')||'').split(/\n\s*\n/)[0])}</p></div></article>`).join('')+'<button class="addtile" id="addTile">+ Add work</button>';
+  $('#empty').style.display=data.works.length?'none':'block';
+}
+
+/* marquee: seamless, slows on hover */
+let marqA=null,marqRate=1,marqTarget=1;
+function startMarq(){
+  const el=$('#marq'),ct=marqA?(marqA.currentTime||0):0;
+  if(marqA){marqA.cancel();marqA=null}
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches||!el.animate)return;
+  marqA=el.animate([{transform:'translateX(0)'},{transform:'translateX(-50%)'}],{duration:60000,iterations:Infinity,easing:'linear'});
+  marqA.currentTime=ct;marqA.playbackRate=marqRate;if(document.hidden)marqA.pause();
+}
+let marqFrame=0;function easeMarquee(){marqFrame=0;marqRate+=(marqTarget-marqRate)*.07;if(marqA)marqA.playbackRate=Math.max(marqRate,.02);if(Math.abs(marqTarget-marqRate)>.001&&!document.hidden)marqFrame=requestAnimationFrame(easeMarquee);}
+function wakeMarquee(){if(!marqFrame&&!document.hidden)marqFrame=requestAnimationFrame(easeMarquee);}
+$('.marq').addEventListener('pointerenter',()=>{marqTarget=.2;wakeMarquee()});
+$('.marq').addEventListener('pointerleave',()=>{marqTarget=1;wakeMarquee()});
+
+/* reveal, counters */
+let io;
+function observe(){
+  io&&io.disconnect();
+  $$('section:not(#top)').forEach(section=>section.querySelectorAll('.rv:not(.in)').forEach((el,i)=>{if(!el.style.getPropertyValue('--d'))el.style.setProperty('--d',Math.min(i*.07,.28)+'s')}));
+  io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(()=>t.classList.add('done'),1400)}}),{threshold:.1,rootMargin:'0px 0px -40px'});
+  $$('.rv:not(.in)').forEach(el=>io.observe(el));
+}
+function counters(){
+  $$('[data-count]').forEach(el=>{
+    const raw=el.dataset.count,m=raw.match(/^(\d+)(.*)$/);
+    if(!m||editing()){el.textContent=raw;return}
+    const end=+m[1],suf=m[2];let t0=null;el.textContent='0'+suf;
+    const run=()=>{const step=ts=>{t0??=ts;const k=Math.min((ts-t0)/1500,1);el.textContent=Math.round(end*(1-Math.pow(1-k,3)))+suf;k<1&&requestAnimationFrame(step)};requestAnimationFrame(step)};
+    new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){run();o.disconnect()}}).observe(el);
+  });
+}
+
+
+/* cursor + tilt + magnet */
+const magneticButtons=$$('.mag');
+let cx=0,cy=0,tx=0,ty=0;
+let pendingPointer=null,pointerFrame=0;
+document.addEventListener('pointermove',e=>{pendingPointer=e;if(pointerFrame)return;pointerFrame=requestAnimationFrame(()=>{pointerFrame=0;applyPointer(pendingPointer);});},{passive:true});
+function applyPointer(e){
+  tx=e.clientX;ty=e.clientY;
+  $('#dotc').style.transform=`translate(${tx}px,${ty}px)`;
+  mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;
+  const t=e.target.closest?.('.tilt,.card');
+  if(t&&!editing()){
+    const r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+    t.style.setProperty('--mx',x*100+'%');t.style.setProperty('--my',y*100+'%');
+    if(t.classList.contains('tilt')){t.style.setProperty('--ry',((x-.5)*9).toFixed(2)+'deg');t.style.setProperty('--rx',((.5-y)*9).toFixed(2)+'deg')}
+  }
+  magneticButtons.forEach(b=>{const r=b.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);
+    b.style.transform=Math.hypot(dx,dy)<90?`translate(${dx*.25}px,${dy*.35}px)`:''});
+  document.body.classList.toggle('text-focus',!!e.target.closest?.('input,textarea,[contenteditable="true"],[contenteditable="plaintext-only"]'));
+  hud();
+  $('#cur').classList.toggle('big',!!e.target.closest?.('a,button,.work,.chip'));
+  wakeCursor();
+}
+document.addEventListener('pointerout',e=>{const t=e.target.closest?.('.tilt');if(t&&!t.contains(e.relatedTarget)){t.style.setProperty('--rx','0deg');t.style.setProperty('--ry','0deg')}});
+let cursorFrame=0;const finePointer=matchMedia('(pointer:fine)');
+function wakeCursor(){if(!cursorFrame&&!document.hidden&&!reduced&&finePointer.matches)cursorFrame=requestAnimationFrame(cursorStep);}
+function cursorStep(){cursorFrame=0;if(document.hidden||reduced||!finePointer.matches)return;cx+=(tx-cx)*.16;cy+=(ty-cy)*.16;$('#cur').style.transform=`translate(${cx}px,${cy}px)`;if(Math.abs(tx-cx)+Math.abs(ty-cy)>.15)wakeCursor();}
+wakeCursor();
+
+const hud=()=>{const h=$('#hud');if(h)h.textContent=`X ${(tx/innerWidth).toFixed(3)}  Y ${(ty/innerHeight).toFixed(3)}  SCR ${Math.round(scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)*100)}%`};
+let lastY=scrollY,sv=0;
+addEventListener('scroll',()=>{
+  const h=document.documentElement;$('#prog').style.width=(scrollY/Math.max(1,h.scrollHeight-innerHeight)*100)+'%';
+  sv+=(scrollY-lastY)*.35;lastY=scrollY;
+  hud();
+  let cur='';['works','terms','contact'].forEach(id=>{const r=document.getElementById(id).getBoundingClientRect();if(!document.getElementById(id).hidden&&r.top<innerHeight*.45)cur=id});
+  $$('#dots a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+(cur||'top')));
+  $$('#nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
+},{passive:true});
+
+/* ---------- living starfield ---------- */
+(()=>{
+  const c=$('#stars'),x=c.getContext('2d');let W,H,S=[],nodes=[],sh=[],dpr=Math.min(devicePixelRatio||1,2);
+  function init(){
+    W=c.width=innerWidth*dpr;H=c.height=innerHeight*dpr;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';
+    const n=low?Math.min(90,Math.round(innerWidth*innerHeight/8000)):Math.min(420,Math.round(innerWidth*innerHeight/5000));
+    S=Array.from({length:n},(_,i)=>{const z=Math.random();return{x:Math.random()*W,y:Math.random()*H,z,r:(.35+z*1.4)*dpr,a:Math.random()*6.28,s:.5+Math.random()*2,vx:(.05+z*.35)*dpr,vy:(Math.random()-.5)*.08*dpr,node:i<(low?35:(innerWidth<700?45:95))}});
+    nodes=S.filter(s=>s.node);
+  }
+  addEventListener('resize',init);addEventListener('qualitychange',init);init();
+  let last=0,previousFrame=0,frameId=0;
+  function schedule(){if(!frameId&&!document.hidden)frameId=requestAnimationFrame(frame);}
+  document.addEventListener('visibilitychange',schedule);
+  function frame(t){
+    frameId=0;if(document.hidden)return;if(t-previousFrame<(low?50:15)){schedule();return}previousFrame=t;
+    x.clearRect(0,0,W,H);
+    sv*=.9;const boost=Math.max(-40,Math.min(40,sv));
+    const mxp=tx*dpr,myp=ty*dpr;
+    for(const s of S){
+      if(!reduced){s.x-=s.vx;s.y+=s.vy-boost*s.z*.6*dpr/4;}
+      if(s.x<-10)s.x=W+10;if(s.y<-10)s.y=H+10;if(s.y>H+10)s.y=-10;
+      const tw=reduced?.7:.5+.5*Math.sin(t/1000*s.s+s.a);
+      const px=s.x-mx*30*s.z*dpr,py=s.y-my*30*s.z*dpr;
+      s.px=px;s.py=py;
+      x.globalAlpha=.2+tw*.8*(.35+s.z*.65);
+      x.fillStyle='#fff';
+      if(!reduced&&Math.abs(boost)>4&&s.z>.3){x.strokeStyle='#fff';x.lineWidth=s.r;x.beginPath();x.moveTo(px,py);x.lineTo(px,py+boost*s.z*1.8*dpr);x.stroke()}
+      x.beginPath();x.arc(px,py,s.r,0,6.283);x.fill();
+    }
+    // constellation net
+    const N=nodes,D=(innerWidth<700?95:140)*dpr;
+    x.lineWidth=.6*dpr;x.strokeStyle='#fff';
+    for(let i=0;i<N.length;i++){
+      const a=N[i];
+      for(let j=i+1;j<N.length;j++){const b=N[j],dx=a.px-b.px,dy=a.py-b.py,d2=dx*dx+dy*dy;
+        if(d2<D*D){const d=Math.sqrt(d2);x.globalAlpha=(1-d/D)*.28;x.beginPath();x.moveTo(a.px,a.py);x.lineTo(b.px,b.py);x.stroke()}}
+      const dm=Math.hypot(a.px-mxp,a.py-myp),R=210*dpr;
+      if(dm<R){x.globalAlpha=(1-dm/R)*.7;x.beginPath();x.moveTo(a.px,a.py);x.lineTo(mxp,myp);x.stroke()}
+    }
+    if(!reduced&&t-last>2800&&Math.random()<.025){last=t;const a=.25+Math.random()*.5;sh.push({x:Math.random()*W,y:Math.random()*H*.55,vx:Math.cos(a)*16*dpr,vy:Math.sin(a)*16*dpr,l:1})}
+    sh=sh.filter(s=>s.l>0);
+    for(const s of sh){
+      const g=x.createLinearGradient(s.x,s.y,s.x-s.vx*8,s.y-s.vy*8);
+      g.addColorStop(0,`rgba(255,255,255,${s.l})`);g.addColorStop(1,'rgba(255,255,255,0)');
+      x.globalAlpha=1;x.strokeStyle=g;x.lineWidth=1.8*dpr;x.beginPath();x.moveTo(s.x,s.y);x.lineTo(s.x-s.vx*8,s.y-s.vy*8);x.stroke();
+      s.x+=s.vx;s.y+=s.vy;s.l-=.018;
+    }
+    schedule();
+  }
+  schedule();
+})();
+
+/* events */
+document.addEventListener('click',e=>{
+  const t=e.target;
+  const f=t.closest('[data-f]');if(f){filter=f.dataset.f;renderWorks();bindText();$$('.work').forEach(w=>w.classList.add('in'));return}
+  const del=t.closest('[data-del]');if(del){if(!requireOwner())return;e.stopPropagation();if(!confirm("Delete?"))return;
+    const ks=del.dataset.del.split('.');const i=+ks.pop();const base=ks.join('.');cancelTextJobs(base);get(base).splice(i,1);
+    const translated={};for(const [key,value] of Object.entries(data.en||{})){const prefix=base+'.';if(key.startsWith(prefix)){const rest=key.slice(prefix.length),m=rest.match(/^(\d+)(.*)$/);if(m){const old=+m[1];if(old===i)continue;translated[prefix+(old>i?old-1:old)+m[2]]=value;continue;}}translated[key]=value;}data.en=translated;
+    save();render();return}
+  const eb=t.closest('[data-edit]');if(eb){e.stopPropagation();openWork(+eb.dataset.edit);return}
+  const add=t.closest('[data-add]');if(add){if(!requireOwner())return;if(add.dataset.add==='nodo'){const text='New item';data.nodo.push(text);if(lang==='en')data.en['nodo.'+(data.nodo.length-1)]=text;queueTextTranslation('nodo.'+(data.nodo.length-1),text,lang);}save();render();return}
+  if(t.closest('#addTile')){openWork(null);return}
+  const w=t.closest('.work');if(w&&!editing())openLB(+w.dataset.i);
+});
+document.addEventListener('focusout',e=>{
+  const el=e.target;if(!el.dataset?.p||!editing())return;
+  const p=el.dataset.p;set(p,el.textContent);save();bindText();
+  if(p==='brand'||p==='role'||p==='nick')links();
+});
+document.addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey)&&e.shiftKey&&e.code==='KeyE'){e.preventDefault();if(!ownerSession()){showOwnerLogin();return;}const on=!admin();setAdmin(on);if(on)toggleEdit(true);return}
+  if(e.key==='Enter'&&e.target.dataset?.p&&e.target.dataset.multi===undefined){e.preventDefault();e.target.blur()}
+  if(e.key==='Escape'){closeLB();$$('.modal').forEach(m=>m.classList.remove('open'))}
+});
+document.addEventListener('pointerover',e=>{const w=e.target.closest?.('.work');if(w){const v=w.querySelector('video');v&&v.play().catch(()=>{})}});
+document.addEventListener('pointerout',e=>{const w=e.target.closest?.('.work');if(w&&!w.contains(e.relatedTarget)){const v=w.querySelector('video');v&&v.pause()}});
+
+function openLB(i){
+  const w=data.works[i];if(!w)return;let h;
+  if(w.type==='youtube'){const y=ytParse(w.src);h=y.id?`<iframe src="https://www.youtube.com/embed/${y.id}?autoplay=1&rel=0&playsinline=1${y.start?'&start='+y.start:''}" title="${esc(get('works.'+i+'.title'))}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`:'<p style="color:#888">Invalid YouTube URL</p>'}
+  else if(w.type==='video'&&w.src)h=`<video src="${esc(w.src)}" controls autoplay loop playsinline></video>`;
+  else if(w.src)h=`<img src="${esc(w.src)}" alt="">`;
+  else h='<p style="color:#888">No video has been added yet</p>';
+  $('#lbm').innerHTML=h;$('#lbt').textContent=get('works.'+i+'.title');$('#lbd').innerHTML=projectDescription(w);$('#lb').classList.add('open');document.body.classList.add('media-open');$('#lbx').focus();
+}
+function closeLB(){const was=$('#lb').classList.contains('open');$('#lb').classList.remove('open');document.body.classList.remove('media-open');$('#lbm').innerHTML='';if(was)$('#worksGrid .work')?.focus({preventScroll:true});}
+$('#lbx').onclick=closeLB;$('#lb').addEventListener('click',e=>{if(e.target.id==='lb')closeLB()});
+
+function projectDescription(w){
+ const blocks=String(w.desc||'').split(/\n\s*\n/).filter(Boolean);
+ let output=blocks.map(block=>{
+  const lines=block.split('\n');
+  if(lines.every(line=>/^\s*[-•]\s+/.test(line)))return '<ul>'+lines.map(line=>'<li>'+esc(line.replace(/^\s*[-•]\s+/,''))+'</li>').join('')+'</ul>';
+  return '<p>'+esc(block).replace(/\n/g,'<br>')+'</p>';
+ }).join('');
+ if(w.sourceURL&&safeURL(w.sourceURL)!=='#')output+='<a class="source-link" href="'+esc(safeURL(w.sourceURL))+'" target="_blank" rel="noopener">View source on GitHub</a>';
+ if(w.code)output+='<details><summary>Code example</summary><pre><code>'+esc(w.code)+'</code></pre></details>';
+ return output;
+}
+let fileData=null;
+function openWork(i){if(!requireOwner())return;
+  editIdx=i;fileData=null;const w=i==null?{title:'',cat:'',type:'youtube',src:'',desc:''}:data.works[i];
+  $('#wmt').textContent=i==null?"New work":"Edit work";
+  $('#w_t').value=i==null?'':get('works.'+i+'.title');$('#w_c').value=i==null?'':get('works.'+i+'.cat');$('#w_ty').value=w.type;$('#w_s').value=w.src.startsWith('data:')?'':w.src;$('#w_d').value=i==null?'':get('works.'+i+'.desc');$('#w_f').value='';$('#fileName').textContent='No file selected';
+  $('#w_source').value=w.sourceURL||'';$('#w_code').value=w.code||'';
+  $('#wm').classList.add('open');translateStatic();
+  setTimeout(()=>$('#w_t').focus({preventScroll:true}),60);
+}
+$('#wcancel').onclick=()=>$('#wm').classList.remove('open');
+$('#w_f').onchange=e=>{
+  const f=e.target.files[0];if(!f)return;
+  $('#fileName').textContent=f.name;$('#w_ty').value=f.type.startsWith('video/')?'video':'image';
+  if(f.size>3*1024*1024)toast("Files over 3 MB may not fit in browser storage. A media URL is recommended.");
+  const r=new FileReader();r.onload=()=>{fileData=r.result;toast("File loaded")};r.readAsDataURL(f);
+};
+let workSaving=false;
+$('#wf').onsubmit=e=>{
+ e.preventDefault();if(!requireOwner()||workSaving)return;workSaving=true;
+ try{
+  const index=editIdx==null?data.works.length:editIdx,old=data.works[index];
+  const src=fileData||$('#w_s').value.trim()||(old?.src.startsWith('data:')?old.src:'');
+  let type=$('#w_ty').value;if(ytId(src))type='youtube';else if(type==='youtube'&&/\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(src))type='video';
+  const w={...old,title:$('#w_t').value.trim(),cat:$('#w_c').value.trim()||'Other',desc:$('#w_d').value.trim(),type,src,sourceURL:$('#w_source').value.trim(),code:$('#w_code').value};
+  if(!w.title)return;delete w._translation;data.works[index]=w;
+  for(const key of Object.keys(data.en||{}))if(key.startsWith('works.'+index+'.'))delete data.en[key];
+  save();$('#wm').classList.remove('open');render();toast('Work saved');
+ }finally{workSaving=false;}
+};
+
+$('#bSet').onclick=()=>{$('#s_dc').value=data.dc;$('#s_id').value=data.discordId||'';$('#s_username').value=data.discordUsername||data.nick;$('#s_stats').checked=data.showStats!==false;$('#s_av').value=data.availability||'open';$('#s_until').value=data.busyUntil||'';$('#s_url').value=data.siteUrl||'';$('#s_m').value=(data.marquee||[]).join(', ');$('#sm').classList.add('open');translateStatic();setTimeout(()=>$('#s_dc').focus({preventScroll:true}),60)};
+$('#scancel').onclick=()=>$('#sm').classList.remove('open');
+$('#sf').onsubmit=e=>{e.preventDefault();data.dc=$('#s_dc').value.trim();data.discordId=$('#s_id').value.trim();data.discordUsername=$('#s_username').value.trim();data.showStats=$('#s_stats').checked;data.availability=$('#s_av').value;data.busyUntil=$('#s_until').value;data.siteUrl=$('#s_url').value.trim();data.marquee=$('#s_m').value.split(',').map(s=>s.trim()).filter(Boolean);syncMarquee();save();$('#sm').classList.remove('open');render()};
+$$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open')}));
+
+function toggleEdit(force){if(force!==false&&!requireOwner()){showOwnerLogin();return false;}
+  const on=document.body.classList.toggle('editing',force);if(on&&!admin())setAdmin(true);
+  $('#tgl').textContent=on?'\u2713 Done':'\u270e Edit';
+  render();if(admin())toast(on?"Click any text to edit it":"Saved");
+}
+$('#tgl').onclick=()=>toggleEdit();
+const ownerRequested=new URLSearchParams(location.search).get('edit')==='1';
+$$('.modal,.lb').forEach(n=>new MutationObserver(()=>document.documentElement.classList.toggle('lock',!!$('.modal.open,.lb.open'))).observe(n,{attributes:true,attributeFilter:['class']}));
+$('#bAdd').onclick=()=>openWork(null);
+$('#bRes').onclick=()=>{if(confirm("Reset all local changes?")){localStorage.removeItem(KEY);data=JSON.parse(JSON.stringify(seed));render()}};
+$('#bExp').onclick=()=>{
+  data._v=Date.now();save();
+  const c=document.documentElement.cloneNode(true);
+  c.querySelector('#seed').textContent=JSON.stringify(data).replace(/</g,'\\u003c');
+  c.removeAttribute('class');c.removeAttribute('style');
+  const b=c.querySelector('body');b.removeAttribute('class');b.removeAttribute('style');
+  ['#stats','#marq','#nodo','#worksGrid','#filters','#lbm','#hud','#faqList','#customSections'].forEach(q=>{const n=c.querySelector(q);if(n)n.innerHTML=''});
+  c.querySelectorAll('#textEditorFields,#manageWorksList,#customSectionsEditor,#builtinSections').forEach(n=>n.innerHTML='');
+  c.querySelector('#editorLaunch').hidden=true;c.querySelector('#ownerPublish').hidden=true;
+  c.querySelector('#ownerTokenInput').value='';c.querySelector('#ownerTokenInput').removeAttribute('value');c.querySelector('#ownerAuthMessage').textContent='';c.querySelector('#ownerLogin').textContent='Owner \u00b7 Korobbka';
+  c.querySelector('#devMetrics').innerHTML='';c.querySelector('#devLocal').textContent='';c.querySelector('#devErrors').textContent='';c.querySelector('#devChecks').textContent='';c.querySelectorAll('[data-runtime-analytics]').forEach(n=>n.remove());
+  c.querySelector('#h1').textContent=data.brand;
+  c.querySelectorAll('meta[property="og:url"]').forEach(n=>n.content=data.siteUrl+'/');
+  c.querySelector('#cnt').textContent='000';
+  c.querySelectorAll('[contenteditable]').forEach(n=>n.removeAttribute('contenteditable'));
+  c.querySelectorAll('.in,.done,.on,.open,.gone,.off').forEach(n=>n.classList.remove('in','done','on','open','gone','off'));
+  c.querySelector('#cur').classList.remove('big');
+  ['#cur','#dotc','#prog','#bar2','#toast','#scene'].forEach(q=>{const n=c.querySelector(q);if(n)n.removeAttribute('style')});
+  c.querySelector('#scene').setAttribute('style','--d:.2s');
+  c.querySelectorAll('.mag').forEach(n=>n.style.removeProperty('transform'));
+  c.querySelectorAll('.card').forEach(n=>{n.style.removeProperty('--mx');n.style.removeProperty('--my')});
+  const url=URL.createObjectURL(new Blob(['<!doctype html>\n'+c.outerHTML],{type:'text/html'}));
+  const a=document.createElement('a');a.href=url;a.download='index.html';document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),4000);
+  toast('index.html exported — upload it to GitHub');
+};
+$('#bImp').onclick=()=>$('#impf').click();
+$('#impf').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{data=JSON.parse(r.result);save();render();toast("Imported")}catch(x){toast("Could not import this file")}};r.readAsText(f)};
+function copyText(t){
+  if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t);
+  return new Promise((res,rej)=>{try{const a=document.createElement('textarea');a.value=t;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();const ok=document.execCommand('copy');a.remove();ok?res():rej()}catch(e){rej(e)}});
+}
+$('#copyNick').onclick=()=>{const b=$('#copyNick');
+  copyText(data.discordUsername||data.nick).then(()=>{toast("Username copied!");b.textContent='Copied \u2713';clearTimeout(b.t);b.t=setTimeout(()=>{b.textContent="Copy username"},1800)},()=>toast('Could not copy: '+(data.discordUsername||data.nick),true))};
+
+/* ---------- intro ---------- */
+(()=>{const it=$('#intro'),cn=$('#cnt'),b=$('#bar2');const t0=performance.now();
+ (function st(t){const k=Math.min((t-t0)/1300,1),v=Math.round(100*(1-Math.pow(1-k,2.2)));cn.textContent=String(v).padStart(3,'0');b.style.width=v+'%';
+  if(k<1)requestAnimationFrame(st);else{it.classList.add('gone');setTimeout(()=>it.classList.add('off'),1100)}})(t0);
+})();
+
+/* ---------- cursor star trail ---------- */
+(()=>{
+ const c=$('#trail'),x=c.getContext('2d');let W,H,dpr=Math.min(devicePixelRatio||1,2),T=[];
+ const rs=()=>{W=c.width=innerWidth*dpr;H=c.height=innerHeight*dpr;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px'};rs();addEventListener('resize',rs);
+ let lx=0,ly=0,trailFrame=0;
+ function wakeTrail(){if(!trailFrame&&T.length&&!document.hidden)trailFrame=requestAnimationFrame(drawTrail);}
+ document.addEventListener('visibilitychange',wakeTrail);
+ document.addEventListener('pointermove',e=>{
+  if(e.pointerType==='touch'||low||reduced||document.body.classList.contains('text-focus'))return;
+  const d=Math.hypot(e.clientX-lx,e.clientY-ly);lx=e.clientX;ly=e.clientY;
+  const n=Math.min(4,1+(d/14|0));
+  for(let i=0;i<n;i++)T.push({x:e.clientX*dpr,y:e.clientY*dpr,vx:(Math.random()-.5)*.9*dpr,vy:((Math.random()-.5)*.9+.25)*dpr,l:1,r:(.6+Math.random()*1.5)*dpr});
+  wakeTrail();
+ });
+ function drawTrail(){trailFrame=0;if(document.hidden)return;x.clearRect(0,0,W,H);x.fillStyle='#fff';T=T.filter(p=>p.l>0);
+  for(const p of T){p.x+=p.vx;p.y+=p.vy;p.l-=.022;x.globalAlpha=Math.max(p.l,0)*.85;x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);x.fill()}
+  if(T.length)wakeTrail();
+ }
+})();
+
+/* ---------- black hole ---------- */
+(()=>{
+ const c=$('#hole'),x=c.getContext('2d');let S=0,P=[],dpr=Math.min(devicePixelRatio||1,2);
+ let still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ function init(){
+  S=Math.max(240,c.parentElement.getBoundingClientRect().width);
+  c.width=S*dpr;c.height=S*dpr;
+  const n=low?1800:4200;
+  P=Array.from({length:n},()=>{const rr=1.5+Math.pow(Math.random(),1.6)*2.1;
+   return{r:rr,a:Math.random()*6.283,w:1/Math.pow(rr,1.5),s:.45+Math.random()*1.1,sn:0,cs:0,br:0}});
+ }
+ addEventListener('resize',init);addEventListener('qualitychange',init);init();
+ let tiltS=.2,rotS=-.12,previousFrame=0,frameId=0;
+ function schedule(){if(!frameId&&!document.hidden&&heroVisible)frameId=requestAnimationFrame(frame);}
+ document.addEventListener('visibilitychange',schedule);
+ addEventListener('qualitychange',()=>{still=reduced;schedule();});
+ c.addEventListener('click',()=>{holePulse=1});
+ c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();holePulse=1}});
+ new IntersectionObserver(es=>{heroVisible=es[0].isIntersecting;if(heroVisible)schedule()},{rootMargin:'100px'}).observe(c);
+ function frame(t){
+  frameId=0;if(document.hidden||!heroVisible)return;if(t-previousFrame<(low?50:15)){schedule();return}previousFrame=t;
+  x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,S,S);
+  const Rs=S*.115;
+  tiltS+=((.2+my*.13)-tiltS)*.05;rotS+=((-.12+mx*.14)-rotS)*.05;
+  x.save();x.translate(S/2,S/2);x.rotate(rotS);
+  x.globalCompositeOperation='lighter';
+  // outer halo
+  let g=x.createRadialGradient(0,0,Rs,0,0,Rs*5.2);g.addColorStop(0,'rgba(255,255,255,.2)');g.addColorStop(.35,'rgba(255,255,255,.05)');g.addColorStop(1,'rgba(255,255,255,0)');
+  x.globalAlpha=1;x.fillStyle=g;x.fillRect(-S/2,-S/2,S,S);
+  // disk body
+  x.save();x.scale(1,tiltS);
+  g=x.createRadialGradient(0,0,Rs*1.45,0,0,Rs*3.7);g.addColorStop(0,'rgba(255,255,255,.34)');g.addColorStop(.35,'rgba(255,255,255,.1)');g.addColorStop(1,'rgba(255,255,255,0)');
+  x.fillStyle=g;x.beginPath();x.arc(0,0,Rs*3.7,0,6.283);x.fill();x.restore();
+  x.fillStyle='#fff';
+  holePulse*=.94;
+  const spd=still?0:.012+holePulse*.02;
+  for(const p of P)p.a+=p.w*spd;
+  // far side, lensed arch, lensed underside
+  for(const p of P){
+   const sn=p.sn=Math.sin(p.a),cs=p.cs=Math.cos(p.a);
+   const dop=.3+.7*(.5-.5*cs);
+   const br=p.br=(2.4/(p.r*p.r)*.5+.16)*dop*p.s;
+   const rp=p.r*Rs;
+   if(sn>0){
+    x.globalAlpha=Math.min(1,br);
+    x.fillRect(cs*rp-.6,-sn*rp*tiltS-.6,1.3,1.3);
+    const ra=Rs*(1.1+(p.r-1.5)*.3);
+    x.globalAlpha=Math.min(1,br*1.1);
+    x.fillRect(cs*ra-.6,-sn*ra*.99-.6,1.4,1.4);
+   }else{
+    const rb=Rs*(1.06+(p.r-1.5)*.14);
+    x.globalAlpha=Math.min(1,br*.7);
+    x.fillRect(cs*rb-.6,-sn*rb*.6-.6,1.2,1.2);
+   }
+  }
+  // shadow
+  x.globalCompositeOperation='source-over';x.globalAlpha=1;
+  g=x.createRadialGradient(0,0,Rs*.8,0,0,Rs*1.08);g.addColorStop(0,'#000');g.addColorStop(.85,'#000');g.addColorStop(1,'rgba(0,0,0,0)');
+  x.fillStyle=g;x.beginPath();x.arc(0,0,Rs*1.08,0,6.283);x.fill();
+  // photon ring
+  x.globalCompositeOperation='lighter';
+  const pulse=.85+.15*Math.sin(t/900);
+  x.strokeStyle='#fff';
+  x.globalAlpha=.95*pulse;x.lineWidth=1.3;x.beginPath();x.arc(0,0,Rs*1.03,0,6.283);x.stroke();
+  x.globalAlpha=.16*pulse;x.lineWidth=7;x.beginPath();x.arc(0,0,Rs*1.05,0,6.283);x.stroke();
+  x.globalAlpha=.06*pulse;x.lineWidth=18;x.beginPath();x.arc(0,0,Rs*1.08,0,6.283);x.stroke();
+  // near side of disk, in front of shadow
+  x.fillStyle='#fff';
+  for(const p of P){
+   const sn=p.sn;if(sn>=0)continue;
+   const cs=p.cs,br=p.br,rp=p.r*Rs;
+   x.globalAlpha=Math.min(1,br*1.15);
+   x.fillRect(cs*rp-.7,-sn*rp*tiltS-.7,1.6,1.6);
+  }
+  x.restore();
+  schedule();
+ }
+ schedule();
+})();
+
+/* -------- Portfolio functionality -------- */
+function translateStatic(){
+ document.documentElement.lang='en';
+ $('#tgl').textContent=editing()?'✓ Done':'✎ Edit';
+ $('#quality').textContent='FX: '+({auto:'AUTO',lite:'LITE',full:'FULL'}[quality]||'AUTO');
+ $('#sound [data-sound]').textContent=audioOn?'Sound on':'Sound off';
+}
+function safeURL(url){try{const u=new URL(url);return ['http:','https:'].includes(u.protocol)?u.href:'#'}catch{return '#'}}
+function field(path){return `<span data-p="${path}">${esc(get(path)??'')}</span>`}
+function renderExtras(){
+  const busy=data.availability==='busy',until=data.busyUntil?new Date(data.busyUntil+'T12:00:00'):null;
+  const status=busy?(until&&!isNaN(until)?'Busy until '+until.toLocaleDateString('en-GB',{day:'numeric',month:'short'}):'Currently busy'):get('status');
+  $('.status [data-p=status]').textContent=status;$('.status').classList.toggle('busy',busy);
+  $$('[data-p]').forEach(el=>{el.contentEditable=editing()?'plaintext-only':'false';el.spellcheck=false});pollPresence();
+}
+let presenceTimer=null,presenceRequest=0,presenceChecked=0,presenceId='',presenceBusy=false;
+async function pollPresence(){
+  if(presenceBusy||document.hidden)return;
+  if(presenceId===data.discordId&&Date.now()-presenceChecked<45000)return;
+  presenceBusy=true;presenceId=data.discordId;presenceChecked=Date.now();
+  clearTimeout(presenceTimer);const request=++presenceRequest,p=$('#presence'),id=data.discordId;
+  if(!/^\d{17,20}$/.test(id||'')){p.dataset.status='unknown';p.querySelector('span').textContent='Discord presence not connected';presenceBusy=false;return;}
+  try{const r=await fetch('https://api.lanyard.rest/v1/users/'+id,{signal:AbortSignal.timeout(6000)});const j=await r.json();if(request!==presenceRequest)return;if(!j.success||!j.data)throw Error();const st=j.data.discord_status||'offline';p.dataset.status=st;p.querySelector('span').textContent=({online:'Discord \u00b7 online',idle:'Discord \u00b7 idle',dnd:'Discord \u00b7 do not disturb',offline:'Discord \u00b7 offline'})[st]||'Presence unavailable';}
+  catch{if(request!==presenceRequest)return;p.dataset.status='unknown';p.querySelector('span').textContent='Discord · @'+(data.discordUsername||data.nick);}
+  presenceBusy=false;presenceTimer=setTimeout(()=>{if(!document.hidden)pollPresence()},45010);
+}
+function download(name,content,type='application/json'){const url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);}
+$('#bContent').onclick=()=>{$('#contentJson').value=JSON.stringify(data,null,2);$('#contentError').textContent='';openDialog('contentModal');};
+function validateContent(d){
+ if(!d||typeof d!=='object'||Array.isArray(d))throw Error('Expected an object');
+ d.en??={};for(const key in seed)if(d[key]==null)d[key]=structuredClone(seed[key]);
+ for(const k of ['works','nodo','faq'])if(!Array.isArray(d[k]))throw Error(k+' must be an array');
+ for(const k of ['brand','nick','role','status','line','dc','contactText','footer'])if(typeof d[k]!=='string')throw Error(k+' must be a string');
+ for(const [key,fields] of Object.entries({works:['title','cat','type','src','desc'],faq:['q','a']}))for(const row of d[key])for(const f of fields)if(typeof row?.[f]!=='string')throw Error(key+'.'+f+' must be a string');
+ if(!d.en||typeof d.en!=='object'||Array.isArray(d.en))throw Error('en must be an object');
+ if(!d.sections||!d.terms)throw Error('sections and terms are required');
+ if(d.en)for(const [path,value] of Object.entries(d.en)){
+  const keys=path.split('.'),last=keys.pop();if(keys.some(k=>['__proto__','constructor','prototype'].includes(k))||['__proto__','constructor','prototype'].includes(last))continue;
+  const parent=keys.reduce((o,k)=>o?.[k],d);if(parent&&typeof value==='string')parent[last]=value;
+ }
+ d.en={};d.language='en';delete d._textTranslationPending;d.works.forEach(w=>delete w._translation);
+ d.customSections??=[];d.hiddenSections??=[];
+ if(!Array.isArray(d.customSections)||d.customSections.length>30)throw Error('Invalid custom sections');
+ for(const item of d.customSections)if(typeof item.id!=='string'||!/^[a-zA-Z0-9-]+$/.test(item.id)||typeof item.title!=='string'||typeof item.body!=='string')throw Error('Invalid custom section');
+ if(!Array.isArray(d.hiddenSections)||d.hiddenSections.some(id=>!['works','terms','contact'].includes(id)))throw Error('Invalid hidden sections');
+ return d;
+}
+$('#contentForm').onsubmit=e=>{e.preventDefault();try{const next=validateContent(JSON.parse($('#contentJson').value));data=next;save();closeDialog('contentModal');render();toast('Content updated');}catch(e){$('#contentError').textContent='Check JSON: '+e.message;}};
+// Validate imported data before applying any changes.
+$('#impf').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const next=validateContent(JSON.parse(await f.text()));data=next;save();render();toast('Imported');}catch{toast('Could not import data.json. Check its structure.',true)}e.target.value='';};
+let dialogReturn=null;
+function openDialog(id){dialogReturn=document.activeElement;$('#'+id).classList.add('open');translateStatic();setTimeout(()=>$('#'+id).querySelector('input,textarea,button')?.focus({preventScroll:true}),80);}
+function closeDialog(id){$('#'+id).classList.remove('open');dialogReturn?.focus({preventScroll:true});}
+function openBrief(){openDialog('briefModal');$('#briefResult').textContent='';$('#briefDiscord').hidden=true;}
+$('#briefOpen').onclick=openBrief;
+$('#briefForm').onsubmit=async e=>{e.preventDefault();const task=$('#br_task').value.trim();if(!task)return;const text='Hi Mistral!\n\nTask: '+task+'\n'+'Budget: '+($('#br_budget').value.trim()||'\u2014')+'\n'+'Timeline: '+($('#br_time').value.trim()||'\u2014')+'\n'+'References: '+($('#br_refs').value.trim()||'\u2014');
+ try{await copyText(text);$('#briefResult').textContent='Brief copied. Open Discord and paste it into a message.';if(safeURL(data.dc)!=='#'&&!data.dc.includes('your_invite')){$('#briefDiscord').href=safeURL(data.dc);$('#briefDiscord').hidden=false;}}
+ catch{$('#briefResult').textContent='Copy unavailable. Select the text below: '+text;}};
+// Ambient is synthesized locally, starts only after a click, and fades on pause.
+let audio=null,audioGain=null,audioOn=false,audioNodes=[];
+$('#sound').onclick=async()=>{
+ try{
+ if(!audio){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)throw Error();audio=new AC();audioGain=audio.createGain();audioGain.gain.value=0;audioGain.connect(audio.destination);
+ [55,82.41,110,164.81].forEach((freq,i)=>{const o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.value=freq;g.gain.value=.1/(i+1);o.connect(g);g.connect(audioGain);o.start();audioNodes.push(o);});
+ const buffer=audio.createBuffer(1,audio.sampleRate*5,audio.sampleRate),channel=buffer.getChannelData(0);let last=0;for(let i=0;i<channel.length;i++){last=(last+Math.random()*.04-.02)/1.02;channel[i]=last;}const noise=audio.createBufferSource(),filter=audio.createBiquadFilter();noise.buffer=buffer;noise.loop=true;filter.type='lowpass';filter.frequency.value=220;noise.connect(filter);filter.connect(audioGain);noise.start();audioNodes.push(noise);
+ }audioOn=!audioOn;if(audioOn)await audio.resume();audioGain.gain.setTargetAtTime(audioOn?.22:0,audio.currentTime,.7);$('#sound').setAttribute('aria-pressed',String(audioOn));translateStatic();
+ }catch{audioOn=false;toast('Audio is unavailable in this browser',true);}
+};
+$('#quality').onclick=()=>{quality=({auto:'lite',lite:'full',full:'auto'})[quality];try{localStorage.setItem('mistral-fx-restored',quality)}catch{}applyQuality();dispatchEvent(new Event('qualitychange'));translateStatic();toast('Graphics: '+quality.toUpperCase());};
+matchMedia('(prefers-reduced-motion:reduce)').addEventListener('change',e=>{reduced=e.matches;applyQuality();dispatchEvent(new Event('qualitychange'));});
+document.addEventListener('visibilitychange',()=>{document.body.classList.toggle('page-hidden',document.hidden);if(marqA){if(document.hidden)marqA.pause();else{marqA.play();wakeMarquee();}}if(audio&&audioGain)audioGain.gain.setTargetAtTime(document.hidden?0:(audioOn?.22:0),audio.currentTime,.3);if(!document.hidden)pollPresence();});
+document.addEventListener('click',e=>{
+
+ if(e.target.closest('[data-brief]'))openBrief();const close=e.target.closest('[data-close]');if(close)closeDialog(close.dataset.close);
+});
+document.addEventListener('keydown',e=>{
+ const dialog=$('.modal.open,.lb.open');if(dialog&&e.key==='Tab'){const all=[...dialog.querySelectorAll('a[href],button,input,select,textarea,[tabindex="0"]')].filter(n=>!n.disabled&&!n.hidden&&n.getClientRects().length);const first=all[0],last=all.at(-1);if(e.shiftKey&&(document.activeElement===first||!dialog.contains(document.activeElement))){e.preventDefault();last?.focus()}else if(!e.shiftKey&&(document.activeElement===last||!dialog.contains(document.activeElement))){e.preventDefault();first?.focus()}}
+ if(!dialog&&!editing()&&e.target.matches('.work')&&['Enter',' '].includes(e.key)){e.preventDefault();openLB(+e.target.dataset.i);}
+});
+// Prevent an unfinished Discord URL from sending visitors to a broken invitation.
+['dcTop','dcHero','dcBox','dcFoot'].forEach(id=>$('#'+id).addEventListener('click',e=>{if(!data.dc||data.dc.includes('your_invite')||safeURL(data.dc)==='#'){e.preventDefault();toast('Contact is being configured. You can prepare a brief for now.');openBrief();}}));
+// Labels, navigation and modal names stay accessible even with the decorative cursor.
+$$('.dots a').forEach(a=>a.setAttribute('aria-label',a.getAttribute('href').slice(1)));
+$$('.modal label').forEach(l=>{if(l.hasAttribute('for'))return;const n=l.nextElementSibling;if(n?.matches('input,textarea,select'))l.htmlFor=n.id;});
+$('#lbx').setAttribute('aria-label','Close preview');$('#wm').setAttribute('aria-labelledby','wmt');
+// Updated reset keeps the canonical data.json, rather than an unrelated browser draft.
+$('#bRes').onclick=()=>{if(confirm('Discard local drafts and restore embedded content?')){localStorage.removeItem(KEY);data=structuredClone(seed);save();render();}};
+
+/* Additive admin controls. These edit browser-local data; HTML export publishes the result. */
+function refreshEditorButtons(){
+ const undo=$('#bUndo'),redo=$('#bRedo');if(undo)undo.disabled=editorHistoryAt<=0;if(redo)redo.disabled=editorHistoryAt>=editorHistory.length-1;
+}
+function recordEditorHistory(){
+ if(editorReplaying)return;const snapshot=JSON.stringify(data);if(editorHistory[editorHistoryAt]===snapshot)return;
+ editorHistory=editorHistory.slice(0,editorHistoryAt+1);editorHistory.push(snapshot);
+ while(editorHistory.length>20||(editorHistory.length>2&&editorHistory.reduce((n,s)=>n+s.length,0)>8*1024*1024))editorHistory.shift();
+ editorHistoryAt=editorHistory.length-1;refreshEditorButtons();
+}
+function replayEditorHistory(direction){if(!requireOwner())return;
+ const next=editorHistoryAt+direction;if(next<0||next>=editorHistory.length)return;editorReplaying=true;
+ try{editorHistoryAt=next;data=JSON.parse(editorHistory[next]);localStorage.setItem(OWNER_DRAFT_KEY,JSON.stringify(data));render();toast('Change undone / restored');}finally{editorReplaying=false;refreshEditorButtons();}
+}
+$('#bUndo').onclick=()=>replayEditorHistory(-1);$('#bRedo').onclick=()=>replayEditorHistory(1);
+$('#editorLaunch').onclick=()=>{setAdmin(true);toggleEdit(true);};
+$('#bEditorClose').onclick=()=>setAdmin(false);
+$('#bBackup').onclick=()=>{const backup=JSON.parse(JSON.stringify(data));backup._v=Date.now();download('mistral-backup.json',JSON.stringify(backup,null,2));toast('Backup downloaded');};
+const editorLabels={
+ brand:["Name / brand",'Name / brand'],role:["Specialization",'Specialization'],status:["Commission status",'Commission status'],line:["Hero description",'Hero description'],
+ 'sections.works':["Work heading",'Work heading'],'sections.terms':["Terms heading",'Terms heading'],'sections.contact':["Contact heading",'Contact heading'],
+ 'terms.noTitle':["Scope heading",'Scope heading'],'terms.priceTitle':["Price heading",'Price heading'],'terms.price':["Starting price",'Starting price'],'terms.priceText':["Pricing description",'Pricing description'],
+ nick:["Display name",'Discord username'],contactText:["Contact description",'Contact description'],footer:["Footer / copyright",'Footer / copyright']
+};
+function textEditorPaths(group){
+ const groups={hero:['brand','role','status','line'],stats:data.stats.flatMap((s,i)=>['stats.'+i+'.n','stats.'+i+'.l']),terms:['sections.works','sections.terms','terms.noTitle',...data.nodo.map((s,i)=>'nodo.'+i),'terms.priceTitle','terms.price','terms.priceText'],contact:['sections.contact','nick','contactText','footer']};
+ return group==='all'?Object.values(groups).flat():groups[group]||groups.hero;
+}
+function buildTextEditor(){
+ const fields=textEditorPaths($('#textEditorGroup').value);$('#textEditorFields').innerHTML=fields.map(path=>{
+ let label=editorLabels[path]?.[lang==='en'?1:0];if(!label){if(path.startsWith('stats.')){const p=path.split('.');label='Statistic '+(+p[1]+1)+(p[2]==='n'?' \u2014 value':' \u2014 label');}else label='Scope item '+(+path.split('.')[1]+1);}
+ return `<div><label for="field_${path.replaceAll('.','_')}">${esc(label)}</label><textarea id="field_${path.replaceAll('.','_')}" data-editor-path="${path}" rows="2">${esc(get(path)||'')}</textarea></div>`;
+ }).join('');
+}
+$('#bText').onclick=()=>{buildTextEditor();openDialog('textEditor');};$('#textEditorGroup').onchange=buildTextEditor;
+$('#textEditorForm').onsubmit=e=>{e.preventDefault();$$('[data-editor-path]').forEach(el=>set(el.dataset.editorPath,el.value));save();closeDialog('textEditor');render();toast('Text saved');};
+function workBundles(){return data.works.map((w,i)=>({work:w,translations:Object.fromEntries(Object.entries(data.en||{}).filter(([k])=>k.startsWith('works.'+i+'.')).map(([k,v])=>[k.slice(('works.'+i+'.').length),v]))}));}
+function applyWorkBundles(bundles){if(!requireOwner())return;cancelTextJobs('works');data.works=bundles.map(b=>b.work);data.en=Object.fromEntries(Object.entries(data.en||{}).filter(([k])=>!k.startsWith('works.')));bundles.forEach((b,i)=>Object.entries(b.translations).forEach(([k,v])=>data.en['works.'+i+'.'+k]=v));save();render();buildWorkManager();}
+function buildWorkManager(){
+ $('#manageWorksList').innerHTML=data.works.map((w,i)=>`<div class="work-manager-row"><div><strong>${esc(get('works.'+i+'.title'))}</strong><small>${esc(get('works.'+i+'.cat'))}</small></div><div class="work-manager-actions"><button type="button" data-manage="up" data-index="${i}" aria-label="Move up" ${i===0?'disabled':''}>\u2191</button><button type="button" data-manage="down" data-index="${i}" aria-label="Move down" ${i===data.works.length-1?'disabled':''}>\u2193</button><button type="button" data-manage="copy" data-index="${i}">${'Duplicate'}</button><button type="button" data-manage="edit" data-index="${i}">${'Edit'}</button></div></div>`).join('')||`<p class="editor-hint">${'No work yet'}</p>`;
+}
+$('#bManage').onclick=()=>{buildWorkManager();openDialog('manageWorks');};$('#manageWorksForm').onsubmit=e=>e.preventDefault();
+$('#managerAdd').onclick=()=>{closeDialog('manageWorks');openWork(null);};
+$('#manageWorksList').onclick=e=>{
+ const b=e.target.closest('[data-manage]');if(!b)return;const i=+b.dataset.index,action=b.dataset.manage;
+ if(action==='edit'){closeDialog('manageWorks');openWork(i);return;}
+ const bundles=workBundles();if(action==='copy'){const copy=JSON.parse(JSON.stringify(bundles[i]));copy.work.title+=' (copy)';if(copy.translations.title)copy.translations.title+=' (copy)';bundles.splice(i+1,0,copy);}
+ else{const to=i+(action==='up'?-1:1);if(to<0||to>=bundles.length)return;[bundles[i],bundles[to]]=[bundles[to],bundles[i]];}
+ applyWorkBundles(bundles);
+};
+// Native text undo stays native; toolbar undo covers site-level edits.
+document.addEventListener('keydown',e=>{if(!admin()||e.target.closest('input,textarea,[contenteditable="true"],[contenteditable="plaintext-only"]'))return;if((e.ctrlKey||e.metaKey)&&e.code==='KeyZ'){e.preventDefault();replayEditorHistory(e.shiftKey?1:-1);}});
+// Browser flags never authenticate an owner.
+
+// OWNER_SECURITY_REVISION:v1
+// No client-side flag is trusted for identity or publication. GitHub enforces repository writes.
+function ownerSession(){return !!ownerToken&&ownerIdentity?.id===OWNER_ID&&ownerIdentity.login.toLowerCase()===OWNER_LOGIN.toLowerCase();}
+function requireOwner(){return ownerSession();}
+function ownerMessage(ru,en){return ui(ru,en);}
+function resetPublicView(){
+ document.body.classList.remove('admin','editing','owner-verified');
+ document.querySelectorAll('[contenteditable]').forEach(n=>n.setAttribute('contenteditable','false'));
+ document.querySelectorAll('.modal.open').forEach(n=>n.classList.remove('open'));
+ document.documentElement.classList.remove('lock');
+}
+function refreshOwnerUI(){
+ const yes=ownerSession();$('#editorLaunch').hidden=!yes;
+ $('#ownerLogin').textContent=yes?'Korobbka \u00b7 '+'Sign out':'Owner \u00b7 Korobbka';
+ $('#ownerPublish').hidden=!yes;if(!yes){$('#ownerCommit').hidden=true;$('#ownerSaveStatus').textContent='';}document.body.classList.toggle('owner-verified',yes);if(!yes)$('#devPanel').classList.remove('open');
+}
+function showOwnerLogin(){
+ $('#ownerAuthMessage').textContent='';$('#ownerTokenInput').value='';$('#ownerAuthModal').classList.add('open');
+ setTimeout(()=>$('#ownerTokenInput').focus(),50);
+}
+function logoutOwner(){
+ ownerAuthEpoch++;ownerToken='';ownerIdentity=null;clearTimeout(ownerExpiryTimer);
+ ownerApiControllers.forEach(c=>c.abort());ownerApiControllers.clear();
+ $('#ownerTokenInput').value='';resetPublicView();data=structuredClone(seed);
+ editorHistory=[JSON.stringify(data)];editorHistoryAt=0;render();refreshOwnerUI();
+}
+async function githubOwnerRequest(path,token,options={}){
+ if(!/^\/(user|repos\/Korobbka\/Mistral(?:\/contents\/index\.html)?)$/.test(path))throw Error('Unexpected GitHub endpoint');
+ const controller=new AbortController();ownerApiControllers.add(controller);const timer=setTimeout(()=>controller.abort(),20000);
+ try{
+  const response=await fetch('https://api.github.com'+path,{...options,signal:controller.signal,cache:'no-store',credentials:'omit',redirect:'error',headers:{Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28',Authorization:'Bearer '+token,...(options.body?{'Content-Type':'application/json'}:{})}});
+  if(!response.ok)throw Error('GitHub HTTP '+response.status);
+  return await response.json();
+ }finally{clearTimeout(timer);ownerApiControllers.delete(controller);}
+}
+async function checkOwnerToken(token){
+ const person=await githubOwnerRequest('/user',token);
+ if(person.id!==OWNER_ID||person.login?.toLowerCase()!==OWNER_LOGIN.toLowerCase())throw Error('Only Korobbka is allowed');
+ const repo=await githubOwnerRequest('/repos/Korobbka/Mistral',token);
+ if(repo.owner?.id!==OWNER_ID||repo.full_name!=='Korobbka/Mistral'||repo.permissions?.push!==true||repo.default_branch!=='main')throw Error('Repository write permission required');
+ return {id:person.id,login:person.login};
+}
+function loadOwnerDraft(){
+ try{const rawDraft=localStorage.getItem(OWNER_DRAFT_KEY);if(!rawDraft)return;const draft=JSON.parse(rawDraft);if((draft._v||0)>(seed._v||0)){validateContent(draft);data=repairStoredEncoding(draft);}}catch{}
+ editorHistory=[JSON.stringify(data)];editorHistoryAt=0;
+}
+$('#ownerLogin').onclick=()=>{if(ownerSession())logoutOwner();else showOwnerLogin();};
+$('#ownerAuthCancel').onclick=()=>{ownerAuthEpoch++;ownerApiControllers.forEach(c=>c.abort());$('#ownerTokenInput').value='';$('#ownerAuthModal').classList.remove('open');};
+$('#ownerAuthForm').onsubmit=async e=>{
+ e.preventDefault();const input=$('#ownerTokenInput'),token=input.value.trim();input.value='';if(!token)return;
+ const epoch=++ownerAuthEpoch,b=$('#ownerAuthSubmit');b.disabled=true;$('#ownerAuthMessage').textContent='Checking GitHub\u2026';
+ try{
+  const identity=await checkOwnerToken(token);if(epoch!==ownerAuthEpoch)return;
+  ownerToken=token;ownerIdentity=identity;loadOwnerDraft();$('#ownerAuthModal').classList.remove('open');
+  setAdmin(true);toggleEdit(true);refreshOwnerUI();clearTimeout(ownerExpiryTimer);ownerExpiryTimer=setTimeout(logoutOwner,60*60*1000);
+ }catch(err){if(epoch===ownerAuthEpoch){ownerToken='';ownerIdentity=null;$('#ownerAuthMessage').textContent='Access denied. A Korobbka token with access to Korobbka/Mistral is required. '+(err.name==='AbortError'?'Timeout':err.message);refreshOwnerUI();}}
+ finally{b.disabled=false;}
+};
+function decodeGitHubContent(content){const bytes=Uint8Array.from(atob(content.replace(/\s/g,'')),c=>c.charCodeAt(0));return new TextDecoder('utf-8',{fatal:true}).decode(bytes);}
+function encodeGitHubContent(text){const bytes=new TextEncoder().encode(text);let binary='';for(let i=0;i<bytes.length;i+=8192)binary+=String.fromCharCode(...bytes.subarray(i,i+8192));return btoa(binary);}
+function publicSeedFromHTML(html){
+ const doc=new DOMParser().parseFromString(html,'text/html'),element=doc.querySelector('script#seed[type="application/json"]');
+ if(!element)throw Error('Missing portfolio data');return JSON.parse(element.textContent);
+}
+function publicFingerprint(value){
+ function ordered(v){if(Array.isArray(v))return v.map(ordered);if(v&&typeof v==='object')return Object.fromEntries(Object.keys(v).filter(k=>k!=='_v').sort().map(k=>[k,ordered(v[k])]));return v;}
+ return JSON.stringify(ordered(value));
+}
+function replaceRemoteSeed(remote,publicData){
+ const pattern=/(<script\b(?=[^>]*\bid=["']seed["'])[^>]*>)[\s\S]*?(<\/script\s*>)/i;
+ if(!pattern.test(remote))throw Error('Missing portfolio data');
+ return remote.replace(pattern,(_,open,close)=>open+JSON.stringify(publicData).replace(/</g,'\\u003c')+close);
+}
+let ownerPublishing=false;
+$('#ownerPublish').onclick=async()=>{
+ if(!requireOwner()||ownerPublishing)return;if(!confirm('Save these changes to Korobbka/Mistral on GitHub?'))return;ownerPublishing=true;const token=ownerToken,epoch=ownerAuthEpoch,b=$('#ownerPublish');b.disabled=true;updateSyncState();
+ try{
+  document.activeElement?.blur();await awaitTextTranslations();
+  await checkOwnerToken(token);if(epoch!==ownerAuthEpoch||!ownerSession())return;
+  const remote=await githubOwnerRequest('/repos/Korobbka/Mistral/contents/index.html',token);
+  const html=decodeGitHubContent(remote.content);
+  if(!html.includes('OWNER_SECURITY_REVISION:v1'))throw Error('Install the secured index.html in GitHub first.');
+  if(publicFingerprint(publicSeedFromHTML(html))!==publicFingerprint(seed))throw Error('GitHub has newer changes. Reload the current version before publishing.');
+  await awaitTextTranslations();if(epoch!==ownerAuthEpoch||!ownerSession())return;
+  const content={...structuredClone(data),_v:Date.now()},updated=replaceRemoteSeed(html,content);
+  if(epoch!==ownerAuthEpoch||token!==ownerToken)return;
+  const result=await githubOwnerRequest('/repos/Korobbka/Mistral/contents/index.html',token,{method:'PUT',body:JSON.stringify({message:'Update Mistral portfolio content',content:encodeGitHubContent(updated),sha:remote.sha,branch:'main'})});
+  if(epoch!==ownerAuthEpoch)return;
+  if(!result.commit?.sha||!result.content?.sha)throw Error('GitHub did not confirm the commit');
+  const hasNewerEdits=publicFingerprint(data)!==publicFingerprint(content);seed=structuredClone(content);if(!hasNewerEdits)data=structuredClone(content);
+  const commit=$('#ownerCommit');commit.href='https://github.com/Korobbka/Mistral/commit/'+result.commit.sha;commit.textContent='Commit '+result.commit.sha.slice(0,7);commit.hidden=false;$('#seed').textContent=JSON.stringify(content).replace(/</g,'\\u003c');save();render();
+  toast('Saved to GitHub. Pages updates after the build.');
+ }catch(err){toast('Not published: '+(err.name==='AbortError'?'Request cancelled / timeout':err.message),true);}
+ finally{ownerPublishing=false;b.disabled=false;updateSyncState();}
+};
+// Owner-only diagnostics. Local counters are explicitly not global visitor analytics.
+const devStarted=Date.now(),devErrorLog=[];let devAnalyticsLoaded='',devAnalyticsError=false,devFps=null,devMeasuring=false;
+let devLocal={views:0,discord:0,work:0,maxScroll:0,lastVisit:null};
+try{devLocal={...devLocal,...JSON.parse(localStorage.getItem('mistral-local-metrics')||'{}')};}catch{}
+devLocal.views++;devLocal.lastVisit=new Date().toISOString();
+function persistLocalMetrics(){try{localStorage.setItem('mistral-local-metrics',JSON.stringify(devLocal));}catch{}}
+persistLocalMetrics();
+function safeDevError(value){return String(value?.message||value||'Error').replace(/github_pat_[A-Za-z0-9_]+|gh[pousr]_[A-Za-z0-9_]+/g,'[redacted]').slice(0,300);}
+addEventListener('error',e=>{if(e.message){devErrorLog.push({time:new Date().toISOString(),message:safeDevError(e.message)});if(devErrorLog.length>30)devErrorLog.shift();}});
+addEventListener('unhandledrejection',e=>{devErrorLog.push({time:new Date().toISOString(),message:safeDevError(e.reason)});if(devErrorLog.length>30)devErrorLog.shift();});
+function analyticsCode(){const code=String(data.analytics?.goatcounterCode||'').trim();return /^[a-z0-9][a-z0-9-]{0,61}$/.test(code)?code:'';}
+function startAnalytics(){
+ const code=analyticsCode();if(!code||devAnalyticsLoaded===code)return;
+ if(devAnalyticsLoaded){toast('Save and reload to change the counter.');return;}
+ devAnalyticsLoaded=code;const script=document.createElement('script');script.async=true;script.src='https://gc.zgo.at/count.js';script.dataset.goatcounter='https://'+code+'.goatcounter.com/count';script.dataset.runtimeAnalytics='true';script.onerror=()=>{devAnalyticsError=true;};document.head.appendChild(script);
+}
+function analyticsEvent(name){if(!analyticsCode()||!window.goatcounter?.count)return;try{window.goatcounter.count({path:name,title:name,event:true});}catch{}}
+document.addEventListener('click',e=>{const a=e.target.closest('a');if(a&&['dcTop','dcHero','dcBox','dcFoot'].includes(a.id)){devLocal.discord++;persistLocalMetrics();analyticsEvent('discord-click');}const w=e.target.closest('.work');if(w&&!editing()){devLocal.work++;persistLocalMetrics();analyticsEvent('work-open');}});
+addEventListener('scroll',()=>{const total=document.documentElement.scrollHeight-innerHeight;const percent=total>0?Math.min(100,Math.round(scrollY/total*100)):100;devLocal.maxScroll=Math.max(devLocal.maxScroll,percent);},{passive:true});
+addEventListener('pagehide',persistLocalMetrics);
+function devReport(){
+ const nav=performance.getEntriesByType?.('navigation')?.[0];const translations=Object.keys(data._textTranslationPending||{}).length+(data.works||[]).filter(w=>w._translation?.pending).length;
+ const media=(data.works||[]).map((w,i)=>({index:i+1,title:get('works.'+i+'.title'),valid:!!w.src&&(w.type!=='youtube'||!!ytId(w.src))}));
+ return {version:'developer-v1',time:new Date().toISOString(),sessionSeconds:Math.round((Date.now()-devStarted)/1000),fps:devFps,viewport:{width:innerWidth,height:innerHeight},language:lang,graphics:quality,pageLoadMs:nav&&nav.loadEventEnd>0?Math.round(nav.loadEventEnd):null,works:media,pendingTranslations:translations,localBrowser:{...devLocal},analytics:{connected:!!analyticsCode(),scriptLoadError:devAnalyticsError},errors:[...devErrorLog]};
+}
+function renderDevPanel(){
+ if(!ownerSession())return;const d=devReport();
+ $('#devMetrics').innerHTML=[['FPS',d.fps??'\u2026'],['Load',d.pageLoadMs==null?'\u2014':d.pageLoadMs+' ms'],['Viewport',d.viewport.width+' \u00d7 '+d.viewport.height],['FX',d.graphics.toUpperCase()],['GitHub',ownerSession()?'Korobbka':'\u2014'],['Language','English']].map(([k,v])=>`<div><small>${esc(k)}</small><strong>${esc(v)}</strong></div>`).join('');
+ $('#devLocal').textContent='Loads: '+d.localBrowser.views+' \u00b7 Discord: '+d.localBrowser.discord+' \u00b7 '+'Work opens: '+d.localBrowser.work+' \u00b7 Scroll: '+d.localBrowser.maxScroll+'%';
+ const code=analyticsCode();$('#devAnalyticsState').textContent=code?(devAnalyticsError?'Counter script failed to load.':'Counter configured. Global data is available in its private dashboard.'):'Global counter not connected. Visits across all browsers are not being collected.';
+ $('#devDashboard').hidden=!code;if(code)$('#devDashboard').href='https://'+code+'.goatcounter.com/';
+ $('#devChecks').textContent=d.works.every(w=>w.valid)?'All work has valid media URLs.':'Check media for work: '+d.works.filter(w=>!w.valid).map(w=>w.title).join(', ');
+ $('#devErrors').textContent=d.errors.length?d.errors.map(e=>e.time+' '+e.message).join('\n'):'No errors captured this session.';
+}
+function measureDevFPS(){if(devMeasuring)return;devMeasuring=true;let frames=0,start=performance.now();function frame(now){if(!ownerSession()||!$('#devPanel').classList.contains('open')){devMeasuring=false;return;}frames++;if(now-start>=1000){devFps=Math.round(frames*1000/(now-start));frames=0;start=now;renderDevPanel();}requestAnimationFrame(frame);}requestAnimationFrame(frame);}
+$('#ownerDev').onclick=()=>{if(!requireOwner())return;$('#devCounterCode').value=analyticsCode();renderDevPanel();openDialog('devPanel');measureDevFPS();};
+$('#devForm').onsubmit=e=>{e.preventDefault();if(!requireOwner())return;const code=$('#devCounterCode').value.trim().toLowerCase();if(code&&!/^[a-z0-9][a-z0-9-]{0,61}$/.test(code)){toast('Invalid GoatCounter site code',true);return;}data.analytics={...(data.analytics||{}),goatcounterCode:code};save();startAnalytics();renderDevPanel();toast('Settings saved locally. Use Save to GitHub.');};
+$('#devExport').onclick=()=>{if(requireOwner())download('mistral-diagnostics.json',JSON.stringify(devReport(),null,2));};
+startAnalytics();
+
+// Guard all normal editor entry points, not just the visible button.
+const ownerOnlySelectors='.bar,#editorLaunch,#wm,#sm,#contentModal,#textEditor,#manageWorks,#sectionsModal,#devPanel,#impf,.ctl,.addrow,#addTile,[data-editor-path]';
+for(const type of ['click','submit','change','focusin'])document.addEventListener(type,e=>{
+ const target=e.target.closest?.(ownerOnlySelectors);if(!target||requireOwner())return;
+ e.preventDefault();e.stopImmediatePropagation();resetPublicView();refreshOwnerUI();
+},true);
+for(const node of document.querySelectorAll(ownerOnlySelectors+',[data-editor-path],.bar *,#wm *,#sm *,#contentModal *,#textEditor *,#manageWorks *,#sectionsModal *,#devPanel *')){
+ for(const key of ['onclick','onsubmit','onchange']){const handler=node[key];if(typeof handler!=='function')continue;node[key]=function(e){if(!requireOwner()){e?.preventDefault();return false;}return handler.call(this,e);};}
+}
+new MutationObserver(()=>{if(!$('#ownerAuthModal').classList.contains('open')&&!ownerSession()){ownerAuthEpoch++;ownerApiControllers.forEach(c=>c.abort());$('#ownerTokenInput').value='';}}).observe($('#ownerAuthModal'),{attributes:true,attributeFilter:['class']});
+// Revoking the UI flag or adding ?edit=1/localStorage never grants identity.
+resetPublicView();refreshOwnerUI();
+
+// Shared structure + synchronized editable text; language dictionaries never own array membership.
+function removeStatAt(portfolio,index){
+ portfolio.stats.splice(index,1);const next={};for(const [key,value] of Object.entries(portfolio.en||{})){const m=key.match(/^stats\.(\d+)(.*)$/);if(!m){next[key]=value;continue;}const old=+m[1];if(old===index)continue;next['stats.'+(old>index?old-1:old)+m[2]]=value;}portfolio.en=next;
+}
+function normalizeStats(portfolio){
+ portfolio.en??={};for(let i=(portfolio.stats||[]).length-1;i>=0;i--){const st=portfolio.stats[i],label=String(st.l||'').trim();if(/^(работ[аы]?|works?|projects?|проекты)$/i.test(label)||(!String(st.n||'').trim()&&!label)){removeStatAt(portfolio,i);}}
+
+}
+function putRaw(path,value){const keys=path.split('.'),last=keys.pop();const parent=keys.reduce((o,k)=>o?.[k],data);if(parent)parent[last]=value;}
+function sharedField(path){return ['brand','nick','footer'].includes(path)||/^stats\.\d+\.n$/.test(path)||path.endsWith('.code')||path.endsWith('.file');}
+function setPortfolioText(path,value){if(!requireOwner())return false;putRaw(path,String(value));if(data.en)delete data.en[path];}
+function queueTextTranslation(){return Promise.resolve();}
+function cancelTextJobs(prefix){for(const key of textJobIds.keys())if(key===prefix||key.startsWith(prefix+'.'))textJobIds.set(key,++textJobSequence);for(const key of Object.keys(data._textTranslationPending||{}))if(key===prefix||key.startsWith(prefix+'.'))delete data._textTranslationPending[key];}
+async function awaitTextTranslations(){while(textJobs.size)await Promise.allSettled([...textJobs]);}
+async function retryTextTranslations(){for(const [path,item] of Object.entries(data._textTranslationPending||{}))queueTextTranslation(path,item.input,item.source);await awaitTextTranslations();}
+function syncMarquee(){for(const key of Object.keys(data.en||{}))if(key.startsWith('marquee.'))delete data.en[key];}
+function updateSyncState(message){
+ const el=document.getElementById('ownerSaveStatus');if(!el)return;
+ if(message){el.textContent=message;return;}
+ if(!ownerSession()){el.textContent='';return;}
+ if(ownerPublishing){el.textContent='Saving to GitHub\u2026';return;}
+ if(textJobs.size){el.textContent='Translating changes\u2026';return;}
+ if(Object.keys(data._textTranslationPending||{}).length){el.textContent='Some text needs translation \u2014 use Retry translation';return;}
+ el.textContent=publicFingerprint(data)===publicFingerprint(seed)?'All changes saved to GitHub':'Unsaved changes \u2014 save to GitHub';
+}
+
+// Optional sections extend the existing owner editor; the default page is unchanged.
+function renderCustomSections(){
+ const root=$('#customSections');
+ root.innerHTML=(data.customSections||[]).filter(x=>!x.hidden).map(item=>{
+  const i=data.customSections.indexOf(item);
+  return `<section id="extra-${esc(item.id)}"><h2 class="title rv" data-p="customSections.${i}.title">${esc(item.title)}</h2><div class="card rv"><div class="custom-section-body" data-p="customSections.${i}.body" data-multi>${esc(item.body)}</div></div></section>`;
+ }).join('');
+ for(const id of ['works','terms','contact']){
+  const hidden=(data.hiddenSections||[]).includes(id);
+  $('#'+id).hidden=hidden;
+  $$(`#nav a[href="#${id}"],#dots a[href="#${id}"]`).forEach(n=>n.hidden=hidden);
+ }
+}
+let sectionDraft=null;
+function buildSectionsManager(){
+ const hidden=sectionDraft.hiddenSections||[];
+ $('#builtinSections').innerHTML=['works','terms','contact'].map(id=>`<label class="editor-check"><input type="checkbox" data-section-visible="${id}" ${hidden.includes(id)?'':'checked'}> ${esc(data.sections[id])}</label>`).join('');
+ $('#customSectionsEditor').innerHTML=(sectionDraft.customSections||[]).map((item,i)=>`<fieldset class="section-editor-row" data-section-index="${i}">
+ <legend>Section ${i+1}</legend><label for="extra-title-${i}">Title</label><input id="extra-title-${i}" data-section-field="title" value="${esc(item.title)}" maxlength="100" required>
+ <label for="extra-body-${i}">Text</label><textarea id="extra-body-${i}" data-section-field="body" rows="4">${esc(item.body)}</textarea>
+ <label class="editor-check"><input type="checkbox" data-section-field="hidden" ${item.hidden?'checked':''}> Hide this section</label>
+ <div class="section-editor-actions"><button type="button" class="mini" data-section-action="up" data-index="${i}" ${i===0?'disabled':''}>Move up</button><button type="button" class="mini" data-section-action="down" data-index="${i}" ${i===sectionDraft.customSections.length-1?'disabled':''}>Move down</button><button type="button" class="mini" data-section-action="remove" data-index="${i}">Remove</button></div>
+ </fieldset>`).join('')||'<p class="editor-hint">Add a section for your process, services or project notes. It will use the existing site style.</p>';
+}
+function readSectionsForm(){
+ if(!requireOwner())return;
+ sectionDraft.hiddenSections=$$('[data-section-visible]').filter(n=>!n.checked).map(n=>n.dataset.sectionVisible);
+ $$('.section-editor-row').forEach(row=>{
+  const item=sectionDraft.customSections[+row.dataset.sectionIndex];if(!item)return;
+  row.querySelectorAll('[data-section-field]').forEach(n=>{item[n.dataset.sectionField]=n.type==='checkbox'?n.checked:n.value;});
+ });
+}
+$('#bSections').onclick=()=>{if(!requireOwner())return;sectionDraft={customSections:structuredClone(data.customSections||[]),hiddenSections:[...(data.hiddenSections||[])]};buildSectionsManager();openDialog('sectionsModal');};
+$('#addSection').onclick=()=>{
+ if(!requireOwner())return;readSectionsForm();
+ sectionDraft.customSections.push({id:crypto.randomUUID(),title:'New section',body:'',hidden:false});buildSectionsManager();
+ $('#customSectionsEditor .section-editor-row:last-child input')?.focus();
+};
+$('#sectionsForm').onsubmit=e=>{e.preventDefault();if(!requireOwner())return;readSectionsForm();data.customSections=sectionDraft.customSections;data.hiddenSections=sectionDraft.hiddenSections;save();render();closeDialog('sectionsModal');toast('Sections saved');};
+$('#customSectionsEditor').onclick=e=>{
+ const b=e.target.closest('[data-section-action]');if(!b||!requireOwner())return;
+ const i=+b.dataset.index,action=b.dataset.sectionAction;
+ if(action==='remove'&&!confirm('Remove this section? You can restore it with Undo.'))return;
+ readSectionsForm();
+ if(action==='remove')sectionDraft.customSections.splice(i,1);
+ else{const j=i+(action==='up'?-1:1);if(j<0||j>=sectionDraft.customSections.length)return;[sectionDraft.customSections[i],sectionDraft.customSections[j]]=[sectionDraft.customSections[j],sectionDraft.customSections[i]];}
+ buildSectionsManager();
+};
+
+if(ownerRequested)showOwnerLogin();
+render();
+})();
+
+</script>
+</body></html>
