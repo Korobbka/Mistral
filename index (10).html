@@ -1,0 +1,198 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mistral | Roblox Scripter</title><meta name="description" content="Roblox gameplay systems and Luau scripting."><style>
+:root{--bg:#0b0b0c;--tile:#19191b;--ink:#f5f5f5;--muted:#b9b9be;--line:#38383b;--gap:10px;--radius:17px;--font:system-ui,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--font)}button,input,select,textarea{font:inherit;color:inherit}button,a,input,select,textarea{outline-offset:4px}button{cursor:pointer;background:var(--tile);border:1px solid var(--line);border-radius:8px;padding:8px 12px}button:hover,a:hover{filter:brightness(1.2)}a{color:inherit;text-decoration:none}h1,h2,p{margin:0}h1{font-size:clamp(25px,3vw,36px);letter-spacing:-1.4px;line-height:1.12}h2{font-size:19px;line-height:1.2;letter-spacing:-.5px}p{color:var(--muted);white-space:pre-wrap;overflow-wrap:anywhere}.shell{max-width:1160px;margin:0 auto;padding:30px 18px}.top,.foot{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font-size:12px;padding:0 5px 12px}.top strong{color:var(--ink);letter-spacing:2px}.board{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:112px;grid-auto-flow:dense;gap:var(--gap);padding:10px;border:1px solid var(--line);border-radius:24px;background:var(--bg)}.tile{grid-column:span var(--w);grid-row:span var(--h);min-width:0;position:relative;background:var(--tile);border:1px solid var(--line);border-radius:var(--radius);box-shadow:inset 0 0 0 3px var(--bg);padding:19px;display:flex;flex-direction:column;gap:10px;overflow:hidden;overflow-wrap:anywhere}.tile .body{min-height:0;overflow:auto;scrollbar-width:thin;flex:1;display:flex;flex-direction:column;gap:8px}.tile.intro .body,.tile.contact .body,.tile.stat .body{justify-content:space-between}.eyebrow{font-size:11px;color:var(--muted);letter-spacing:.4px}.identity{display:flex;align-items:center;gap:10px}.avatar{width:38px;height:38px;border-radius:50%;background:#eee;color:#161616;display:grid;place-items:center;font-weight:700;font-size:18px;object-fit:cover}.project,.image,.video{padding:0;justify-content:flex-end}.media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#27272a}.media-fallback{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:12px}.project .body,.image .body,.video .body{flex:none;position:relative;background:var(--tile);padding:13px 15px;border-top:1px solid var(--line);max-height:60%}.project h2,.image h2,.video h2{font-size:16px}.project p,.image p,.video p{font-size:12px}.links{display:flex;gap:7px;flex-wrap:wrap}.link{display:inline-flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:12px;background:var(--bg)}.link:hover{border-color:var(--muted)}.statvalue{font-size:58px;letter-spacing:-4px;font-weight:650;line-height:1}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:11px;padding:5px 8px;border:1px solid var(--line);border-radius:7px}.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.tool{display:grid;place-items:center;gap:3px;border:1px solid var(--line);border-radius:9px;padding:8px 2px;font-size:10px;text-align:center}.tool svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7}.foot{padding:14px 5px}.editbar{display:none;position:absolute;z-index:3;top:6px;right:6px;gap:4px;flex-wrap:wrap;justify-content:flex-end;max-width:95%}.editbar button{padding:4px 7px;background:#111;color:#fff;font-size:11px}.editing .editbar{display:flex}.editing .tile{padding-top:62px}.editing .tile.dragover{outline:2px dashed #aaa}.editing .tile .media{opacity:.65}.editing .tile.project,.editing .tile.image,.editing .tile.video{padding:0}.editing .tile.project .body,.editing .tile.image .body,.editing .tile.video .body{max-height:52%}.toolbar{display:none;position:sticky;top:0;z-index:5;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:12px;gap:7px;flex-wrap:wrap}.editing .toolbar{display:flex}.primary{background:#eee;color:#111;border-color:#eee}.danger{color:#ffb1b1}dialog{width:min(600px,calc(100% - 24px));max-height:90vh;overflow:auto;border:1px solid var(--line);border-radius:16px;background:var(--bg);color:var(--ink);padding:22px}dialog::backdrop{background:#000b}form{display:grid;gap:12px}label{display:grid;gap:4px;font-size:12px;color:var(--muted)}input,textarea,select{width:100%;background:var(--tile);border:1px solid var(--line);border-radius:7px;padding:9px;color:var(--ink)}textarea{min-height:75px;resize:vertical}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}.notice{font-size:12px;color:var(--muted)}#status{min-height:18px;white-space:pre-wrap}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}@media(max-width:850px){.board{grid-template-columns:repeat(4,minmax(0,1fr))}.tile{grid-column:span min(var(--w),4)}}@media(max-width:530px){.shell{padding:12px 7px}.board{grid-template-columns:repeat(2,minmax(0,1fr));padding:6px;grid-auto-rows:115px}.tile{grid-column:span min(var(--w),2);padding:13px}.tile.project,.tile.image,.tile.video{padding:0}.fields{grid-template-columns:1fr}.top{padding:0 5px 8px}.tool{padding:5px 1px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style></head><body><main class="shell"><header class="top"><strong id="brand">MISTRAL.</strong><span id="headerText">ROBLOX / LUAU</span></header><div class="toolbar" id="toolbar"><button id="add" class="primary">+ Card</button><button id="appearance">Appearance</button><button id="undo">Undo</button><button id="redo">Redo</button><button id="export">Download HTML</button><button id="import">Import HTML / JSON</button><button id="publish">GitHub</button><button id="discard">Discard draft</button><button id="done">Preview</button></div><div class="board" id="board"></div><footer class="foot"><span id="footerText">© 2026 Mistral</span><button id="edit">Edit portfolio</button></footer><p id="status" role="status"></p></main><dialog id="modal"></dialog><input type="file" id="file" accept="text/html,.html,application/json,.json" hidden><script id="portfolio-data" type="application/json">
+{
+  "version": 1,
+  "brand": "MISTRAL.",
+  "header": "ROBLOX / LUAU",
+  "footer": "© 2026 Mistral",
+  "theme": {
+    "bg": "#0b0b0c",
+    "tile": "#19191b",
+    "ink": "#f5f5f5",
+    "muted": "#b9b9be",
+    "line": "#38383b",
+    "gap": 10,
+    "radius": 17,
+    "font": "system-ui,sans-serif"
+  },
+  "cards": [
+    {
+      "id": "intro",
+      "type": "intro",
+      "w": 3,
+      "h": 2,
+      "label": "Mistral | Roblox developer",
+      "title": "Gameplay systems. Built with Luau.",
+      "text": "Combat, multiplayer mechanics and server-side systems.",
+      "value": "M",
+      "links": []
+    },
+    {
+      "id": "bodycam",
+      "type": "project",
+      "w": 1,
+      "h": 2,
+      "title": "Bodycam",
+      "text": "Camera / FPS",
+      "image": "https://i.ytimg.com/vi/8L9Db4z7umY/hqdefault.jpg",
+      "links": [
+        {
+          "label": "Watch",
+          "url": "https://youtu.be/8L9Db4z7umY"
+        }
+      ]
+    },
+    {
+      "id": "gen",
+      "type": "project",
+      "w": 1,
+      "h": 2,
+      "title": "Generators",
+      "text": "Multiplayer / UI",
+      "image": "https://i.ytimg.com/vi/QqmfYHLJO6U/hqdefault.jpg",
+      "links": [
+        {
+          "label": "Watch",
+          "url": "https://youtu.be/QqmfYHLJO6U"
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "type": "links",
+      "w": 1,
+      "h": 1,
+      "title": "Profiles",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Korobbka"
+        },
+        {
+          "label": "Source",
+          "url": "https://github.com/Korobbka/GeneratorsV1.5"
+        }
+      ]
+    },
+    {
+      "id": "hire",
+      "type": "text",
+      "w": 1,
+      "h": 2,
+      "label": "Available for work",
+      "title": "250 Robux",
+      "text": "Starting rate.\nPaid projects only.\nNo revenue share.",
+      "links": []
+    },
+    {
+      "id": "exp",
+      "type": "stat",
+      "w": 1,
+      "h": 2,
+      "label": "Experience",
+      "value": "01",
+      "title": "Year",
+      "text": "Roblox scripting",
+      "links": []
+    },
+    {
+      "id": "tools",
+      "type": "tools",
+      "w": 2,
+      "h": 2,
+      "label": "Tech stack",
+      "title": "My tools",
+      "items": [
+        "Roblox Studio",
+        "VS Code",
+        "Git",
+        "Luau"
+      ],
+      "links": []
+    },
+    {
+      "id": "combat",
+      "type": "project",
+      "w": 2,
+      "h": 2,
+      "title": "Combat system",
+      "text": "Combos · Blocking · Hit detection",
+      "image": "https://i.ytimg.com/vi/W-nzfXX0P_g/hqdefault.jpg",
+      "links": [
+        {
+          "label": "Watch",
+          "url": "https://youtu.be/W-nzfXX0P_g"
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "type": "text",
+      "w": 4,
+      "h": 2,
+      "title": "How I work",
+      "text": "Modular scripts, editable configs and server validation.",
+      "items": [
+        "RemoteEvents",
+        "ProfileStore",
+        "Raycasting",
+        "UI scripting"
+      ],
+      "links": []
+    },
+    {
+      "id": "contact",
+      "type": "contact",
+      "w": 2,
+      "h": 2,
+      "label": "Contact",
+      "title": "Let’s work together.",
+      "links": [
+        {
+          "label": "Contact",
+          "url": "https://mistralportfolio.carrd.co/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+'use strict';
+const $=id=>document.getElementById(id), clone=x=>JSON.parse(JSON.stringify(x));
+const contact='https://mistralportfolio.carrd.co/';
+const defaults={version:1,brand:'MISTRAL.',header:'ROBLOX / LUAU',footer:'© 2026 Mistral',theme:{bg:'#0b0b0c',tile:'#19191b',ink:'#f5f5f5',muted:'#b9b9be',line:'#38383b',gap:10,radius:17,font:'system-ui,sans-serif'},cards:[
+{id:'intro',type:'intro',w:3,h:2,label:'Mistral | Roblox developer',title:'Gameplay systems. Built with Luau.',text:'Combat, multiplayer mechanics and server-side systems.',value:'M',links:[]},
+{id:'bodycam',type:'project',w:1,h:2,title:'Bodycam',text:'Camera / FPS',image:'https://i.ytimg.com/vi/8L9Db4z7umY/hqdefault.jpg',links:[{label:'Watch',url:'https://youtu.be/8L9Db4z7umY'}]},
+{id:'gen',type:'project',w:1,h:2,title:'Generators',text:'Multiplayer / UI',image:'https://i.ytimg.com/vi/QqmfYHLJO6U/hqdefault.jpg',links:[{label:'Watch',url:'https://youtu.be/QqmfYHLJO6U'}]},
+{id:'social',type:'links',w:1,h:1,title:'Profiles',links:[{label:'GitHub',url:'https://github.com/Korobbka'},{label:'Source',url:'https://github.com/Korobbka/GeneratorsV1.5'}]},
+{id:'hire',type:'text',w:1,h:2,label:'Available for work',title:'250 Robux',text:'Starting rate.\nPaid projects only.\nNo revenue share.',links:[]},
+{id:'exp',type:'stat',w:1,h:2,label:'Experience',value:'01',title:'Year',text:'Roblox scripting',links:[]},
+{id:'tools',type:'tools',w:2,h:2,label:'Tech stack',title:'My tools',items:['Roblox Studio','VS Code','Git','Luau'],links:[]},
+{id:'combat',type:'project',w:2,h:2,title:'Combat system',text:'Combos · Blocking · Hit detection',image:'https://i.ytimg.com/vi/W-nzfXX0P_g/hqdefault.jpg',links:[{label:'Watch',url:'https://youtu.be/W-nzfXX0P_g'}]},
+{id:'skills',type:'text',w:4,h:2,title:'How I work',text:'Modular scripts, editable configs and server validation.',items:['RemoteEvents','ProfileStore','Raycasting','UI scripting'],links:[]},
+{id:'contact',type:'contact',w:2,h:2,label:'Contact',title:'Let’s work together.',links:[{label:'Contact',url:contact}]}]};
+const sourceHTML='<!doctype html>\n'+document.documentElement.outerHTML;
+const types=['intro','project','image','video','text','stat','tools','links','contact'];const storage='mistral.portfolio.draft.v1';let data=clone(defaults),published=clone(defaults),editing=false,history=[],future=[],dragId=null,remoteSha=null,remoteKey='',remoteSnapshot=null,busy=false;
+function safeUrl(s,media=false){if(typeof s!=='string'||!s.trim())return '';if(!media&&!/^https?:\/\//i.test(s))return '';try{const u=new URL(s,location.href);if(['https:','http:'].includes(u.protocol))return u.href;if(media&&/^data:image\/(png|jpeg|webp|gif);base64,/i.test(s))return s;if(media&&!/^[a-z][a-z\d+.-]*:/i.test(s)&&!s.startsWith('//'))return s}catch{}return ''}
+function str(v,n=2000){return typeof v==='string'?v.slice(0,n):''}function num(v,a,b,d){return Number.isFinite(+v)?Math.max(a,Math.min(b,Math.round(+v))):d}
+function normalize(o){if(!o||!Array.isArray(o.cards)||o.cards.length>100)throw Error('Invalid portfolio JSON (maximum 100 cards).');const t=o.theme||{},theme={...defaults.theme};for(const k of ['bg','tile','ink','muted','line'])if(/^#[0-9a-f]{6}$/i.test(t[k]))theme[k]=t[k];theme.gap=num(t.gap,4,24,10);theme.radius=num(t.radius,0,32,17);if(['system-ui,sans-serif','Georgia,serif','monospace','Arial,sans-serif'].includes(t.font))theme.font=t.font;const seen=new Set();return {version:1,brand:str(o.brand,80),header:str(o.header,100),footer:str(o.footer,150),theme,cards:o.cards.map((c,i)=>{if(!c||!types.includes(c.type))throw Error('Invalid card type');let id=str(c.id,100)||'card-'+i;if(seen.has(id))id=uid();seen.add(id);return {id,type:c.type,w:num(c.w,1,6,2),h:num(c.h,1,5,2),label:str(c.label,150),title:str(c.title,150),text:str(c.text),value:str(c.value,150),image:str(c.image,4000000),items:Array.isArray(c.items)?c.items.slice(0,30).map(x=>str(x,100)):[],links:Array.isArray(c.links)?c.links.slice(0,30).filter(x=>x&&typeof x.url==='string').map(x=>({label:str(x.label,100),url:str(x.url,2000)})):[]}})}}
+function uid(){return globalThis.crypto?.randomUUID?.()||Date.now().toString(36)+Math.random().toString(36).slice(2)}function el(tag,cls,txt){const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n}function btn(txt,fn,cls){const b=el('button',cls,txt);b.type='button';b.onclick=fn;return b}function status(t){$('status').textContent=t}function save(){try{localStorage.setItem(storage,JSON.stringify(data));return true}catch{status('Local storage is full or unavailable. Download HTML to keep your work.');return false}}function change(fn){const before=clone(data);fn();history.push(before);if(history.length>40)history.shift();future=[];save();render()}function undo(){if(!history.length)return;future.push(clone(data));data=history.pop();save();render()}function redo(){if(!future.length)return;history.push(clone(data));data=future.pop();save();render()}
+const icons={'Roblox Studio':'M4 3l17 4-4 17L0 20z M8 9l7 2-2 7-7-2z','VS Code':'M3 7l13 12 5-3V5l-5-3L3 14l3 3L18 7v10L6 4z','Git':'M12 2l10 10-10 10L2 12z M8 8l8 8M12 12V5','Luau':'M12 2l10 10-10 10L2 12z M12 7l5 5-5 5-5-5z'};function toolIcon(name){const s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('viewBox','0 0 24 24');s.setAttribute('aria-hidden','true');const p=document.createElementNS(s.namespaceURI,'path');p.setAttribute('d',icons[name]||'M8 6l-6 6 6 6m8-12 6 6-6 6');s.append(p);return s}
+function render(){for(const [k,v] of Object.entries(data.theme))document.documentElement.style.setProperty('--'+k,typeof v==='number'?v+'px':v);$('brand').textContent=data.brand;$('headerText').textContent=data.header;$('footerText').textContent=data.footer;document.body.classList.toggle('editing',editing);$('undo').disabled=!history.length;$('redo').disabled=!future.length;$('edit').textContent=editing?'Exit editor':'Edit portfolio';const board=$('board');board.replaceChildren();for(const c of data.cards){const card=el('section','tile '+c.type);card.dataset.id=c.id;card.style.setProperty('--w',c.w);card.style.setProperty('--h',c.h);const body=el('div','body');const media=['project','image','video'].includes(c.type);if(media){const fallback=el('div','media-fallback','No preview');card.append(fallback);const src=safeUrl(c.image,true);if(src){const img=el('img','media');img.alt=c.title||'Project preview';img.src=src;img.onerror=()=>img.remove();card.append(img)}}if(c.type==='intro'){const id=el('div','identity');const a=el('span','avatar',c.value||'M');if(safeUrl(c.image,true)){const im=el('img','avatar');im.src=safeUrl(c.image,true);im.alt='';im.onerror=()=>im.replaceWith(a);id.append(im)}else id.append(a);id.append(el('span','eyebrow',c.label));body.append(id)}else if(c.label)body.append(el('div','eyebrow',c.label));const main=el('div');if(c.type==='stat'&&c.value)main.append(el('div','statvalue',c.value));if(c.title)main.append(el(c.type==='intro'?'h1':'h2','',c.title));if(c.text){const p=el('p','',c.text);p.style.marginTop='6px';main.append(p)}body.append(main);if(c.items?.length){const items=el('div',c.type==='tools'?'tools':'tags');for(const item of c.items){const t=el('div',c.type==='tools'?'tool':'tag');if(c.type==='tools')t.append(toolIcon(item));t.append(el('span','',item));items.append(t)}body.append(items)}if(c.links?.length){const links=el('div','links');for(const l of c.links){const url=safeUrl(l.url);if(!url)continue;const a=el('a','link', (l.label||'Open')+' ↗');a.href=url;a.target='_blank';a.rel='noopener noreferrer';links.append(a)}body.append(links)}card.append(body);if(editing){const bar=el('div','editbar');bar.append(btn('Edit',()=>editCard(c.id)),btn('↑',()=>move(c.id,-1)),btn('↓',()=>move(c.id,1)),btn('Copy',()=>change(()=>{const n=clone(c);n.id=uid();data.cards.splice(data.cards.indexOf(c)+1,0,n)})),btn('×',()=>{if(confirm('Delete this card?'))change(()=>data.cards=data.cards.filter(x=>x.id!==c.id))}));const handle=btn('⠿',()=>{});handle.title='Drag to reorder';handle.draggable=true;handle.ondragstart=e=>{dragId=c.id;e.dataTransfer.setData('text/plain',c.id);e.dataTransfer.effectAllowed='move'};handle.ondragend=()=>{dragId=null;document.querySelectorAll('.dragover').forEach(n=>n.classList.remove('dragover'))};bar.prepend(handle);card.append(bar);card.ondragover=e=>{if(dragId){e.preventDefault();card.classList.add('dragover')}};card.ondragleave=()=>card.classList.remove('dragover');card.ondrop=e=>{e.preventDefault();card.classList.remove('dragover');if(dragId&&dragId!==c.id){const from=data.cards.findIndex(x=>x.id===dragId),to=data.cards.findIndex(x=>x.id===c.id);if(from>=0)change(()=>data.cards.splice(to,0,data.cards.splice(from,1)[0]))}dragId=null}}board.append(card)}}
+function move(id,d){const i=data.cards.findIndex(x=>x.id===id),j=i+d;if(j<0||j>=data.cards.length)return;change(()=>[data.cards[i],data.cards[j]]=[data.cards[j],data.cards[i]])}
+function dialog(title){const m=$('modal');m.replaceChildren(el('h2','',title));const f=el('form');f.style.marginTop='15px';m.append(f);m.showModal();return f}function field(f,label,name,value='',kind='text',opts=[]){const l=el('label','',label);let n;if(kind==='select'){n=el('select');for(const v of opts){const o=el('option','',v);o.value=v;n.append(o)}}else{n=el(kind==='textarea'?'textarea':'input');if(kind!=='textarea')n.type=kind}n.name=name;if(kind!=='file')n.value=value??'';l.append(n);f.append(l);return n}function actions(f,submit){const row=el('div','actions');row.append(btn('Cancel',()=>$('modal').close()));const b=el('button','primary',submit);b.type='submit';row.append(b);f.append(row);return b}
+function editCard(id){const old=data.cards.find(c=>c.id===id),c=old?clone(old):{id:uid(),type:'text',w:2,h:2,title:'New card',links:[],items:[]};const f=dialog(old?'Edit card':'Add card');field(f,'Card type','type',c.type,'select',types);const dims=el('div','fields');f.append(dims);const w=field(dims,'Width (columns 1–6)','w',c.w,'number');w.min=1;w.max=6;w.required=true;const h=field(dims,'Height (rows 1–5)','h',c.h,'number');h.min=1;h.max=5;h.required=true;field(f,'Small label','label',c.label);field(f,'Title','title',c.title);field(f,'Description','text',c.text,'textarea');field(f,'Stat value / initials','value',c.value);const imageField=field(f,'Image URL or local image path','image',c.image);const upload=field(f,'Or upload image (PNG/JPEG/WebP/GIF, max 1 MB)','upload','','file');upload.accept='image/png,image/jpeg,image/webp,image/gif';let pending=false;upload.onchange=()=>{const file=upload.files[0];if(!file)return;if(file.size>1000000||!/^image\/(png|jpeg|webp|gif)$/.test(file.type)){alert('Use a supported image under 1 MB.');upload.value='';return}pending=true;const r=new FileReader();r.onload=()=>{imageField.value=r.result;pending=false};r.onerror=()=>{pending=false;alert('Image could not be read')};r.readAsDataURL(file)};field(f,'Tools / tags (one per line)','items',c.items?.join('\n'),'textarea');field(f,'Links (one per line: Label | https://...)','links',c.links?.map(l=>l.label+' | '+l.url).join('\n'),'textarea');f.append(el('p','notice','For video cards, add a preview image and a YouTube or other video link.'));actions(f,'Save card');f.onsubmit=e=>{e.preventDefault();if(pending)return;const v=Object.fromEntries(new FormData(f));delete v.upload;const links=v.links.split('\n').filter(x=>x.trim()).map(x=>{const i=x.indexOf('|');return i<0?{label:'Open',url:x.trim()}:{label:x.slice(0,i).trim(),url:x.slice(i+1).trim()}});if(links.some(l=>!safeUrl(l.url))){alert('Use valid HTTP(S) links.');return}const n={...c,...v,w:+v.w,h:+v.h,items:v.items.split('\n').map(x=>x.trim()).filter(Boolean),links};change(()=>{if(old)data.cards[data.cards.findIndex(x=>x.id===id)]=n;else data.cards.push(n)});$('modal').close()}}
+function appearance(){const f=dialog('Appearance');field(f,'Brand','brand',data.brand);field(f,'Header','header',data.header);field(f,'Footer','footer',data.footer);const g=el('div','fields');f.append(g);for(const k of ['bg','tile','ink','muted','line'])field(g,k,k,data.theme[k],'color');for(const [k,min,max] of [['gap',4,24],['radius',0,32]]){const n=field(g,k,k,data.theme[k],'number');n.min=min;n.max=max;n.required=true}field(f,'Font','font',data.theme.font,'select',['system-ui,sans-serif','Arial,sans-serif','Georgia,serif','monospace']);actions(f,'Save appearance');f.onsubmit=e=>{e.preventDefault();const v=Object.fromEntries(new FormData(f));change(()=>{for(const k of ['brand','header','footer'])data[k]=v[k];for(const k of Object.keys(data.theme))data.theme[k]=['gap','radius'].includes(k)?+v[k]:v[k]});$('modal').close()}}
+const dataOpen='<script id="portfolio-data" type="application/json">',dataClose='</scr'+'ipt>';
+function dataRange(html){const a=html.indexOf(dataOpen);if(a<0)throw Error('Upload this single-file index.html first.');const begin=a+dataOpen.length,end=html.indexOf(dataClose,begin);if(end<0)throw Error('Invalid embedded portfolio data.');return {begin,end}}
+function readHTML(html){const {begin,end}=dataRange(html);return normalize(JSON.parse(html.slice(begin,end)))}
+function writeHTML(html,obj){const {begin,end}=dataRange(html);return html.slice(0,begin)+'\n'+JSON.stringify(obj,null,2).replace(/</g,'\\u003c')+'\n'+html.slice(end)}
+function download(){const u=URL.createObjectURL(new Blob([writeHTML(sourceHTML,data)],{type:'text/html;charset=utf-8'}));const a=el('a');a.href=u;a.download='index.html';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+function b64(s){const bytes=new TextEncoder().encode(s);let out='';for(let i=0;i<bytes.length;i+=8192)out+=String.fromCharCode(...bytes.subarray(i,i+8192));return btoa(out)}function unb64(s){return new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g,'')),c=>c.charCodeAt(0)))}
+async function api(url,token,opts={}){const r=await fetch(url,{...opts,headers:{Accept:'application/vnd.github+json',Authorization:'Bearer '+token,'X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'}});let j;try{j=await r.json()}catch{j={}}return {r,j}}
+function github(){const f=dialog('GitHub publishing');$('modal').addEventListener('close',()=>{const token=f.querySelector('[name=token]');if(token)token.value='';},{once:true});f.append(el('p','notice','Create a fine-grained personal access token for this repository with Contents: Read and write. Token is only used in this dialog, never saved. Upload index.html to the Pages source first.'));field(f,'Owner','owner','Korobbka');field(f,'Repository','repo','Mistral');field(f,'Branch','branch','main');field(f,'Path relative to repository root','path','index.html');const tk=field(f,'Personal access token','token','','password');tk.autocomplete='off';tk.required=true;const msg=el('p','notice');f.append(msg);const row=el('div','actions');f.append(row);const load=btn('Load remote',()=>run(false));const pub=btn('Publish draft',()=>run(true),'primary');row.append(btn('Cancel',()=>$('modal').close()),load,pub);f.onsubmit=e=>e.preventDefault();async function run(write){if(busy)return;const v=Object.fromEntries(new FormData(f));if(!v.token||!v.owner||!v.repo||!v.branch||!v.path){msg.textContent='Fill all fields.';return}if(!/^[\w.-]+$/.test(v.owner)||!/^[-\w.]+$/.test(v.repo)||v.path.split('/').some(p=>!p||p==='.'||p==='..')||!v.path.endsWith('.html')){msg.textContent='Invalid repository or HTML path.';return}const base='https://api.github.com/repos/'+encodeURIComponent(v.owner)+'/'+encodeURIComponent(v.repo)+'/contents/'+v.path.split('/').map(encodeURIComponent).join('/');const key=base+'?ref='+encodeURIComponent(v.branch);busy=true;load.disabled=pub.disabled=true;msg.textContent='Connecting…';try{const {r,j}=await api(key,v.token);if(!r.ok&&r.status!==404)throw Error(j.message||'HTTP '+r.status);let remoteHTML=sourceHTML;if(r.ok){if(!j.sha||j.type!=='file')throw Error('Remote path is not a file.');if(j.content)remoteHTML=unb64(j.content);else{const raw=await fetch(key,{headers:{Accept:'application/vnd.github.raw+json',Authorization:'Bearer '+v.token,'X-GitHub-Api-Version':'2022-11-28'}});if(!raw.ok)throw Error('Could not read remote HTML.');remoteHTML=await raw.text()}}if(!write){if(!r.ok)throw Error('Remote HTML not found. Publish to create it.');const incoming=readHTML(remoteHTML);if(!confirm('Replace current draft with remote portfolio?'))return;change(()=>data=incoming);remoteSha=j.sha;remoteKey=key;remoteSnapshot=clone(incoming);msg.textContent='Remote portfolio loaded.';return}if(r.ok&&(!j.sha||j.type!=='file'))throw Error('Remote path is not a file.');if(r.ok&&((remoteKey===key&&remoteSha!==j.sha)||(remoteKey!==key&&JSON.stringify(readHTML(remoteHTML))!==JSON.stringify(published)))){if(!confirm('Remote content differs from the loaded version. Overwrite it with your draft?'))return}if(!confirm('Publish current draft to '+v.owner+'/'+v.repo+' ('+v.branch+')?'))return;const payload={message:'Update portfolio',content:b64(writeHTML(remoteHTML,data)),branch:v.branch};if(r.ok)payload.sha=j.sha;const result=await api(base,v.token,{method:'PUT',body:JSON.stringify(payload)});if(!result.r.ok)throw Error(result.j.message||'HTTP '+result.r.status);remoteSha=result.j.content?.sha;remoteKey=key;remoteSnapshot=clone(data);published=clone(data);try{localStorage.removeItem(storage)}catch{}msg.textContent='Committed successfully. GitHub Pages deployment may take a few minutes.';status('GitHub commit saved.');tk.value=''}catch(err){msg.textContent='GitHub: '+err.message}finally{busy=false;load.disabled=pub.disabled=false}}}
+$('add').onclick=()=>editCard();$('appearance').onclick=appearance;$('undo').onclick=undo;$('redo').onclick=redo;$('export').onclick=download;$('import').onclick=()=>$('file').click();$('file').onchange=async()=>{const file=$('file').files[0];if(!file)return;try{const content=await file.text();const n=file.name.toLowerCase().endsWith('.html')?readHTML(content):normalize(JSON.parse(content));if(confirm('Replace current draft with imported file?'))change(()=>data=n)}catch(e){status('Import failed: '+e.message)}$('file').value=''};$('publish').onclick=github;$('discard').onclick=()=>{if(confirm('Discard local changes and restore published version?')){data=clone(published);history=[];future=[];try{localStorage.removeItem(storage)}catch{}render()}};function toggle(){editing=!editing;render()}$('edit').onclick=toggle;$('done').onclick=toggle;document.addEventListener('keydown',e=>{if(!editing||$('modal').open||!(e.ctrlKey||e.metaKey))return;if(e.key.toLowerCase()==='z'){e.preventDefault();e.shiftKey?redo():undo()}else if(e.key.toLowerCase()==='y'){e.preventDefault();redo()}});
+(()=>{try{published=readHTML(sourceHTML)}catch(e){status('Could not load embedded portfolio: '+e.message)}data=clone(published);try{const s=localStorage.getItem(storage);if(s){data=normalize(JSON.parse(s));status('Local draft loaded. Only this browser sees unpublished changes.')}}catch{}render()})();
+</script></body></html>
